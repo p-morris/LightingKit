@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
   spec.swift_version = '4.2'
   spec.platform = :ios, '12'
   spec.requires_arc = true
-  spec.source = { git: 'https://github.com/p-morris/LightingKit.git', tag: '#{spec.version}', submodules: true }
+  spec.source = { git: 'https://github.com/p-morris/LightingKit.git', tag: "#{spec.version}", submodules: true }
   spec.source_files = 'LightingKit/LightingKit/*.swift'
   spec.framework    = 'HomeKit'
 end
