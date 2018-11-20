@@ -10,7 +10,7 @@ import Foundation
 import HomeKit
 
 /// Used to request permission from the user for HomeKit access
-class LightingKitPermission: NSObject {
+final class LightingKitPermission: NSObject {
     typealias PermissionCompletion = (Bool) -> Void
     /// The `HMHomeManager` to use for requesting permission
     private var homeManager: HomeManagerProtocol?
