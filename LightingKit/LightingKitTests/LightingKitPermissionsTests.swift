@@ -20,15 +20,12 @@ class LightingKitPermissionsTests: XCTestCase {
         completion = TestCompletion()
         mockHomeManager = MockHomeManager()
         strategy = MockStrategy()
-        permissions = LightingKitPermission(
-            homeManager: self.mockHomeManager,
-            strategy: strategy,
-            permissionCompletion: completion.getCompletion()
-        )
+        permissions = LightingKitPermission(strategy: strategy)
     }
 
     func testPermissionFailed() {
         strategy.shouldSucceed = false
+        permissions.requestPermission(homeManager: mockHomeManager, completion: completion.getCompletion())
         mockHomeManager.notifyDelegate()
         XCTAssertFalse(
             completion.complete,
@@ -38,6 +35,7 @@ class LightingKitPermissionsTests: XCTestCase {
     
     func testPermissionGranted() {
         strategy.shouldSucceed = true
+        permissions.requestPermission(homeManager: mockHomeManager, completion: completion.getCompletion())
         mockHomeManager.notifyDelegate()
         XCTAssertTrue(
             completion.complete,

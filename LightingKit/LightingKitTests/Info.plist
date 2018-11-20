@@ -16,6 +16,10 @@
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key></key>
+	<string></string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>
