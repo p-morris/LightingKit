@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		728E450421A2BD6100233F9A /* LightingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728E44FA21A2BD6100233F9A /* LightingKit.framework */; };
-		728E450921A2BD6100233F9A /* LightingKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728E450821A2BD6100233F9A /* LightingKitTests.swift */; };
 		728E450B21A2BD6100233F9A /* LightingKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E44FD21A2BD6100233F9A /* LightingKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		729BC40D21A3F323002E0C0D /* LightingKitPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */; };
+		729BC41621A40005002E0C0D /* MockHomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41521A40005002E0C0D /* MockHomeManager.swift */; };
+		729BC41821A4005D002E0C0D /* LightingKitPermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41721A4005D002E0C0D /* LightingKitPermissionsTests.swift */; };
+		729BC41A21A400F4002E0C0D /* TestCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41921A400F4002E0C0D /* TestCompletion.swift */; };
+		729BC41C21A40DEF002E0C0D /* MockStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41B21A40DEF002E0C0D /* MockStrategy.swift */; };
+		729BC42021A40F49002E0C0D /* SuccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */; };
+		729BC42221A41191002E0C0D /* HomeKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC42121A41191002E0C0D /* HomeKitExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +33,14 @@
 		728E44FD21A2BD6100233F9A /* LightingKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LightingKit.h; sourceTree = "<group>"; };
 		728E44FE21A2BD6100233F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		728E450321A2BD6100233F9A /* LightingKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightingKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		728E450821A2BD6100233F9A /* LightingKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingKitTests.swift; sourceTree = "<group>"; };
 		728E450A21A2BD6100233F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingKitPermissions.swift; sourceTree = "<group>"; };
+		729BC41521A40005002E0C0D /* MockHomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeManager.swift; sourceTree = "<group>"; };
+		729BC41721A4005D002E0C0D /* LightingKitPermissionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingKitPermissionsTests.swift; sourceTree = "<group>"; };
+		729BC41921A400F4002E0C0D /* TestCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCompletion.swift; sourceTree = "<group>"; };
+		729BC41B21A40DEF002E0C0D /* MockStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStrategy.swift; sourceTree = "<group>"; };
+		729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStrategy.swift; sourceTree = "<group>"; };
+		729BC42121A41191002E0C0D /* HomeKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,9 @@
 			children = (
 				728E44FD21A2BD6100233F9A /* LightingKit.h */,
 				728E44FE21A2BD6100233F9A /* Info.plist */,
+				729BC42121A41191002E0C0D /* HomeKitExtensions.swift */,
+				729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */,
+				729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */,
 			);
 			path = LightingKit;
 			sourceTree = "<group>";
@@ -80,10 +95,21 @@
 		728E450721A2BD6100233F9A /* LightingKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				728E450821A2BD6100233F9A /* LightingKitTests.swift */,
+				729BC41021A3F886002E0C0D /* Mocks */,
 				728E450A21A2BD6100233F9A /* Info.plist */,
+				729BC41721A4005D002E0C0D /* LightingKitPermissionsTests.swift */,
 			);
 			path = LightingKitTests;
+			sourceTree = "<group>";
+		};
+		729BC41021A3F886002E0C0D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				729BC41521A40005002E0C0D /* MockHomeManager.swift */,
+				729BC41921A400F4002E0C0D /* TestCompletion.swift */,
+				729BC41B21A40DEF002E0C0D /* MockStrategy.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +174,11 @@
 				TargetAttributes = {
 					728E44F921A2BD6100233F9A = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					728E450221A2BD6100233F9A = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -194,6 +222,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				729BC42021A40F49002E0C0D /* SuccessStrategy.swift in Sources */,
+				729BC40D21A3F323002E0C0D /* LightingKitPermissions.swift in Sources */,
+				729BC42221A41191002E0C0D /* HomeKitExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				728E450921A2BD6100233F9A /* LightingKitTests.swift in Sources */,
+				729BC41621A40005002E0C0D /* MockHomeManager.swift in Sources */,
+				729BC41821A4005D002E0C0D /* LightingKitPermissionsTests.swift in Sources */,
+				729BC41C21A40DEF002E0C0D /* MockStrategy.swift in Sources */,
+				729BC41A21A400F4002E0C0D /* TestCompletion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +375,7 @@
 		728E450F21A2BD6100233F9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.petemorris.LightingKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +402,7 @@
 		728E451021A2BD6100233F9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +428,8 @@
 		728E451221A2BD6100233F9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7682PK9SF;
 				INFOPLIST_FILE = LightingKitTests/Info.plist;
@@ -401,6 +440,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.petemorris.LightingKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -409,6 +449,8 @@
 		728E451321A2BD6100233F9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7682PK9SF;
 				INFOPLIST_FILE = LightingKitTests/Info.plist;
