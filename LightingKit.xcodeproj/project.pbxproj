@@ -94,7 +94,7 @@
 			path = "HomeKit Extensions";
 			sourceTree = "<group>";
 		};
-		728D896321A547EE005060C4 /* LightingKit */ = {
+		728D896321A547EE005060C4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				728D896421A54801005060C4 /* Model */,
@@ -102,7 +102,7 @@
 				729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */,
 				72100E5221A4FE4000834C4D /* LightingKit.swift */,
 			);
-			path = LightingKit;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		728D896421A54801005060C4 /* Model */ = {
@@ -137,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				72100E5B21A5172900834C4D /* HomeKit Extensions */,
-				728D896321A547EE005060C4 /* LightingKit */,
+				728D896321A547EE005060C4 /* Core */,
 				728E44FD21A2BD6100233F9A /* LightingKit.h */,
 				728E44FE21A2BD6100233F9A /* Info.plist */,
 			);

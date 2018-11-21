@@ -8,24 +8,11 @@
 
 import UIKit
 import LightingKit
-import HomeKit
 
-class ViewController: UIViewController, HMHomeManagerDelegate {
-    
-    var permission: LightingKitPermission!
-    var homeManager: HMHomeManager!
+class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        permission = LightingKitPermission(permissionCompletion: { (complete) in
-            print("Permission \(complete ? "granted" : "failed")")
-            self.homeManager = HMHomeManager()
-            self.homeManager.delegate = self
-        })
-    }
-    
-    func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
-        print("DID UPDATE HOMES")
     }
 
 }
