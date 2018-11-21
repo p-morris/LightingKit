@@ -25,7 +25,7 @@ public struct Home: LightingKitObject {
 }
 
 extension Home: Equatable {
-    static func == (lhs: Home, rhs: HomeKitObject) -> Bool {
+    static func == (lhs: Home, rhs: HomeKitObjectProtocol) -> Bool {
         return lhs.id == rhs.uniqueIdentifier
     }
 }

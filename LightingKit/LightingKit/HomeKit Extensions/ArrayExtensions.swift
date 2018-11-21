@@ -10,7 +10,7 @@ import Foundation
 import HomeKit
 
 /// Used to extend array to map HomeKit objects to concrete `LightingKitObject` instances.
-internal extension Array where Element: HomeKitObject {
+internal extension Array where Element: HomeKitObjectProtocol {
     /**
      Initializes and returns LightingKit representations of the HomeKit object elements.
      - Returns: An array of LightingKit objects representing the HomeKit objects contained in

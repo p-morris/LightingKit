@@ -12,14 +12,14 @@ import XCTest
 
 class ArrayExtensionTests: XCTestCase {
     func testGenericInitialization() {
-        let mockHomeKitHome = MockHomeKitHome(uniqueIdentifier: UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!, name: "TestHome")
-        let mockHomeKitHome2 = MockHomeKitHome(uniqueIdentifier: UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5E")!, name: "TestHome")
+        let mockHomeKitHome = MockHomeKitObject(uniqueIdentifier: UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!, name: "TestHome")
+        let mockHomeKitHome2 = MockHomeKitObject(uniqueIdentifier: UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5E")!, name: "TestHome")
         let lightingKitHomes: [MockLightingKitObject] = [mockHomeKitHome, mockHomeKitHome2].lightingKitObjects()
         XCTAssertEqual(lightingKitHomes.count, 2, "Array extension lightingKitObjects should return a Home object for each HMHome.")
     }
     func testGenericInitialzationUsesCorrectInitParams() {
         let uuid = UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!
-        let mockHomeKitHome = MockHomeKitHome(uniqueIdentifier: uuid, name: "TestHome")
+        let mockHomeKitHome = MockHomeKitObject(uniqueIdentifier: uuid, name: "TestHome")
         let lightningKitHome: MockLightingKitObject? = [mockHomeKitHome].lightingKitObjects().first
         XCTAssert(lightningKitHome != nil &&
             lightningKitHome!.id == mockHomeKitHome.uniqueIdentifier &&

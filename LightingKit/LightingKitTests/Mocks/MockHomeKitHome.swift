@@ -10,7 +10,7 @@ import Foundation
 import HomeKit
 @testable import LightingKit
 
-struct MockHomeKitHome: HomeKitObject {
+struct MockHomeKitObject: HomeKitObjectProtocol {
     let uniqueIdentifier: UUID
     let name: String
 }

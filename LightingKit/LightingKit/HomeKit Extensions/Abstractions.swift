@@ -19,11 +19,11 @@ internal protocol HomeManagerProtocol {
 extension HMHomeManager: HomeManagerProtocol { }
 
 /// An abstraction for HomeKit objects
-internal protocol HomeKitObject {
+internal protocol HomeKitObjectProtocol {
     var name: String { get }
     var uniqueIdentifier: UUID { get }
 }
 
-extension HMHome: HomeKitObject { }
-extension HMRoom: HomeKitObject { }
-extension HMAccessory: HomeKitObject { }
+extension HMHome: HomeKitObjectProtocol { }
+extension HMRoom: HomeKitObjectProtocol { }
+extension HMAccessory: HomeKitObjectProtocol { }
