@@ -9,7 +9,7 @@
 import Foundation
 @testable import LightingKit
 
-class MockStrategy: SuccessStrategy {
+class MockSuccessStrategy: SuccessStrategy {
     var shouldSucceed = false
     func success(manager: HomeManagerProtocol) -> Bool {
         return shouldSucceed

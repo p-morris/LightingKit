@@ -14,13 +14,18 @@
 		72100E5F21A5178500834C4D /* Abstractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5E21A5178500834C4D /* Abstractions.swift */; };
 		72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6021A517D800834C4D /* ArrayExtensions.swift */; };
 		72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6221A5187400834C4D /* FilterStrategy.swift */; };
+		728D896721A54840005060C4 /* TestArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D896621A54840005060C4 /* TestArrayExtensions.swift */; };
+		728D896921A5489C005060C4 /* MockHomeKitHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D896821A5489C005060C4 /* MockHomeKitHome.swift */; };
+		728D896D21A55944005060C4 /* TestModelEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D896C21A55944005060C4 /* TestModelEquatable.swift */; };
+		728D896F21A55B60005060C4 /* TestLightingKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D896E21A55B60005060C4 /* TestLightingKit.swift */; };
+		728D897121A55D38005060C4 /* MockPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D897021A55D38005060C4 /* MockPermission.swift */; };
 		728E450421A2BD6100233F9A /* LightingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728E44FA21A2BD6100233F9A /* LightingKit.framework */; };
 		728E450B21A2BD6100233F9A /* LightingKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E44FD21A2BD6100233F9A /* LightingKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		729BC40D21A3F323002E0C0D /* LightingKitPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */; };
 		729BC41621A40005002E0C0D /* MockHomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41521A40005002E0C0D /* MockHomeManager.swift */; };
 		729BC41821A4005D002E0C0D /* LightingKitPermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41721A4005D002E0C0D /* LightingKitPermissionsTests.swift */; };
 		729BC41A21A400F4002E0C0D /* TestCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41921A400F4002E0C0D /* TestCompletion.swift */; };
-		729BC41C21A40DEF002E0C0D /* MockStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41B21A40DEF002E0C0D /* MockStrategy.swift */; };
+		729BC41C21A40DEF002E0C0D /* MockSuccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41B21A40DEF002E0C0D /* MockSuccessStrategy.swift */; };
 		729BC42021A40F49002E0C0D /* SuccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +47,11 @@
 		72100E5E21A5178500834C4D /* Abstractions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abstractions.swift; sourceTree = "<group>"; };
 		72100E6021A517D800834C4D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		72100E6221A5187400834C4D /* FilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
+		728D896621A54840005060C4 /* TestArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestArrayExtensions.swift; sourceTree = "<group>"; };
+		728D896821A5489C005060C4 /* MockHomeKitHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeKitHome.swift; sourceTree = "<group>"; };
+		728D896C21A55944005060C4 /* TestModelEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModelEquatable.swift; sourceTree = "<group>"; };
+		728D896E21A55B60005060C4 /* TestLightingKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLightingKit.swift; sourceTree = "<group>"; };
+		728D897021A55D38005060C4 /* MockPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPermission.swift; sourceTree = "<group>"; };
 		728E44FA21A2BD6100233F9A /* LightingKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LightingKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		728E44FD21A2BD6100233F9A /* LightingKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LightingKit.h; sourceTree = "<group>"; };
 		728E44FE21A2BD6100233F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,7 +61,7 @@
 		729BC41521A40005002E0C0D /* MockHomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeManager.swift; sourceTree = "<group>"; };
 		729BC41721A4005D002E0C0D /* LightingKitPermissionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingKitPermissionsTests.swift; sourceTree = "<group>"; };
 		729BC41921A400F4002E0C0D /* TestCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCompletion.swift; sourceTree = "<group>"; };
-		729BC41B21A40DEF002E0C0D /* MockStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStrategy.swift; sourceTree = "<group>"; };
+		729BC41B21A40DEF002E0C0D /* MockSuccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSuccessStrategy.swift; sourceTree = "<group>"; };
 		729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStrategy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +94,27 @@
 			path = "HomeKit Extensions";
 			sourceTree = "<group>";
 		};
+		728D896321A547EE005060C4 /* LightingKit */ = {
+			isa = PBXGroup;
+			children = (
+				728D896421A54801005060C4 /* Model */,
+				729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */,
+				729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */,
+				72100E5221A4FE4000834C4D /* LightingKit.swift */,
+			);
+			path = LightingKit;
+			sourceTree = "<group>";
+		};
+		728D896421A54801005060C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72100E5421A5014200834C4D /* Home.swift */,
+				72100E5621A503D600834C4D /* Room.swift */,
+				72100E5821A5056F00834C4D /* Light.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		728E44F021A2BD6000233F9A = {
 			isa = PBXGroup;
 			children = (
@@ -106,14 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				72100E5B21A5172900834C4D /* HomeKit Extensions */,
+				728D896321A547EE005060C4 /* LightingKit */,
 				728E44FD21A2BD6100233F9A /* LightingKit.h */,
 				728E44FE21A2BD6100233F9A /* Info.plist */,
-				729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */,
-				729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */,
-				72100E5221A4FE4000834C4D /* LightingKit.swift */,
-				72100E5421A5014200834C4D /* Home.swift */,
-				72100E5621A503D600834C4D /* Room.swift */,
-				72100E5821A5056F00834C4D /* Light.swift */,
 			);
 			path = LightingKit;
 			sourceTree = "<group>";
@@ -124,6 +150,9 @@
 				729BC41021A3F886002E0C0D /* Mocks */,
 				728E450A21A2BD6100233F9A /* Info.plist */,
 				729BC41721A4005D002E0C0D /* LightingKitPermissionsTests.swift */,
+				728D896621A54840005060C4 /* TestArrayExtensions.swift */,
+				728D896C21A55944005060C4 /* TestModelEquatable.swift */,
+				728D896E21A55B60005060C4 /* TestLightingKit.swift */,
 			);
 			path = LightingKitTests;
 			sourceTree = "<group>";
@@ -133,7 +162,9 @@
 			children = (
 				729BC41521A40005002E0C0D /* MockHomeManager.swift */,
 				729BC41921A400F4002E0C0D /* TestCompletion.swift */,
-				729BC41B21A40DEF002E0C0D /* MockStrategy.swift */,
+				729BC41B21A40DEF002E0C0D /* MockSuccessStrategy.swift */,
+				728D896821A5489C005060C4 /* MockHomeKitHome.swift */,
+				728D897021A55D38005060C4 /* MockPermission.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -264,10 +295,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				728D897121A55D38005060C4 /* MockPermission.swift in Sources */,
 				729BC41621A40005002E0C0D /* MockHomeManager.swift in Sources */,
+				728D896D21A55944005060C4 /* TestModelEquatable.swift in Sources */,
 				729BC41821A4005D002E0C0D /* LightingKitPermissionsTests.swift in Sources */,
-				729BC41C21A40DEF002E0C0D /* MockStrategy.swift in Sources */,
+				728D896921A5489C005060C4 /* MockHomeKitHome.swift in Sources */,
+				729BC41C21A40DEF002E0C0D /* MockSuccessStrategy.swift in Sources */,
 				729BC41A21A400F4002E0C0D /* TestCompletion.swift in Sources */,
+				728D896F21A55B60005060C4 /* TestLightingKit.swift in Sources */,
+				728D896721A54840005060C4 /* TestArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

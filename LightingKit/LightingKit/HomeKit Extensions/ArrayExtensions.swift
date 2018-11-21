@@ -10,7 +10,7 @@ import Foundation
 import HomeKit
 
 /// Used to extend array to map HomeKit objects to concrete `LightingKitObject` instances.
-extension Array where Element: HomeKitObject {
+internal extension Array where Element: HomeKitObject {
     /**
      Initializes and returns LightingKit representations of the HomeKit object elements.
      - Returns: An array of LightingKit objects representing the HomeKit objects contained in
@@ -27,7 +27,7 @@ extension Array where Element: HomeKitObject {
 }
 
 /// Used to add utility functions to arrays of `HMHome` objects
-extension Array where Element: HMHome {
+internal extension Array where Element: HMHome {
     /**
      Returns  the `HMHome` object required by the filtering strategy passed in.
      - Parameters:
@@ -36,7 +36,7 @@ extension Array where Element: HMHome {
      - Returns: An `HMHome` object if one is found. Nil otherwise
      */
     func home(for room: Room, strategy: HomesByRoomStrategy = HomesByRoomStrategy()) -> HMHome? {
-        return filter({ strategy.include(object: $0, compareWith: room) }).first
+        return self.filter({ return strategy.include(object: $0, compareWith: room) }).first
     }
     /**
      Returns all the `Room` objects associated with a given `Home`.
@@ -59,7 +59,7 @@ extension Array where Element: HMHome {
     }
 }
 
-extension Array where Element: HMAccessory {
+internal extension Array where Element: HMAccessory {
     /**
      Returns all the `HMAccessory` objects required by the fitering strategy passed in.
      - Parameters:

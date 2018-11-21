@@ -1,5 +1,5 @@
 //
-//  LKHome.swift
+//  Room.swift
 //  LightingKit
 //
 //  Created by Peter Morris on 21/11/2018.
@@ -9,13 +9,7 @@
 import Foundation
 import HomeKit
 
-public protocol LightingKitObject {
-    var name: String { get }
-    var id: UUID { get }
-    init(name: String, id: UUID)
-}
-
-public struct Home: LightingKitObject {
+public struct Room: LightingKitObject {
     public let name: String
     public let id: UUID
     public init(name: String, id: UUID) {
@@ -24,8 +18,8 @@ public struct Home: LightingKitObject {
     }
 }
 
-extension Home: Equatable {
-    static func == (lhs: Home, rhs: HMHome) -> Bool {
+extension Room: Equatable {
+    static func == (lhs: Room, rhs: HomeKitObject) -> Bool {
         return lhs.id == rhs.uniqueIdentifier
     }
 }

@@ -14,12 +14,12 @@ class LightingKitPermissionsTests: XCTestCase {
     var mockHomeManager: MockHomeManager!
     var permissions: LightingKitPermission!
     var completion: TestCompletion!
-    var strategy: MockStrategy!
+    var strategy: MockSuccessStrategy!
 
     override func setUp() {
         completion = TestCompletion()
         mockHomeManager = MockHomeManager()
-        strategy = MockStrategy()
+        strategy = MockSuccessStrategy()
         permissions = LightingKitPermission(strategy: strategy)
     }
 
@@ -41,6 +41,12 @@ class LightingKitPermissionsTests: XCTestCase {
             completion.complete,
             "LightingKitPermissings completion should return true when permission granted."
         )
+    }
+    
+    func testDidUpdateRemovesDelegate() {
+        permissions.requestPermission(homeManager: mockHomeManager, completion: completion.getCompletion())
+        mockHomeManager.notifyDelegate()
+        XCTAssertNil(mockHomeManager.delegate, "LightingKitPermissions should set delegate to nil on completion.")
     }
 
 }

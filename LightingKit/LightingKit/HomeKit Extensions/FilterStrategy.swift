@@ -15,20 +15,20 @@ internal protocol FilterStrategy {
     func include(object: HomeKitObjectType, compareWith lightingKitObject: LightingKitObjectType) -> Bool
 }
 
-internal class HomesByRoomStrategy: FilterStrategy {
+internal final class HomesByRoomStrategy: FilterStrategy {
     typealias HomeKitObjectType = HMHome
     typealias LightingKitObjectType = Room
-    func include(object: HMHome, compareWith lightingKitObject: Room) -> Bool {
-        return true
+    func include(object: HomeKitObjectType, compareWith lightingKitObject: LightingKitObjectType) -> Bool {
+        return object.rooms.contains { lightingKitObject == $0 }
     }
 }
 
-internal class LightbulbsByRoomStrategy: FilterStrategy {
+internal final class LightbulbsByRoomStrategy: FilterStrategy {
     typealias HomeKitObjectType = HMAccessory
     typealias LightingKitObjectType = Room
-    func include(object: HMAccessory, compareWith lightingKitObject: Room) -> Bool {
+    func include(object: HMAccessory, compareWith lightingKitObject: LightingKitObjectType) -> Bool {
+        guard let room = object.room else { return false }
         return object.services.contains { $0.serviceType == HMServiceTypeLightbulb }
-        && object.room != nil
-        && lightingKitObject == object.room! // Safe - checked for nil first
+        && lightingKitObject == room
     }
 }
