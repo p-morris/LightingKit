@@ -10,7 +10,7 @@ import Foundation
 
 /// Used to determine whether HomeKit permissions were successfully
 /// granted to the app.
-protocol SuccessStrategy {
+internal protocol SuccessStrategy {
     /**
      Indicates whether HomeKit permission have been granted.
      - Parameters:
@@ -20,7 +20,7 @@ protocol SuccessStrategy {
     func success(manager: HomeManagerProtocol) -> Bool
 }
 
-class HomeKitPermissionSuccessStrategy: SuccessStrategy {
+internal final class HomeKitPermissionSuccessStrategy: SuccessStrategy {
     /// Returns `true` if `manager.homes.count` is greater than 0.
     func success(manager: HomeManagerProtocol) -> Bool {
         return manager.homes.count > 0

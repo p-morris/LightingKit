@@ -13,6 +13,9 @@ import HomeKit
 class MockHomeManager: HomeManagerProtocol {
     var homes: [HMHome] = []
     weak var delegate: HMHomeManagerDelegate?
+    required init() {
+        //
+    }
     func notifyDelegate() {
         delegate?.homeManagerDidUpdateHomes?(HMHomeManager())
     }

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72100E5321A4FE4000834C4D /* LightingKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5221A4FE4000834C4D /* LightingKit.swift */; };
+		72100E5521A5014200834C4D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5421A5014200834C4D /* Home.swift */; };
+		72100E5721A503D600834C4D /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5621A503D600834C4D /* Room.swift */; };
+		72100E5921A5056F00834C4D /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5821A5056F00834C4D /* Light.swift */; };
+		72100E5F21A5178500834C4D /* Abstractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5E21A5178500834C4D /* Abstractions.swift */; };
+		72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6021A517D800834C4D /* ArrayExtensions.swift */; };
+		72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6221A5187400834C4D /* FilterStrategy.swift */; };
 		728E450421A2BD6100233F9A /* LightingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728E44FA21A2BD6100233F9A /* LightingKit.framework */; };
 		728E450B21A2BD6100233F9A /* LightingKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 728E44FD21A2BD6100233F9A /* LightingKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		729BC40D21A3F323002E0C0D /* LightingKitPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */; };
@@ -15,7 +22,6 @@
 		729BC41A21A400F4002E0C0D /* TestCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41921A400F4002E0C0D /* TestCompletion.swift */; };
 		729BC41C21A40DEF002E0C0D /* MockStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41B21A40DEF002E0C0D /* MockStrategy.swift */; };
 		729BC42021A40F49002E0C0D /* SuccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */; };
-		729BC42221A41191002E0C0D /* HomeKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC42121A41191002E0C0D /* HomeKitExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72100E5221A4FE4000834C4D /* LightingKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingKit.swift; sourceTree = "<group>"; };
+		72100E5421A5014200834C4D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		72100E5621A503D600834C4D /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		72100E5821A5056F00834C4D /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		72100E5E21A5178500834C4D /* Abstractions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abstractions.swift; sourceTree = "<group>"; };
+		72100E6021A517D800834C4D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		72100E6221A5187400834C4D /* FilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
 		728E44FA21A2BD6100233F9A /* LightingKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LightingKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		728E44FD21A2BD6100233F9A /* LightingKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LightingKit.h; sourceTree = "<group>"; };
 		728E44FE21A2BD6100233F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,7 +53,6 @@
 		729BC41921A400F4002E0C0D /* TestCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCompletion.swift; sourceTree = "<group>"; };
 		729BC41B21A40DEF002E0C0D /* MockStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStrategy.swift; sourceTree = "<group>"; };
 		729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStrategy.swift; sourceTree = "<group>"; };
-		729BC42121A41191002E0C0D /* HomeKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72100E5B21A5172900834C4D /* HomeKit Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				72100E5E21A5178500834C4D /* Abstractions.swift */,
+				72100E6021A517D800834C4D /* ArrayExtensions.swift */,
+				72100E6221A5187400834C4D /* FilterStrategy.swift */,
+			);
+			path = "HomeKit Extensions";
+			sourceTree = "<group>";
+		};
 		728E44F021A2BD6000233F9A = {
 			isa = PBXGroup;
 			children = (
@@ -83,11 +105,15 @@
 		728E44FC21A2BD6100233F9A /* LightingKit */ = {
 			isa = PBXGroup;
 			children = (
+				72100E5B21A5172900834C4D /* HomeKit Extensions */,
 				728E44FD21A2BD6100233F9A /* LightingKit.h */,
 				728E44FE21A2BD6100233F9A /* Info.plist */,
-				729BC42121A41191002E0C0D /* HomeKitExtensions.swift */,
 				729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */,
 				729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */,
+				72100E5221A4FE4000834C4D /* LightingKit.swift */,
+				72100E5421A5014200834C4D /* Home.swift */,
+				72100E5621A503D600834C4D /* Room.swift */,
+				72100E5821A5056F00834C4D /* Light.swift */,
 			);
 			path = LightingKit;
 			sourceTree = "<group>";
@@ -224,7 +250,13 @@
 			files = (
 				729BC42021A40F49002E0C0D /* SuccessStrategy.swift in Sources */,
 				729BC40D21A3F323002E0C0D /* LightingKitPermissions.swift in Sources */,
-				729BC42221A41191002E0C0D /* HomeKitExtensions.swift in Sources */,
+				72100E5F21A5178500834C4D /* Abstractions.swift in Sources */,
+				72100E5721A503D600834C4D /* Room.swift in Sources */,
+				72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */,
+				72100E5321A4FE4000834C4D /* LightingKit.swift in Sources */,
+				72100E5521A5014200834C4D /* Home.swift in Sources */,
+				72100E5921A5056F00834C4D /* Light.swift in Sources */,
+				72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

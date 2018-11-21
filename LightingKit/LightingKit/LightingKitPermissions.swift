@@ -10,7 +10,7 @@ import Foundation
 import HomeKit
 
 /// Used to request permission from the user for HomeKit access
-final class LightingKitPermission: NSObject {
+final internal class LightingKitPermission: NSObject {
     typealias PermissionCompletion = (Bool) -> Void
     /// The `HMHomeManager` to use for requesting permission
     private var homeManager: HomeManagerProtocol?
@@ -29,7 +29,7 @@ final class LightingKitPermission: NSObject {
      - Warning: The `permissionCompletion` closure is escaping and therefore any references to
      self within *will* be captured.
      */
-    init(strategy: SuccessStrategy = HomeKitPermissionSuccessStrategy()) {
+    internal init(strategy: SuccessStrategy = HomeKitPermissionSuccessStrategy()) {
         self.strategy = strategy
         super.init()
     }
@@ -44,7 +44,7 @@ final class LightingKitPermission: NSObject {
      - Warning: The application's Info.plist file must contain the `NSHomeKitUsageDescription` key
      and a corresponding value, else the application will exit immediately on execution of this method.
      */
-    func requestPermission(homeManager: HomeManagerProtocol = HMHomeManager(),
+    internal func requestPermission(homeManager: HomeManagerProtocol = HMHomeManager(),
                            completion: @escaping PermissionCompletion) {
         self.homeManager = homeManager
         self.homeManager?.delegate = self
