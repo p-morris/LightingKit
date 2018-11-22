@@ -19,8 +19,7 @@ internal extension Array where Element: HomeKitObjectProtocol {
     func lightingKitObjects<T: LightingKitObject>() -> [T] {
         var array: [T] = []
         forEach { object in
-            let lightingKitObject = T.init(name: object.name, id: object.uniqueIdentifier)
-            array.append(lightingKitObject)
+            array.append(object.lightingKitObject())
         }
         return array
     }

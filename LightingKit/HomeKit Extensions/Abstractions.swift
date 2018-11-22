@@ -24,6 +24,18 @@ internal protocol HomeKitObjectProtocol {
     var uniqueIdentifier: UUID { get }
 }
 
+/// Used to bridge HomeKit objects to LightningKit structs
+extension HomeKitObjectProtocol {
+    /**
+     Returns a `LightingKitObject` representing the current HomeKit object.
+     - Parameters:
+     - Returns: An initialized instance of a concrete `LightingKitObject` class.
+     */
+    func lightingKitObject<T: LightingKitObject>() -> T {
+        return T.init(name: self.name, id: self.uniqueIdentifier)
+    }
+}
+
 extension HMHome: HomeKitObjectProtocol { }
 extension HMRoom: HomeKitObjectProtocol { }
 extension HMAccessory: HomeKitObjectProtocol { }

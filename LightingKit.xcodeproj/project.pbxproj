@@ -27,6 +27,8 @@
 		729BC41A21A400F4002E0C0D /* TestCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41921A400F4002E0C0D /* TestCompletion.swift */; };
 		729BC41C21A40DEF002E0C0D /* MockSuccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41B21A40DEF002E0C0D /* MockSuccessStrategy.swift */; };
 		729BC42021A40F49002E0C0D /* SuccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */; };
+		72B7B37E21A6607B004336C1 /* LightingBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B37D21A6607B004336C1 /* LightingBrowser.swift */; };
+		72B7B38021A66762004336C1 /* HMAccessory+Lighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B37F21A66762004336C1 /* HMAccessory+Lighting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		729BC41921A400F4002E0C0D /* TestCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCompletion.swift; sourceTree = "<group>"; };
 		729BC41B21A40DEF002E0C0D /* MockSuccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSuccessStrategy.swift; sourceTree = "<group>"; };
 		729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStrategy.swift; sourceTree = "<group>"; };
+		72B7B37D21A6607B004336C1 /* LightingBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingBrowser.swift; sourceTree = "<group>"; };
+		72B7B37F21A66762004336C1 /* HMAccessory+Lighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HMAccessory+Lighting.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 				72100E5E21A5178500834C4D /* Abstractions.swift */,
 				72100E6021A517D800834C4D /* ArrayExtensions.swift */,
 				72100E6221A5187400834C4D /* FilterStrategy.swift */,
+				72B7B37F21A66762004336C1 /* HMAccessory+Lighting.swift */,
 			);
 			path = "HomeKit Extensions";
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 				728D896421A54801005060C4 /* Model */,
 				729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */,
 				729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */,
+				72B7B37D21A6607B004336C1 /* LightingBrowser.swift */,
 				72100E5221A4FE4000834C4D /* LightingKit.swift */,
 			);
 			path = Core;
@@ -279,7 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B7B37E21A6607B004336C1 /* LightingBrowser.swift in Sources */,
 				729BC42021A40F49002E0C0D /* SuccessStrategy.swift in Sources */,
+				72B7B38021A66762004336C1 /* HMAccessory+Lighting.swift in Sources */,
 				729BC40D21A3F323002E0C0D /* LightingKitPermissions.swift in Sources */,
 				72100E5F21A5178500834C4D /* Abstractions.swift in Sources */,
 				72100E5721A503D600834C4D /* Room.swift in Sources */,

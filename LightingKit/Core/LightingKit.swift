@@ -9,20 +9,23 @@
 import Foundation
 import HomeKit
 
+protocol LightingKitDelegate: class {
+    func lightingKit(_ lightingKit: LightingKit, foundNewLight light: Light)
+}
+
 /// Used to access Homes, Rooms and Lights via HomeKit
 public final class LightingKit: NSObject {
+    /// The object that acts as the delegate
+    weak var delegate: LightingKitDelegate?
     /// The `HMHomeManager` object to use.
     private var homeManager: HomeManagerProtocol?
     /// The `HomeKitPermission` to use for requesting HomeKit permissions.
     private var permission: HomeKitPermission?
+    /// The `LightingBrowser` object to use for finding new lights.
+    private var browser: LightingBrowser?
     /// Indicates whether LightingKit is ready to use.
     public var ready: Bool {
         return homeManager != nil
-    }
-    /// An array of `Home` objects currently available for use.
-    /// Empty if non are available (including when LightningKit is not ready)
-    public var homes: [Home] {
-        return homeManager?.homes.lightingKitObjects() ?? []
     }
     /**
      Initializes a new `LightingKit` object.
@@ -55,6 +58,19 @@ public final class LightingKit: NSObject {
             }
         }
     }
+}
+
+//MARK:- Homes
+extension LightingKit {
+    /// An array of `Home` objects currently available for use.
+    /// Empty if non are available (including when LightningKit is not ready)
+    public var homes: [Home] {
+        return homeManager?.homes.lightingKitObjects() ?? []
+    }
+}
+
+//MARK:- Rooms
+extension LightingKit {
     /**
      Returns the currently available Rooms.
      - Parameters:
@@ -65,6 +81,10 @@ public final class LightingKit: NSObject {
     public func rooms(forHome home: Home) -> [Room] {
         return homeManager?.homes.rooms(for: home) ?? []
     }
+}
+
+//MARK:- Lights
+extension LightingKit {
     /**
      Returns the currently available Lights.
      - Parameters:
@@ -75,8 +95,33 @@ public final class LightingKit: NSObject {
     public func lights(forRoom room: Room) -> [Light] {
         return homeManager?.homes.lightingKitLights(for: room) ?? []
     }
+    /**
+     Begins searching for new lights.
+     */
+    public func searchForNewLighting() {
+        findNewLights()
+    }
+    /**
+     Stops searching for new lights.
+     */
+    public func stopNewLightingSearch() {
+        browser?.stop()
+        browser = nil
+    }
+    /**
+     Begins searching for new lights, and notifies the `delegate` when one is found.
+     - Parameters:
+     - browser: The `LightingBrowser` to use for the search.
+     */
+    private func findNewLights(browser: LightingBrowser = LightingBrowser()) {
+        self.browser = browser
+        browser.findNewLights { [unowned self] accessory in
+            self.delegate?.lightingKit(self, foundNewLight: accessory.lightingKitObject())
+        }
+    }
 }
 
+//MARK:- homeManager delegate
 extension LightingKit: HMHomeManagerDelegate {
 
 }

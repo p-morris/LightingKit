@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'LightingKit'
-  spec.version = '0.3'
+  spec.version = '0.4'
   spec.summary = 'A simple iOS library that helps you to discover and control HomeKit lightbulbs.'
   spec.homepage = 'https://github.com/p-morris/LightingKit'
   spec.license = { type: 'MIT', file: 'LICENSE' }

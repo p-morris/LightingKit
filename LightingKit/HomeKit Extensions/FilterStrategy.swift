@@ -45,7 +45,6 @@ internal class LightbulbsByRoomStrategy: FilterStrategy {
      */
     func include(object: HMAccessory, compareWith room: Room) -> Bool {
         guard let homeKitRoom = object.room else { return false }
-        return object.services.contains { $0.serviceType == HMServiceTypeLightbulb }
-        && room == homeKitRoom
+        return object.isLighting && room == homeKitRoom
     }
 }

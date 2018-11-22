@@ -30,8 +30,8 @@ internal final class LightingKitPermission: NSObject, HomeKitPermission {
      - permissionCompletion: The closure to execute when permission request completes.
      If access was granted, `true` will be passed, othewise `false`.
      - Returns: An initialized `LightingKitPermission` object.
-     - Warning: The `permissionCompletion` closure is escaping and therefore any references to
-     self within *will* be captured.
+     - Warning: The `permissionCompletion` closure is escaping, retained, and a reference to it is held for the
+     lifetime of the object. Any objects used within should be declared `weak` or `unowned`.
      */
     internal init(strategy: SuccessStrategy = HomeKitPermissionSuccessStrategy()) {
         self.strategy = strategy
