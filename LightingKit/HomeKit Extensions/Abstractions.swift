@@ -13,6 +13,7 @@ import HomeKit
 internal protocol HomeManagerProtocol {
     var delegate: HMHomeManagerDelegate? { get set }
     var homes: [HMHome] { get }
+    var permissionGranted: Bool { get }
     init()
 }
 

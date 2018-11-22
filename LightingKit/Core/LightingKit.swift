@@ -10,6 +10,7 @@ import Foundation
 import HomeKit
 
 protocol LightingKitDelegate: class {
+    func lightingKit(_ lightingKit: LightingKit, permissionsGranted: Bool)
     func lightingKit(_ lightingKit: LightingKit, foundNewLight light: Light)
 }
 
@@ -18,23 +19,26 @@ public final class LightingKit: NSObject {
     /// The object that acts as the delegate
     weak var delegate: LightingKitDelegate?
     /// The `HMHomeManager` object to use.
-    private var homeManager: HomeManagerProtocol?
+    private var homeManager: HomeManagerProtocol? {
+        didSet {
+            delegate?.lightingKit(self, permissionsGranted: ready)
+        }
+    }
     /// The `HomeKitPermission` to use for requesting HomeKit permissions.
     private var permission: HomeKitPermission?
     /// The `LightingBrowser` object to use for finding new lights.
     private var browser: LightingBrowser?
     /// Indicates whether LightingKit is ready to use.
     public var ready: Bool {
-        return homeManager != nil
+        return homeManager != nil && (homeManager?.permissionGranted ?? false)
     }
     /**
-     Initializes a new `LightingKit` object.
-     - Returns: An initialized `LightingKit` object.
-     - Warning: Initializing an instance of LightingKit will display the HomeKit permissions alert,
-     in the event that permissions have not already been granted.
+     Configures the `LightingKit` object with HomeKit.
+     - Warning: If this is the first time you have executed `configure` the HomeKit
+     permissions alert will be shown to the user. The delegate callback `lightingKit(_:permissionsGranted:)`
+     will be executed when confirguration is complete.
      */
-    public override init() {
-        super.init()
+    public func configureHomeKit() {
         configure()
     }
     /**
@@ -46,15 +50,13 @@ public final class LightingKit: NSObject {
     internal func configure(permission: HomeKitPermission = LightingKitPermission(),
                             manager: HomeManagerProtocol = HMHomeManager()) {
         self.permission = permission
-        // Note: requestPermission retains a reference to this closure. Reference to
-        // self *must* be unowned.
-        permission.requestPermission(homeManager: manager) { [unowned self] success in
+        permission.requestPermission(homeManager: manager) { [weak self] success in
             if success {
-                self.homeManager = manager
-                self.homeManager?.delegate = self
+                self?.homeManager = manager
+                self?.homeManager?.delegate = self
             } else {
-                self.homeManager = nil
-                self.homeManager?.delegate = nil
+                self?.homeManager = nil
+                self?.homeManager?.delegate = nil
             }
         }
     }
@@ -86,9 +88,19 @@ extension LightingKit {
 //MARK:- Lights
 extension LightingKit {
     /**
-     Returns the currently available Lights.
+     Returns the currently available Lights for a given home.
      - Parameters:
-     - home: The `Room` the `Light` objects returned should be associated with.
+     - home: The `Home` the `Light` objects returned should be associated with.
+     - Returns: An array of `Light` objects, all of which belong to `home`.
+     - Note: Returns and empty array if there are no lights, or if `LightingKit` is not ready.
+     */
+    public func lights(forHome home: Home) -> [Light] {
+        return homeManager?.homes.lightingKitLights(for: home) ?? []
+    }
+    /**
+     Returns the currently available Lights for a given room.
+     - Parameters:
+     - room: The `Room` the `Light` objects returned should be associated with.
      - Returns: An array of `Light` objects, all of which belong to `room`.
      - Note: Returns and empty array if there are no lights, or if `LightingKit` is not ready.
      */

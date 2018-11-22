@@ -7,27 +7,36 @@
 //
 
 import UIKit
+import HomeKit
 import LightingKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LightingKitDelegate, HMHomeManagerDelegate {
     
-    let kit = LightingKit()
+    //let kit = LightingKit()
+    let hm = HMHomeManager()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
     @IBAction func go() {
-        if let home = kit.homes.first {
-            kit.rooms(forHome: home).forEach {
-                print($0.name + " " + $0.id.uuidString)
-                print("------- LIGHTS ------")
-                kit.lights(forRoom: $0).forEach {
-                    print($0.name + " " + $0.id.uuidString)
-                }
-            }
-        }
+        hm.delegate = self
+        hm.permission()
+//        kit.delegate = self
+//        kit.searchForNewLighting()
+//        if let home = kit.homes.first {
+//            kit.rooms(forHome: home).forEach {
+//                print($0.name + " " + $0.id.uuidString)
+//                print("------- LIGHTS ------")
+//                kit.lights(forRoom: $0).forEach {
+//                    print($0.name + " " + $0.id.uuidString)
+//                }
+//            }
+//        }
+    }
+    
+    func lightingKit(_ lightingKit: LightingKit, foundNewLight light: Light) {
+        print(light.name)
     }
 
 }
-

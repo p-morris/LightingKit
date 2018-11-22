@@ -29,6 +29,7 @@
 		729BC42021A40F49002E0C0D /* SuccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */; };
 		72B7B37E21A6607B004336C1 /* LightingBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B37D21A6607B004336C1 /* LightingBrowser.swift */; };
 		72B7B38021A66762004336C1 /* HMAccessory+Lighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B37F21A66762004336C1 /* HMAccessory+Lighting.swift */; };
+		72B7B38521A6A5BF004336C1 /* HMHomeManager+Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B38421A6A5BF004336C1 /* HMHomeManager+Permissions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		729BC41F21A40F49002E0C0D /* SuccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStrategy.swift; sourceTree = "<group>"; };
 		72B7B37D21A6607B004336C1 /* LightingBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingBrowser.swift; sourceTree = "<group>"; };
 		72B7B37F21A66762004336C1 /* HMAccessory+Lighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HMAccessory+Lighting.swift"; sourceTree = "<group>"; };
+		72B7B38421A6A5BF004336C1 /* HMHomeManager+Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HMHomeManager+Permissions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				72100E5E21A5178500834C4D /* Abstractions.swift */,
 				72100E6021A517D800834C4D /* ArrayExtensions.swift */,
 				72100E6221A5187400834C4D /* FilterStrategy.swift */,
+				72B7B38421A6A5BF004336C1 /* HMHomeManager+Permissions.swift */,
 				72B7B37F21A66762004336C1 /* HMAccessory+Lighting.swift */,
 			);
 			path = "HomeKit Extensions";
@@ -291,6 +294,7 @@
 				729BC40D21A3F323002E0C0D /* LightingKitPermissions.swift in Sources */,
 				72100E5F21A5178500834C4D /* Abstractions.swift in Sources */,
 				72100E5721A503D600834C4D /* Room.swift in Sources */,
+				72B7B38521A6A5BF004336C1 /* HMHomeManager+Permissions.swift in Sources */,
 				72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */,
 				72100E5321A4FE4000834C4D /* LightingKit.swift in Sources */,
 				72100E5521A5014200834C4D /* Home.swift in Sources */,

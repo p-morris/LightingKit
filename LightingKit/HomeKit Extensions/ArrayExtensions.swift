@@ -47,6 +47,16 @@ internal extension Array where Element: HMHome {
         return filter({ home == $0 }).first?.rooms.lightingKitObjects() ?? []
     }
     /**
+     Returns all the `Light` objects associated with a given `Home`.
+     - Parameters:
+     - home: The `Home` which the lights should be associated with.
+     - Returns: An array of `Light` objects associated with `home`.
+     */
+    func lightingKitLights(for home: Home) -> [Light] {
+        guard let home = filter({ home == $0 }).first else { return [] }
+        return home.accessories.filter({ $0.isLighting }).lightingKitObjects()
+    }
+    /**
      Returns all the `Light` objects associated with a given `Room`.
      - Parameters:
      - room: The `Room` which the lights should be associated with.

@@ -60,8 +60,7 @@ extension LightingKitPermission: HMHomeManagerDelegate {
     /// Sets the `homeManager` delegate to nil, determines whether
     /// permission was granted successfully, and then executes `completion`/.
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
-        let success = strategy.success(manager: manager)
-        completion?(success)
+        completion?(manager.permissionGranted)
         completion = nil
         homeManager?.delegate = nil
     }

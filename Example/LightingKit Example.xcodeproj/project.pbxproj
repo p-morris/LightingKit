@@ -12,6 +12,7 @@
 		729BC43521A41233002E0C0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43321A41233002E0C0D /* Main.storyboard */; };
 		729BC43721A41239002E0C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43621A41239002E0C0D /* Assets.xcassets */; };
 		729BC43A21A41239002E0C0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43821A41239002E0C0D /* LaunchScreen.storyboard */; };
+		72B7B38221A69D5C004336C1 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B7B38121A69D5C004336C1 /* HomeKit.framework */; };
 		C73E449C2A9ED5EDDACF1A70 /* Pods_LightingKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,8 @@
 		729BC43621A41239002E0C0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		729BC43921A41239002E0C0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		729BC43B21A41239002E0C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72B7B38121A69D5C004336C1 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		72B7B38321A69D5C004336C1 /* LightingKit Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LightingKit Example.entitlements"; sourceTree = "<group>"; };
 		B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightingKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A6C66705A527309DBC327F /* Pods-LightingKit Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightingKit Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B7B38221A69D5C004336C1 /* HomeKit.framework in Frameworks */,
 				C73E449C2A9ED5EDDACF1A70 /* Pods_LightingKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +47,7 @@
 		38710891E2E071833AE8F21A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				72B7B38121A69D5C004336C1 /* HomeKit.framework */,
 				B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */,
 			);
 			name = Frameworks;
@@ -78,6 +83,7 @@
 		729BC42E21A41233002E0C0D /* LightingKit Example */ = {
 			isa = PBXGroup;
 			children = (
+				72B7B38321A69D5C004336C1 /* LightingKit Example.entitlements */,
 				729BC42F21A41233002E0C0D /* AppDelegate.swift */,
 				729BC43121A41233002E0C0D /* ViewController.swift */,
 				729BC43321A41233002E0C0D /* Main.storyboard */,
@@ -122,6 +128,11 @@
 				TargetAttributes = {
 					729BC42B21A41233002E0C0D = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -356,6 +367,7 @@
 			baseConfigurationReference = 29D70AA1B1CA67C15A1E2CF0 /* Pods-LightingKit Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "LightingKit Example/LightingKit Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7682PK9SF;
 				INFOPLIST_FILE = "LightingKit Example/Info.plist";
@@ -375,6 +387,7 @@
 			baseConfigurationReference = F7A6C66705A527309DBC327F /* Pods-LightingKit Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "LightingKit Example/LightingKit Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7682PK9SF;
 				INFOPLIST_FILE = "LightingKit Example/Info.plist";

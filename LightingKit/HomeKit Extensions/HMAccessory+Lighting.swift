@@ -10,6 +10,6 @@ import HomeKit
 
 extension HMAccessory {
     var isLighting: Bool {
-        return services.contains { $0.serviceType == HMServiceTypeLightbulb }
+        return category.categoryType == HMAccessoryCategoryTypeLightbulb
     }
 }
