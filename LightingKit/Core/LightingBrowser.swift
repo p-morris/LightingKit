@@ -43,6 +43,7 @@ class LightingBrowser: NSObject {
      lifetime of the object. Any objects used within should be declared `weak` or `unowned`.
      */
     func findNewLights(completion: @escaping AccessoryCompletion) {
+        browser.stopSearchingForNewAccessories()
         newAccessories.removeAll()
         self.completion = completion
         browser.startSearchingForNewAccessories()
@@ -61,6 +62,7 @@ extension LightingBrowser: HMAccessoryBrowserDelegate {
     func accessoryBrowser(_ browser: HMAccessoryBrowser, didFindNewAccessory accessory: HMAccessory) {
         if accessory.isLighting {
             newAccessories.append(accessory)
+            completion?(accessory)
         }
     }
     func accessoryBrowser(_ browser: HMAccessoryBrowser, didRemoveNewAccessory accessory: HMAccessory) {

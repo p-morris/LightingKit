@@ -16,3 +16,9 @@ public struct Light: LightingKitObject {
         self.id = id
     }
 }
+
+extension Light: Equatable {
+    static func == (lhs: Light, rhs: HomeKitObjectProtocol) -> Bool {
+        return lhs.id == rhs.uniqueIdentifier
+    }
+}

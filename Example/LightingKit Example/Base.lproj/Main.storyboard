@@ -18,11 +18,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHo-nc-hFU">
-                                <rect key="frame" x="144" y="61" width="46" height="30"/>
+                                <rect key="frame" x="153" y="53" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Configure"/>
                                 <connections>
-                                    <action selector="go" destination="BYZ-38-t0r" eventType="touchUpInside" id="tfn-TV-6Yz"/>
+                                    <action selector="configure" destination="BYZ-38-t0r" eventType="touchUpInside" id="wc0-P7-6ho"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xV-sT-yDc">
+                                <rect key="frame" x="151" y="91" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Home"/>
+                                <connections>
+                                    <action selector="addHome" destination="BYZ-38-t0r" eventType="touchUpInside" id="nhi-0a-iW0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M8-sf-cAh">
+                                <rect key="frame" x="152" y="129" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Room"/>
+                                <connections>
+                                    <action selector="addRoom" destination="BYZ-38-t0r" eventType="touchUpInside" id="OT1-OA-tXV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfB-qK-hLV">
+                                <rect key="frame" x="148" y="167" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Find Lights"/>
+                                <connections>
+                                    <action selector="findLights" destination="BYZ-38-t0r" eventType="touchUpInside" id="vOH-7W-0dz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiU-ba-tUX">
+                                <rect key="frame" x="121" y="205" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Light to Room"/>
+                                <connections>
+                                    <action selector="addNewLightToRoom" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gL-k4-1Kv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wb2-Eb-br3">
+                                <rect key="frame" x="154" y="243" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="List lights"/>
+                                <connections>
+                                    <action selector="listAccessories" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgF-I5-C00"/>
                                 </connections>
                             </button>
                         </subviews>

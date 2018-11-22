@@ -15,6 +15,7 @@ internal protocol HomeManagerProtocol {
     var homes: [HMHome] { get }
     var permissionGranted: Bool { get }
     init()
+    func addHome(withName homeName: String, completionHandler completion: @escaping (HMHome?, Error?) -> Void)
 }
 
 extension HMHomeManager: HomeManagerProtocol { }

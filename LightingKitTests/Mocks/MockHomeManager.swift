@@ -11,6 +11,7 @@ import HomeKit
 @testable import LightingKit
 
 class MockHomeManager: HomeManagerProtocol {
+    var permissionGranted: Bool { return true }
     var homes: [HMHome] = []
     weak var delegate: HMHomeManagerDelegate?
     required init() {

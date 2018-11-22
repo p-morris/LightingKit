@@ -12,12 +12,21 @@
 		729BC43521A41233002E0C0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43321A41233002E0C0D /* Main.storyboard */; };
 		729BC43721A41239002E0C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43621A41239002E0C0D /* Assets.xcassets */; };
 		729BC43A21A41239002E0C0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43821A41239002E0C0D /* LaunchScreen.storyboard */; };
-		72B7B38221A69D5C004336C1 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B7B38121A69D5C004336C1 /* HomeKit.framework */; };
-		C73E449C2A9ED5EDDACF1A70 /* Pods_LightingKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */; };
+		72B7B39521A6AFC6004336C1 /* HMHomeManager+Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B38721A6AFC6004336C1 /* HMHomeManager+Permissions.swift */; };
+		72B7B39621A6AFC6004336C1 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B38821A6AFC6004336C1 /* ArrayExtensions.swift */; };
+		72B7B39721A6AFC6004336C1 /* Abstractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B38921A6AFC6004336C1 /* Abstractions.swift */; };
+		72B7B39821A6AFC6004336C1 /* HMAccessory+Lighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B38A21A6AFC6004336C1 /* HMAccessory+Lighting.swift */; };
+		72B7B39921A6AFC6004336C1 /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B38B21A6AFC6004336C1 /* FilterStrategy.swift */; };
+		72B7B39A21A6AFC6004336C1 /* LightingKitPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B38D21A6AFC6004336C1 /* LightingKitPermissions.swift */; };
+		72B7B39B21A6AFC6004336C1 /* LightingKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B38E21A6AFC6004336C1 /* LightingKit.swift */; };
+		72B7B39C21A6AFC6004336C1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B39021A6AFC6004336C1 /* Home.swift */; };
+		72B7B39D21A6AFC6004336C1 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B39121A6AFC6004336C1 /* Room.swift */; };
+		72B7B39E21A6AFC6004336C1 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B39221A6AFC6004336C1 /* Light.swift */; };
+		72B7B39F21A6AFC6004336C1 /* LightingBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B39321A6AFC6004336C1 /* LightingBrowser.swift */; };
+		72B7B3A021A6AFC6004336C1 /* SuccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B39421A6AFC6004336C1 /* SuccessStrategy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29D70AA1B1CA67C15A1E2CF0 /* Pods-LightingKit Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightingKit Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example.debug.xcconfig"; sourceTree = "<group>"; };
 		729BC42C21A41233002E0C0D /* LightingKit Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LightingKit Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		729BC42F21A41233002E0C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		729BC43121A41233002E0C0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,8 +36,19 @@
 		729BC43B21A41239002E0C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72B7B38121A69D5C004336C1 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		72B7B38321A69D5C004336C1 /* LightingKit Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LightingKit Example.entitlements"; sourceTree = "<group>"; };
+		72B7B38721A6AFC6004336C1 /* HMHomeManager+Permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HMHomeManager+Permissions.swift"; sourceTree = "<group>"; };
+		72B7B38821A6AFC6004336C1 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		72B7B38921A6AFC6004336C1 /* Abstractions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Abstractions.swift; sourceTree = "<group>"; };
+		72B7B38A21A6AFC6004336C1 /* HMAccessory+Lighting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HMAccessory+Lighting.swift"; sourceTree = "<group>"; };
+		72B7B38B21A6AFC6004336C1 /* FilterStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
+		72B7B38D21A6AFC6004336C1 /* LightingKitPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingKitPermissions.swift; sourceTree = "<group>"; };
+		72B7B38E21A6AFC6004336C1 /* LightingKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingKit.swift; sourceTree = "<group>"; };
+		72B7B39021A6AFC6004336C1 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		72B7B39121A6AFC6004336C1 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		72B7B39221A6AFC6004336C1 /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		72B7B39321A6AFC6004336C1 /* LightingBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingBrowser.swift; sourceTree = "<group>"; };
+		72B7B39421A6AFC6004336C1 /* SuccessStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessStrategy.swift; sourceTree = "<group>"; };
 		B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightingKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7A6C66705A527309DBC327F /* Pods-LightingKit Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightingKit Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,8 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72B7B38221A69D5C004336C1 /* HomeKit.framework in Frameworks */,
-				C73E449C2A9ED5EDDACF1A70 /* Pods_LightingKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,8 +74,6 @@
 		53C1A0377577FA58D92118FB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				29D70AA1B1CA67C15A1E2CF0 /* Pods-LightingKit Example.debug.xcconfig */,
-				F7A6C66705A527309DBC327F /* Pods-LightingKit Example.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -83,6 +99,8 @@
 		729BC42E21A41233002E0C0D /* LightingKit Example */ = {
 			isa = PBXGroup;
 			children = (
+				72B7B38C21A6AFC6004336C1 /* Core */,
+				72B7B38621A6AFC6004336C1 /* HomeKit Extensions */,
 				72B7B38321A69D5C004336C1 /* LightingKit Example.entitlements */,
 				729BC42F21A41233002E0C0D /* AppDelegate.swift */,
 				729BC43121A41233002E0C0D /* ViewController.swift */,
@@ -94,6 +112,42 @@
 			path = "LightingKit Example";
 			sourceTree = "<group>";
 		};
+		72B7B38621A6AFC6004336C1 /* HomeKit Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				72B7B38721A6AFC6004336C1 /* HMHomeManager+Permissions.swift */,
+				72B7B38821A6AFC6004336C1 /* ArrayExtensions.swift */,
+				72B7B38921A6AFC6004336C1 /* Abstractions.swift */,
+				72B7B38A21A6AFC6004336C1 /* HMAccessory+Lighting.swift */,
+				72B7B38B21A6AFC6004336C1 /* FilterStrategy.swift */,
+			);
+			name = "HomeKit Extensions";
+			path = "../../LightingKit/HomeKit Extensions";
+			sourceTree = "<group>";
+		};
+		72B7B38C21A6AFC6004336C1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				72B7B38D21A6AFC6004336C1 /* LightingKitPermissions.swift */,
+				72B7B38E21A6AFC6004336C1 /* LightingKit.swift */,
+				72B7B38F21A6AFC6004336C1 /* Model */,
+				72B7B39321A6AFC6004336C1 /* LightingBrowser.swift */,
+				72B7B39421A6AFC6004336C1 /* SuccessStrategy.swift */,
+			);
+			name = Core;
+			path = ../../LightingKit/Core;
+			sourceTree = "<group>";
+		};
+		72B7B38F21A6AFC6004336C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72B7B39021A6AFC6004336C1 /* Home.swift */,
+				72B7B39121A6AFC6004336C1 /* Room.swift */,
+				72B7B39221A6AFC6004336C1 /* Light.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,11 +155,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 729BC43E21A41239002E0C0D /* Build configuration list for PBXNativeTarget "LightingKit Example" */;
 			buildPhases = (
-				06DD69946171FE8AE783FF46 /* [CP] Check Pods Manifest.lock */,
 				729BC42821A41233002E0C0D /* Sources */,
 				729BC42921A41233002E0C0D /* Frameworks */,
 				729BC42A21A41233002E0C0D /* Resources */,
-				7F3EFC1D648566CA6D993D64 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,60 +219,25 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		06DD69946171FE8AE783FF46 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LightingKit Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7F3EFC1D648566CA6D993D64 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/LightingKit/LightingKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LightingKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		729BC42821A41233002E0C0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B7B39521A6AFC6004336C1 /* HMHomeManager+Permissions.swift in Sources */,
+				72B7B39A21A6AFC6004336C1 /* LightingKitPermissions.swift in Sources */,
+				72B7B39C21A6AFC6004336C1 /* Home.swift in Sources */,
+				72B7B39F21A6AFC6004336C1 /* LightingBrowser.swift in Sources */,
+				72B7B39821A6AFC6004336C1 /* HMAccessory+Lighting.swift in Sources */,
 				729BC43221A41233002E0C0D /* ViewController.swift in Sources */,
+				72B7B3A021A6AFC6004336C1 /* SuccessStrategy.swift in Sources */,
 				729BC43021A41233002E0C0D /* AppDelegate.swift in Sources */,
+				72B7B39E21A6AFC6004336C1 /* Light.swift in Sources */,
+				72B7B39621A6AFC6004336C1 /* ArrayExtensions.swift in Sources */,
+				72B7B39B21A6AFC6004336C1 /* LightingKit.swift in Sources */,
+				72B7B39721A6AFC6004336C1 /* Abstractions.swift in Sources */,
+				72B7B39921A6AFC6004336C1 /* FilterStrategy.swift in Sources */,
+				72B7B39D21A6AFC6004336C1 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +381,6 @@
 		};
 		729BC43F21A41239002E0C0D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29D70AA1B1CA67C15A1E2CF0 /* Pods-LightingKit Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "LightingKit Example/LightingKit Example.entitlements";
@@ -384,7 +400,6 @@
 		};
 		729BC44021A41239002E0C0D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7A6C66705A527309DBC327F /* Pods-LightingKit Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "LightingKit Example/LightingKit Example.entitlements";
