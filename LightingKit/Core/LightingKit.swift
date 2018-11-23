@@ -35,7 +35,7 @@ public final class LightingKit: NSObject {
     /// The `HomeKitPermission` to use for requesting HomeKit permissions.
     private var permission: HomeKitPermission?
     /// The `LightingBrowser` object to use for finding new lights.
-    private var browser: LightingBrowser?
+    private var browser: LightingKitBrowser?
     /// Indicates whether LightingKit is ready to use.
     public var ready: Bool {
         return (homeManager?.permissionGranted ?? false)
@@ -166,7 +166,7 @@ extension LightingKit {
      - Parameters:
      - browser: The `LightingBrowser` to use for the search.
      */
-    private func findNewLights(browser: LightingBrowser = LightingBrowser()) {
+    internal func findNewLights(browser: LightingKitBrowser = LightingBrowser()) {
         self.browser = browser
         browser.findNewLights { [weak self] accessory in
             guard let self = self else { return }

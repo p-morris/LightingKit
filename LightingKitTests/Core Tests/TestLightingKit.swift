@@ -79,4 +79,47 @@ class TestLightingKit: XCTestCase {
         let room = Room(name: "", id: uuid)
         XCTAssertEqual(lightingKit.lights(forRoom: room).count, 0, "LightingKit lights(room:) should return empty array when not ready.")
     }
+    func testConfigureHomeKitNotifiesDelegateWhenAlreadyConfigured() {
+        let lightingKit = LightingKit()
+        let mockDelegate = MockLightingKitDelegate()
+        let mockPermission = MockPermission()
+        mockPermission.success = true
+        let mockManager = MockHomeManager()
+        lightingKit.configure(permission: mockPermission, manager: mockManager)
+        lightingKit.delegate = mockDelegate
+        lightingKit.configureHomeKit()
+        XCTAssertTrue(mockDelegate.configured, "LightingKit configureHomeKit should notify delegate if already configured.")
+    }
+    func testAddHomeUsesHomeManagerAddHome() {
+        let lightingKit = LightingKit()
+        let mockPermission = MockPermission()
+        mockPermission.success = true
+        let mockManager = MockHomeManager()
+        lightingKit.configure(permission: mockPermission, manager: mockManager)
+        lightingKit.addHome(name: "Hello") { _ in }
+        XCTAssertTrue(mockManager.addedHome, "LightingKit addHome should invoke home manager addHome function.")
+    }
+    func testAddHomeExecutesCompletion() {
+        let lightingKit = LightingKit()
+        let mockPermission = MockPermission()
+        mockPermission.success = true
+        let mockManager = MockHomeManager()
+        lightingKit.configure(permission: mockPermission, manager: mockManager)
+        let completion = MockAddHomeCompletion()
+        lightingKit.addHome(name: "Hello", completion: completion.completion)
+        XCTAssertTrue(completion.called, "LightingKit addHome should execute completion.")
+    }
+    func testStopSearchCallsBrowserStop() {
+        let lightingKit = LightingKit()
+        let mockBrowser = MockLightingBrowser()
+        lightingKit.findNewLights(browser: mockBrowser)
+        lightingKit.stopNewLightingSearch()
+        XCTAssertTrue(mockBrowser.stopped, "LightingKit stopNewLightingSearch should stop browser from searching.")
+    }
+    func testFindNewLightsStartsBrowser() {
+        let lightingKit = LightingKit()
+        let mockBrowser = MockLightingBrowser()
+        lightingKit.findNewLights(browser: mockBrowser)
+        XCTAssertTrue(mockBrowser.started, "LightingKit startNewLightingSearch should start browser.")
+    }
 }

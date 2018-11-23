@@ -9,15 +9,21 @@
 import Foundation
 import HomeKit
 
+/// Used to represent a class responsible for finding new lights to setup
+protocol LightingKitBrowser {
+    var newAccessories: [HMAccessory] { get }
+    func findNewLights(completion: @escaping (HMAccessory) -> Void)
+    func stop()
+}
+
 /// Used to find new lighting accessories, which have yet to be setup for use with HomeKit.
-class LightingBrowser: NSObject {
-    typealias AccessoryCompletion = ((HMAccessory) -> Void)
+class LightingBrowser: NSObject, LightingKitBrowser {
     /// The `HMAccessoryBrowser` to search to perfom the accessory search.
-    private let browser: HMAccessoryBrowser
+    private var browser: HomeKitAccessoryBrowserProtocol
     /// An array of new `HMAccessory` objects that have been found.
-    private (set) public var newAccessories: [HMAccessory] = []
+    private (set) internal var newAccessories: [HMAccessory] = []
     /// The closure to execute when a new acccessory is found
-    private var completion: AccessoryCompletion? {
+    internal var completion: ((HMAccessory) -> Void)? {
         didSet {
             newAccessories.forEach {
                 completion?($0)
@@ -30,7 +36,7 @@ class LightingBrowser: NSObject {
      - browser: The `HMAccessoryBrowser` to use for finding new accessories.
      - returns: An initialized `LightingBrowser` object.
      */
-    init(browser: HMAccessoryBrowser = HMAccessoryBrowser()) {
+    init(browser: HomeKitAccessoryBrowserProtocol = HMAccessoryBrowser()) {
         self.browser = browser
         super.init()
         self.browser.delegate = self
@@ -42,7 +48,7 @@ class LightingBrowser: NSObject {
      - Warning: The `completion` closure is escaping, retained, and a reference to it is held for the
      lifetime of the object. Any objects used within should be declared `weak` or `unowned`.
      */
-    func findNewLights(completion: @escaping AccessoryCompletion) {
+    func findNewLights(completion: @escaping (HMAccessory) -> Void) {
         browser.stopSearchingForNewAccessories()
         newAccessories.removeAll()
         self.completion = completion
