@@ -37,6 +37,9 @@
 		72A0371821A7F344001E8761 /* MockAccessoryBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A0371721A7F344001E8761 /* MockAccessoryBrowser.swift */; };
 		72A0371A21A7F3B4001E8761 /* HMAccessoryBrowserExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A0371921A7F3B4001E8761 /* HMAccessoryBrowserExtensions.swift */; };
 		72A0371E21A80154001E8761 /* MockLightingBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A0371D21A80154001E8761 /* MockLightingBrowser.swift */; };
+		72A0372221A84795001E8761 /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A0372121A84795001E8761 /* Brightness.swift */; };
+		72A0372421A8479D001E8761 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A0372321A8479D001E8761 /* Power.swift */; };
+		72A0372621A850F1001E8761 /* TimeInterval+FadeBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A0372521A850F1001E8761 /* TimeInterval+FadeBrightness.swift */; };
 		72B7B37E21A6607B004336C1 /* LightingBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B37D21A6607B004336C1 /* LightingBrowser.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +87,9 @@
 		72A0371721A7F344001E8761 /* MockAccessoryBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAccessoryBrowser.swift; sourceTree = "<group>"; };
 		72A0371921A7F3B4001E8761 /* HMAccessoryBrowserExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAccessoryBrowserExtensions.swift; sourceTree = "<group>"; };
 		72A0371D21A80154001E8761 /* MockLightingBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLightingBrowser.swift; sourceTree = "<group>"; };
+		72A0372121A84795001E8761 /* Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brightness.swift; sourceTree = "<group>"; };
+		72A0372321A8479D001E8761 /* Power.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
+		72A0372521A850F1001E8761 /* TimeInterval+FadeBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+FadeBrightness.swift"; sourceTree = "<group>"; };
 		72B7B37D21A6607B004336C1 /* LightingBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +143,9 @@
 				72100E5421A5014200834C4D /* Home.swift */,
 				72100E5621A503D600834C4D /* Room.swift */,
 				72100E5821A5056F00834C4D /* Light.swift */,
+				72A0372321A8479D001E8761 /* Power.swift */,
+				72A0372121A84795001E8761 /* Brightness.swift */,
+				72A0372521A850F1001E8761 /* TimeInterval+FadeBrightness.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,13 +340,16 @@
 				72A036FE21A7C21A001E8761 /* SuccessStrategy.swift in Sources */,
 				72A0370621A7CEA1001E8761 /* HMHomeManagerExtensions.swift in Sources */,
 				72B7B37E21A6607B004336C1 /* LightingBrowser.swift in Sources */,
+				72A0372421A8479D001E8761 /* Power.swift in Sources */,
 				729BC40D21A3F323002E0C0D /* LightingKitPermissions.swift in Sources */,
 				72A0370821A7CECE001E8761 /* HomeKitModelExtensions.swift in Sources */,
 				72100E5721A503D600834C4D /* Room.swift in Sources */,
 				72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */,
 				72A0370C21A7CF6C001E8761 /* LightingKitObject.swift in Sources */,
 				72100E5321A4FE4000834C4D /* LightingKit.swift in Sources */,
+				72A0372221A84795001E8761 /* Brightness.swift in Sources */,
 				72100E5521A5014200834C4D /* Home.swift in Sources */,
+				72A0372621A850F1001E8761 /* TimeInterval+FadeBrightness.swift in Sources */,
 				72100E5921A5056F00834C4D /* Light.swift in Sources */,
 				72A0371A21A7F3B4001E8761 /* HMAccessoryBrowserExtensions.swift in Sources */,
 				72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */,

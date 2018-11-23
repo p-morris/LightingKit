@@ -9,68 +9,26 @@
 import Foundation
 import HomeKit
 
-protocol LightDelegate: class {
-    func light(_ light: Light, completedPowerUpdate: Error?)
-    func light(_ light: Light, completedBrightnessUpdate: Error?)
-    func light(_ light: Light, completedTimedBrightnessUpdate error: Error?)
-}
-
+/// Represents a HomeKit light
 public class Light: LightingKitObject {
-    weak var delegate: LightDelegate?
+    /// The name of the light
     public let name: String
+    /// The unique identifier for the light
     public let id: UUID
-    internal var _power: HMCharacteristic?
-    internal var _brightness: HMCharacteristic?
-    private var timer: Timer?
-    private var targetBrightness: Int?
+    /// The `Power` object. Used to set the power state of the light.
+    internal (set) public var power: Power?
+    /// The `Brightness` object. Used to set the brightness state of the light.
+    internal (set) public var brightness: Brightness?
+    /**
+     Initializes a `Light` object.
+     - Parameters:
+     - name: The name of the light.
+     - id: The unique identifier for the light.
+     - returns: An initialized `Light` object.
+     */
     required public init(name: String, id: UUID) {
         self.name = name
         self.id = id
-    }
-}
-
-extension Light {
-    public func set(powerOn on: Bool) {
-        _power?.writeValue(on) { error in
-            self.delegate?.light(self, completedPowerUpdate: error)
-        }
-    }
-    public func set(brightness: Int) {
-        _brightness?.writeValue(brightness) { error in
-            self.delegate?.light(self, completedBrightnessUpdate: error)
-        }
-    }
-    public func set(brightness: Int, duration: TimeInterval) {
-        guard duration > 0 else {
-            set(brightness: brightness)
-            return
-        }
-        
-        let targetBrightness = Double(brightness)
-        let timeIncrement = TimeInterval(round(duration / targetBrightness))
-        self.targetBrightness = brightness
-        timer = Timer.scheduledTimer(
-            timeInterval: timeIncrement,
-            target: self,
-            selector: #selector(updateTimedBrightness),
-            userInfo: nil,
-            repeats: true
-        )
-    }
-    @objc internal func updateTimedBrightness() {
-        guard let targetBrightness = targetBrightness,
-            let brightness = _brightness,
-            let currentBrightness = brightness.value as? Int,
-            currentBrightness < targetBrightness else {
-            delegate?.light(self, completedTimedBrightnessUpdate: nil)
-            cancelTimedBrightnessUpdate()
-            return
-        }
-        set(brightness: currentBrightness + 1)
-    }
-    public func cancelTimedBrightnessUpdate() {
-        timer?.invalidate()
-        timer = nil
     }
 }
 
