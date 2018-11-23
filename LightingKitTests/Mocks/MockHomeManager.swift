@@ -11,6 +11,10 @@ import HomeKit
 @testable import LightingKit
 
 class MockHomeManager: HomeManagerProtocol {
+    func addHome(withName homeName: String, completionHandler completion: @escaping (HMHome?, Error?) -> Void) {
+        //
+    }
+    
     var permissionGranted: Bool { return true }
     var homes: [HMHome] = []
     weak var delegate: HMHomeManagerDelegate?

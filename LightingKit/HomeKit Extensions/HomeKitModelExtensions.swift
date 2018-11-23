@@ -1,24 +1,13 @@
 //
-//  Abstractions.swift
+//  HomeKitModelExtensions.swift
 //  LightingKit
 //
-//  Created by Peter Morris on 21/11/2018.
+//  Created by Peter Morris on 23/11/2018.
 //  Copyright © 2018 Pete Morris. All rights reserved.
 //
 
 import Foundation
 import HomeKit
-
-/// An abstraction for `HMHomeManager`
-internal protocol HomeManagerProtocol {
-    var delegate: HMHomeManagerDelegate? { get set }
-    var homes: [HMHome] { get }
-    var permissionGranted: Bool { get }
-    init()
-    func addHome(withName homeName: String, completionHandler completion: @escaping (HMHome?, Error?) -> Void)
-}
-
-extension HMHomeManager: HomeManagerProtocol { }
 
 /// An abstraction for HomeKit objects
 internal protocol HomeKitObjectProtocol {
@@ -41,3 +30,17 @@ extension HomeKitObjectProtocol {
 extension HMHome: HomeKitObjectProtocol { }
 extension HMRoom: HomeKitObjectProtocol { }
 extension HMAccessory: HomeKitObjectProtocol { }
+
+/// An abstraction for HomeKit category objects
+protocol HomeKitCategoryProtocol {
+    var categoryType: String { get }
+}
+
+extension HomeKitCategoryProtocol {
+    /// Indicates whether the category is associated with a LightBulb accessory.
+    var isLighting: Bool {
+        return categoryType == HMAccessoryCategoryTypeLightbulb
+    }
+}
+
+extension HMAccessoryCategory: HomeKitCategoryProtocol { }

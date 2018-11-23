@@ -23,6 +23,6 @@ internal protocol SuccessStrategy {
 internal final class HomeKitPermissionSuccessStrategy: SuccessStrategy {
     /// Returns `true` if `manager.homes.count` is greater than 0.
     func success(manager: HomeManagerProtocol) -> Bool {
-        return manager.homes.count > 0
+        return manager.permissionGranted
     }
 }

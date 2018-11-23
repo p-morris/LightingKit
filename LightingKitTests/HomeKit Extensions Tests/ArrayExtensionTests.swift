@@ -24,7 +24,7 @@ class ArrayExtensionTests: XCTestCase {
         XCTAssert(lightningKitHome != nil &&
             lightningKitHome!.id == mockHomeKitHome.uniqueIdentifier &&
             lightningKitHome!.name == mockHomeKitHome.name,
-            "Array extension lightinKitObjects should pass correct values for init params."
+                  "Array extension lightinKitObjects should pass correct values for init params."
         )
     }
     

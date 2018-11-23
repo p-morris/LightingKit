@@ -10,7 +10,19 @@ import Foundation
 import HomeKit
 
 public protocol LightingKitDelegate: class {
+    /**
+     Executed when LightingKit has finished configuring.
+     - Parameters:
+     - lightingKit: The `LightingKit` object that was configured.
+     - permissionsGranted: Indicates whether HomeKit permissions have been granted or not.
+     */
     func lightingKit(_ lightingKit: LightingKit, permissionsGranted: Bool)
+    /**
+     Executed when LightingKit has found a new `Light` that hasn't been set up with HomeKit.
+     - Parameters:
+     - lightingKit: The `LightingKit` object that found the `Light`.
+     - light: The `Light` that was found.
+     */
     func lightingKit(_ lightingKit: LightingKit, foundNewLight light: Light)
 }
 

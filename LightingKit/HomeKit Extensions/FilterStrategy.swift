@@ -43,8 +43,8 @@ internal class LightbulbsByRoomStrategy: FilterStrategy {
      - room: The `Room` object that should be associated with `object` if it is to be included.
      - Returns: `true` if the `HMAccessory` should be included in the filtered array, false otherwise.
      */
-    func include(object: HMAccessory, compareWith room: Room) -> Bool {
+    func include(object: HomeKitObjectType, compareWith room: Room) -> Bool {
         guard let homeKitRoom = object.room else { return false }
-        return object.isLighting && room == homeKitRoom
+        return object.category.isLighting && room == homeKitRoom
     }
 }
