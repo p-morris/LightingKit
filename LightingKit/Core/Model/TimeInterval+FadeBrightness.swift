@@ -10,7 +10,8 @@ import Foundation
 
 extension TimeInterval {
     /**
-     Calculates the `TimeInterval` required to increment from `currentBrightness` to `targetBrightness`.
+     Calculates the `TimeInterval` required to for each incremental brightness update,
+     to increment from `currentBrightness` to `targetBrightness` over the duration of `self`.
      - Parameters:
      - currentBrightness: The current brightness value. 0-100.
      - targetBrightness: The target brightness value. 0-100.

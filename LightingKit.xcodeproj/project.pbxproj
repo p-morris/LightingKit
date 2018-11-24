@@ -13,6 +13,8 @@
 		72100E5921A5056F00834C4D /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5821A5056F00834C4D /* Light.swift */; };
 		72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6021A517D800834C4D /* ArrayExtensions.swift */; };
 		72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6221A5187400834C4D /* FilterStrategy.swift */; };
+		7278437221A9E79000FD2445 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278437121A9E79000FD2445 /* Error.swift */; };
+		7278437421A9E95B00FD2445 /* Int+SanitizeBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278437321A9E95B00FD2445 /* Int+SanitizeBrightness.swift */; };
 		728D896921A5489C005060C4 /* MockHomeKitHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D896821A5489C005060C4 /* MockHomeKitHome.swift */; };
 		728D896F21A55B60005060C4 /* TestLightingKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D896E21A55B60005060C4 /* TestLightingKit.swift */; };
 		728D897121A55D38005060C4 /* MockPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D897021A55D38005060C4 /* MockPermission.swift */; };
@@ -60,6 +62,8 @@
 		72100E5821A5056F00834C4D /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		72100E6021A517D800834C4D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		72100E6221A5187400834C4D /* FilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
+		7278437121A9E79000FD2445 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		7278437321A9E95B00FD2445 /* Int+SanitizeBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+SanitizeBrightness.swift"; sourceTree = "<group>"; };
 		728D896821A5489C005060C4 /* MockHomeKitHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeKitHome.swift; sourceTree = "<group>"; };
 		728D896E21A55B60005060C4 /* TestLightingKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLightingKit.swift; sourceTree = "<group>"; };
 		728D897021A55D38005060C4 /* MockPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPermission.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 		728D896421A54801005060C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7278437121A9E79000FD2445 /* Error.swift */,
 				72A0370B21A7CF6C001E8761 /* LightingKitObject.swift */,
 				72100E5421A5014200834C4D /* Home.swift */,
 				72100E5621A503D600834C4D /* Room.swift */,
@@ -146,6 +151,7 @@
 				72A0372321A8479D001E8761 /* Power.swift */,
 				72A0372121A84795001E8761 /* Brightness.swift */,
 				72A0372521A850F1001E8761 /* TimeInterval+FadeBrightness.swift */,
+				7278437321A9E95B00FD2445 /* Int+SanitizeBrightness.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -346,12 +352,14 @@
 				72100E5721A503D600834C4D /* Room.swift in Sources */,
 				72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */,
 				72A0370C21A7CF6C001E8761 /* LightingKitObject.swift in Sources */,
+				7278437421A9E95B00FD2445 /* Int+SanitizeBrightness.swift in Sources */,
 				72100E5321A4FE4000834C4D /* LightingKit.swift in Sources */,
 				72A0372221A84795001E8761 /* Brightness.swift in Sources */,
 				72100E5521A5014200834C4D /* Home.swift in Sources */,
 				72A0372621A850F1001E8761 /* TimeInterval+FadeBrightness.swift in Sources */,
 				72100E5921A5056F00834C4D /* Light.swift in Sources */,
 				72A0371A21A7F3B4001E8761 /* HMAccessoryBrowserExtensions.swift in Sources */,
+				7278437221A9E79000FD2445 /* Error.swift in Sources */,
 				72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
