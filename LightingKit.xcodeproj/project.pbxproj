@@ -15,6 +15,7 @@
 		72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6221A5187400834C4D /* FilterStrategy.swift */; };
 		7278437221A9E79000FD2445 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278437121A9E79000FD2445 /* Error.swift */; };
 		7278437421A9E95B00FD2445 /* Int+SanitizeBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278437321A9E95B00FD2445 /* Int+SanitizeBrightness.swift */; };
+		7278437621A9EFF900FD2445 /* Characteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278437521A9EFF900FD2445 /* Characteristic.swift */; };
 		728D896921A5489C005060C4 /* MockHomeKitHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D896821A5489C005060C4 /* MockHomeKitHome.swift */; };
 		728D896F21A55B60005060C4 /* TestLightingKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D896E21A55B60005060C4 /* TestLightingKit.swift */; };
 		728D897121A55D38005060C4 /* MockPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D897021A55D38005060C4 /* MockPermission.swift */; };
@@ -64,6 +65,7 @@
 		72100E6221A5187400834C4D /* FilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
 		7278437121A9E79000FD2445 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		7278437321A9E95B00FD2445 /* Int+SanitizeBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+SanitizeBrightness.swift"; sourceTree = "<group>"; };
+		7278437521A9EFF900FD2445 /* Characteristic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characteristic.swift; sourceTree = "<group>"; };
 		728D896821A5489C005060C4 /* MockHomeKitHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeKitHome.swift; sourceTree = "<group>"; };
 		728D896E21A55B60005060C4 /* TestLightingKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLightingKit.swift; sourceTree = "<group>"; };
 		728D897021A55D38005060C4 /* MockPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPermission.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				72100E5421A5014200834C4D /* Home.swift */,
 				72100E5621A503D600834C4D /* Room.swift */,
 				72100E5821A5056F00834C4D /* Light.swift */,
+				7278437521A9EFF900FD2445 /* Characteristic.swift */,
 				72A0372321A8479D001E8761 /* Power.swift */,
 				72A0372121A84795001E8761 /* Brightness.swift */,
 				72A0372521A850F1001E8761 /* TimeInterval+FadeBrightness.swift */,
@@ -349,6 +352,7 @@
 				72A0372421A8479D001E8761 /* Power.swift in Sources */,
 				729BC40D21A3F323002E0C0D /* LightingKitPermissions.swift in Sources */,
 				72A0370821A7CECE001E8761 /* HomeKitModelExtensions.swift in Sources */,
+				7278437621A9EFF900FD2445 /* Characteristic.swift in Sources */,
 				72100E5721A503D600834C4D /* Room.swift in Sources */,
 				72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */,
 				72A0370C21A7CF6C001E8761 /* LightingKitObject.swift in Sources */,

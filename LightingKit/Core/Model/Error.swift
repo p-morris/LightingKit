@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Used to represent LightingKit errors.
 enum LightingError {
     /// An error indicating that an invalid duration was used for a timed brightness update.
     static let brightnessDuration = NSError(

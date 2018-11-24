@@ -44,3 +44,27 @@ extension HomeKitCategoryProtocol {
 }
 
 extension HMAccessoryCategory: HomeKitCategoryProtocol { }
+
+enum CharacteristicType {
+    case power
+    case brightness
+    case unknown
+}
+
+protocol HomeKitCharacteristicProtocol {
+    var characteristicType: String { get }
+    var value: Any? { get }
+    func writeValue(_ value: Any?, completionHandler completion: @escaping (Error?) -> Void)
+}
+
+extension HomeKitCharacteristicProtocol {
+    var type: CharacteristicType {
+        switch characteristicType {
+        case HMCharacteristicTypePowerState: return .power
+        case HMCharacteristicTypeBrightness: return .brightness
+        default: return .unknown
+        }
+    }
+}
+
+extension HMCharacteristic: HomeKitCharacteristicProtocol { }

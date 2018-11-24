@@ -91,3 +91,21 @@ internal extension Array where Element: HMAccessory {
         return lightBulbAccessories(for: room).lightingKitObjects()
     }
 }
+
+internal extension Array where Element: HMCharacteristic {
+    
+}
+
+//if let characteristic = service.characteristics.filter({ $0.characteristicType == HMCharacteristicTypePowerState }).first {
+//    characteristic.enableNotification(true) { (error) in
+//        if error == nil {
+//            print("Notifications enabled)")
+//            self.characteristic = characteristic
+//        }
+//    }
+//}
+//if let brightness = service.characteristics.filter({ $0.characteristicType == HMCharacteristicTypeBrightness }).first {
+//    brightness.enableNotification(true) { (error) in
+//        if error == nil {
+//            print("Brighness notifications enabled")
+//            self.brightnessC

@@ -34,12 +34,13 @@ public protocol TimedBrightnessUpdateDelegate: class {
 }
 
 /// Used to represent a `Light` object's brightness state.
-public final class Brightness {
-    var value: Int? {
-        return characteristic.value as? Int
+public final class Brightness: Characteristic {
+    /// The current brightness value.
+    public var value: Int? {
+        return homeKitCharacteristic.value as? Int
     }
     /// The `HMCharacteristic` that represents the light's brightness.
-    private let characteristic: HMCharacteristic
+    internal let homeKitCharacteristic: HomeKitCharacteristicProtocol
     /// Used to slowly adjust the brightness value over a period of time.
     private var timer: Timer?
     /// The brightness value before the timed brightness update began
@@ -56,8 +57,11 @@ public final class Brightness {
      - characteristic: The `HMCharacteristic` that represents the light's brightness state.
      - returns: An initialized `Brightness` object.
      */
-    internal init(characteristic: HMCharacteristic) {
-        self.characteristic = characteristic
+    internal init?(homeKitCharacteristic: HomeKitCharacteristicProtocol) {
+        guard homeKitCharacteristic.type == .brightness else {
+            return nil
+        }
+        self.homeKitCharacteristic = homeKitCharacteristic
     }
     /**
      Sets the brightness of the `Light` to a new value **immediately**.
@@ -67,7 +71,7 @@ public final class Brightness {
      - returns: An initialized `Brightness` object.
      */
     public func set(brightness: Int, completion: @escaping (Error?) -> Void) {
-        characteristic.writeValue(brightness, completionHandler: completion)
+        homeKitCharacteristic.writeValue(brightness, completionHandler: completion)
     }
 }
 
