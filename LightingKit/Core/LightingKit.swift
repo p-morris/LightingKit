@@ -140,6 +140,8 @@ extension LightingKit {
         }
         home.addAccessory(accessory) { _ in
             home.assignAccessory(accessory, to: room, completionHandler: { error in
+                light.brightness = Brightness(homeKitCharacteristic: accessory.services.light?.characteristics.brightness)
+                light.power = Power(homeKitCharacteristic: accessory.services.light?.characteristics.power)
                 completion(error == nil)
             })
         }

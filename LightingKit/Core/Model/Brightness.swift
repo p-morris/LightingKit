@@ -57,8 +57,8 @@ public final class Brightness: Characteristic {
      - characteristic: The `HMCharacteristic` that represents the light's brightness state.
      - returns: An initialized `Brightness` object.
      */
-    internal init?(homeKitCharacteristic: HomeKitCharacteristicProtocol) {
-        guard homeKitCharacteristic.type == .brightness else {
+    internal init?(homeKitCharacteristic: HomeKitCharacteristicProtocol?) {
+        guard let homeKitCharacteristic = homeKitCharacteristic, homeKitCharacteristic.type == .brightness else {
             return nil
         }
         self.homeKitCharacteristic = homeKitCharacteristic

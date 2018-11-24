@@ -11,5 +11,5 @@ import HomeKit
 
 protocol Characteristic {
     var homeKitCharacteristic: HomeKitCharacteristicProtocol { get }
-    init?(homeKitCharacteristic: HomeKitCharacteristicProtocol)
+    init?(homeKitCharacteristic: HomeKitCharacteristicProtocol?)
 }

@@ -25,6 +25,25 @@ internal extension Array where Element: HomeKitObjectProtocol {
     }
 }
 
+/// Used to extend array to map HomeKit accessories with LightBulb services on `Light` instances.
+internal extension Array where Element: HomeKitAccessoryProtocol {
+    /**
+     Initializes and returns `Light` representations of the HomeKit accessories with Lightbulb services..
+     - Returns: An array of `Light` objects representing the HomeKit accessories contained in
+     the array.
+     */
+    func lightingKitLights() -> [Light] {
+        var lights: [Light] = []
+        forEach { object in
+            let light: Light = object.lightingKitObject()
+            light.brightness = Brightness(homeKitCharacteristic: object.services.light?.characteristics.brightness)
+            light.power = Power(homeKitCharacteristic: object.services.light?.characteristics.power)
+            lights.append(light)
+        }
+        return lights
+    }
+}
+
 /// Used to add utility functions to arrays of `HMHome` objects
 internal extension Array where Element: HMHome {
     /**
@@ -54,7 +73,7 @@ internal extension Array where Element: HMHome {
      */
     func lightingKitLights(for home: Home) -> [Light] {
         guard let home = filter({ home == $0 }).first else { return [] }
-        return home.accessories.filter({ $0.category.isLighting }).lightingKitObjects()
+        return home.accessories.filter({ $0.category.isLighting }).lightingKitLights()
     }
     /**
      Returns all the `Light` objects associated with a given `Room`.
@@ -88,24 +107,26 @@ internal extension Array where Element: HMAccessory {
      - Returns: An array of `Light` objects associated with `room`
      */
     func lightingKitLights(for room: Room) -> [Light] {
-        return lightBulbAccessories(for: room).lightingKitObjects()
+        return lightBulbAccessories(for: room).lightingKitLights()
     }
 }
 
-internal extension Array where Element: HMCharacteristic {
-    
+/// Used to add computed properties to support easy access to brightness and power characteristics
+internal extension Array where Element: HomeKitCharacteristicProtocol {
+    /// The brightness characteristic if one exists, `nil` otherwise.
+    var brightness: Element? {
+        return filter { $0.characteristicType == HMCharacteristicTypeBrightness }.first
+    }
+    /// The power characteristic if one exists, `nil` otherwise.
+    var power: Element? {
+        return filter { $0.characteristicType == HMCharacteristicTypePowerState }.first
+    }
 }
 
-//if let characteristic = service.characteristics.filter({ $0.characteristicType == HMCharacteristicTypePowerState }).first {
-//    characteristic.enableNotification(true) { (error) in
-//        if error == nil {
-//            print("Notifications enabled)")
-//            self.characteristic = characteristic
-//        }
-//    }
-//}
-//if let brightness = service.characteristics.filter({ $0.characteristicType == HMCharacteristicTypeBrightness }).first {
-//    brightness.enableNotification(true) { (error) in
-//        if error == nil {
-//            print("Brighness notifications enabled")
-//            self.brightnessC
+/// used to add computer property to support easy access to light bulb services.
+internal extension Array where Element: HMService {
+    /// The lightbulb service if one exists, or `nil` otherwise.
+    var light: HMService? {
+        return filter { $0.serviceType == HMServiceTypeLightbulb }.first
+    }
+}

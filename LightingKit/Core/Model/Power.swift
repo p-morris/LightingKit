@@ -23,8 +23,8 @@ public final class Power: Characteristic {
      - characteristic: The `HMCharacteristic` that represents the light's power state.
      - returns: An initialized `Power` object.
      */
-    internal init?(homeKitCharacteristic: HomeKitCharacteristicProtocol) {
-        guard homeKitCharacteristic.type == .power else {
+    internal init?(homeKitCharacteristic: HomeKitCharacteristicProtocol?) {
+        guard let homeKitCharacteristic = homeKitCharacteristic, homeKitCharacteristic.type == .power else {
             return nil
         }
         self.homeKitCharacteristic = homeKitCharacteristic

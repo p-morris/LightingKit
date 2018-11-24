@@ -29,7 +29,12 @@ extension HomeKitObjectProtocol {
 
 extension HMHome: HomeKitObjectProtocol { }
 extension HMRoom: HomeKitObjectProtocol { }
-extension HMAccessory: HomeKitObjectProtocol { }
+
+protocol HomeKitAccessoryProtocol: HomeKitObjectProtocol {
+    var services: [HMService] { get }
+}
+
+extension HMAccessory: HomeKitAccessoryProtocol { }
 
 /// An abstraction for HomeKit category objects
 protocol HomeKitCategoryProtocol {
