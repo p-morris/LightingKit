@@ -13,6 +13,7 @@
 		72100E5921A5056F00834C4D /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5821A5056F00834C4D /* Light.swift */; };
 		72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6021A517D800834C4D /* ArrayExtensions.swift */; };
 		72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6221A5187400834C4D /* FilterStrategy.swift */; };
+		72385CAB21AAD1C8004983E9 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72385CAA21AAD1C8004983E9 /* HomeKit.framework */; };
 		726F8A7B21AA65BD0086A34B /* CharacteristicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A7A21AA65BD0086A34B /* CharacteristicExtensions.swift */; };
 		726F8A7D21AA66AE0086A34B /* CategoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A7C21AA66AE0086A34B /* CategoryExtensions.swift */; };
 		726F8A7F21AA672F0086A34B /* HomeKitObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A7E21AA672F0086A34B /* HomeKitObjectExtensions.swift */; };
@@ -73,6 +74,7 @@
 		72100E5821A5056F00834C4D /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		72100E6021A517D800834C4D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		72100E6221A5187400834C4D /* FilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
+		72385CAA21AAD1C8004983E9 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		726F8A7A21AA65BD0086A34B /* CharacteristicExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicExtensions.swift; sourceTree = "<group>"; };
 		726F8A7C21AA66AE0086A34B /* CategoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExtensions.swift; sourceTree = "<group>"; };
 		726F8A7E21AA672F0086A34B /* HomeKitObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitObjectExtensions.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72385CAB21AAD1C8004983E9 /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +154,14 @@
 				72A0371921A7F3B4001E8761 /* HMAccessoryBrowserExtensions.swift */,
 			);
 			path = "HomeKit Extensions";
+			sourceTree = "<group>";
+		};
+		72385CA921AAD1C8004983E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72385CAA21AAD1C8004983E9 /* HomeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		728D896321A547EE005060C4 /* Core */ = {
@@ -187,6 +198,7 @@
 				728E44FC21A2BD6100233F9A /* LightingKit */,
 				728E450721A2BD6100233F9A /* LightingKitTests */,
 				728E44FB21A2BD6100233F9A /* Products */,
+				72385CA921AAD1C8004983E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

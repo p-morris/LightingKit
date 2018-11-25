@@ -1,5 +1,5 @@
 PODS:
-  - LightingKit (0.54)
+  - LightingKit (0.9.0)
 
 DEPENDENCIES:
   - LightingKit (from `https://github.com/p-morris/LightingKit`)
@@ -10,11 +10,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LightingKit:
-    :commit: efd6e7bee3eec21efd6265a56a008130b96070ad
+    :commit: b0339cde0760bb5a2b0256cfe3016e2372a43a32
     :git: https://github.com/p-morris/LightingKit
 
 SPEC CHECKSUMS:
-  LightingKit: f23b2bc953635339aae9df9a0d57f373633b3d97
+  LightingKit: a85ddc45b298d71883a760304c7f55df39bc6cba
 
 PODFILE CHECKSUM: fffdbaf212a60e74e67ca0b93b9df88b2e28af5f
 
