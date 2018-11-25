@@ -65,6 +65,30 @@
                                     <action selector="listAccessories" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgF-I5-C00"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1T-4a-DBl">
+                                <rect key="frame" x="163" y="281" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="On/Off"/>
+                                <connections>
+                                    <action selector="onoff" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ojy-h3-Xsj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rc3-tb-tVU">
+                                <rect key="frame" x="116" y="312" width="140" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Set brightness to 50"/>
+                                <connections>
+                                    <action selector="simpleBrightness" destination="BYZ-38-t0r" eventType="touchUpInside" id="sSj-pc-NWb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Z3-gr-ZTX">
+                                <rect key="frame" x="131" y="350" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Timed brightness"/>
+                                <connections>
+                                    <action selector="timedBrightness" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rw6-Sb-LTg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

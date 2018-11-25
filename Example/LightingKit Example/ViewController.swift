@@ -80,6 +80,45 @@ class ViewController: UIViewController, LightingKitDelegate {
             })
         }
     }
+    var on = false
+    @IBAction func onoff() {
+        on = true
+        let home = kit.homes.first!
+        kit.lights(forHome: home).forEach { (light) in
+            light.power?.on(on, completion: { (error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("Toggled power.")
+                }
+            })
+        }
+        
+    }
+    
+    @IBAction func simpleBrightness() {
+        let home = kit.homes.first!
+        kit.lights(forHome: home).forEach { (light) in
+            light.brightness?.set(brightness: 50, completion: { (error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("Set brightness to 50")
+                }
+            })
+        }
+    }
+    
+    @IBAction func timedBrightness() {
+        let home = kit.homes.first!
+        kit.lights(forHome: home).forEach { (light) in
+            light.power?.on(true, completion: { (error) in
+                light.brightness?.set(brightness: 0, completion: { (error) in
+                    light.brightness?.set(brightness: 100, duration: 10, brightnessDelegate: self)
+                })
+            })
+        }
+    }
     
     func lightingKit(_ lightingKit: LightingKit, foundNewLight light: Light) {
         lights.append(light)
@@ -90,4 +129,20 @@ class ViewController: UIViewController, LightingKitDelegate {
         print(permissionsGranted ? "LightingKit ready" : "LightingKit not ready")
     }
 
+}
+
+extension ViewController: TimedBrightnessUpdateDelegate {
+    func brightness(_ brightness: Brightness, valueDidChange newValue: Int) {
+        print(newValue)
+    }
+    
+    func brightness(_ brightness: Brightness, didCompleteTimedUpdate newValue: Int) {
+        print("Did complete timed brightness")
+    }
+    
+    func brightness(_ brightness: Brightness, timedUpdateFailed error: Error?) {
+        print("Timed update failiure")
+    }
+    
+    
 }
