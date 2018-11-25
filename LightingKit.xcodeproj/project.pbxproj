@@ -22,6 +22,8 @@
 		726F8A8721AA6DB90086A34B /* MockBrightnessDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A8621AA6DB90086A34B /* MockBrightnessDelegate.swift */; };
 		726F8A8921AA6E600086A34B /* TimeIntervalExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A8821AA6E600086A34B /* TimeIntervalExtensionTests.swift */; };
 		726F8A8B21AA6F050086A34B /* IntExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A8A21AA6F050086A34B /* IntExtensionTests.swift */; };
+		726F8A8D21AA73CE0086A34B /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A8C21AA73CE0086A34B /* FoundationExtensions.swift */; };
+		726F8A8F21AA75120086A34B /* MockTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A8E21AA75120086A34B /* MockTimer.swift */; };
 		7278437221A9E79000FD2445 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278437121A9E79000FD2445 /* Error.swift */; };
 		7278437421A9E95B00FD2445 /* Int+SanitizeBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278437321A9E95B00FD2445 /* Int+SanitizeBrightness.swift */; };
 		7278437621A9EFF900FD2445 /* Characteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7278437521A9EFF900FD2445 /* Characteristic.swift */; };
@@ -80,6 +82,8 @@
 		726F8A8621AA6DB90086A34B /* MockBrightnessDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBrightnessDelegate.swift; sourceTree = "<group>"; };
 		726F8A8821AA6E600086A34B /* TimeIntervalExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtensionTests.swift; sourceTree = "<group>"; };
 		726F8A8A21AA6F050086A34B /* IntExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionTests.swift; sourceTree = "<group>"; };
+		726F8A8C21AA73CE0086A34B /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		726F8A8E21AA75120086A34B /* MockTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimer.swift; sourceTree = "<group>"; };
 		7278437121A9E79000FD2445 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		7278437321A9E95B00FD2445 /* Int+SanitizeBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+SanitizeBrightness.swift"; sourceTree = "<group>"; };
 		7278437521A9EFF900FD2445 /* Characteristic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characteristic.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 		72100E5B21A5172900834C4D /* HomeKit Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				726F8A8C21AA73CE0086A34B /* FoundationExtensions.swift */,
 				726F8A7E21AA672F0086A34B /* HomeKitObjectExtensions.swift */,
 				726F8A7A21AA65BD0086A34B /* CharacteristicExtensions.swift */,
 				726F8A7C21AA66AE0086A34B /* CategoryExtensions.swift */,
@@ -230,6 +235,7 @@
 				72A0371D21A80154001E8761 /* MockLightingBrowser.swift */,
 				726F8A8221AA69630086A34B /* MockCharacteristic.swift */,
 				726F8A8621AA6DB90086A34B /* MockBrightnessDelegate.swift */,
+				726F8A8E21AA75120086A34B /* MockTimer.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 				72100E5921A5056F00834C4D /* Light.swift in Sources */,
 				72A0371A21A7F3B4001E8761 /* HMAccessoryBrowserExtensions.swift in Sources */,
 				7278437221A9E79000FD2445 /* Error.swift in Sources */,
+				726F8A8D21AA73CE0086A34B /* FoundationExtensions.swift in Sources */,
 				72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +414,7 @@
 				72A0371421A7F1C8001E8761 /* SuccessStrategyTests.swift in Sources */,
 				72A0371621A7F2E8001E8761 /* LightingKitBrowserTests.swift in Sources */,
 				728D897121A55D38005060C4 /* MockPermission.swift in Sources */,
+				726F8A8F21AA75120086A34B /* MockTimer.swift in Sources */,
 				729BC41621A40005002E0C0D /* MockHomeManager.swift in Sources */,
 				72A0370E21A7CFA6001E8761 /* ArrayExtensionTests.swift in Sources */,
 				726F8A8521AA6BF70086A34B /* BrightnessTests.swift in Sources */,

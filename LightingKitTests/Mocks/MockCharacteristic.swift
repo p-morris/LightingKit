@@ -16,6 +16,7 @@ class MockCharacteristic: HomeKitCharacteristicProtocol {
     var didWriteValue = false
     func writeValue(_ value: Any?, completionHandler completion: @escaping (Error?) -> Void) {
         didWriteValue = true
+        self.value = value
         completion(nil)
     }
 }
