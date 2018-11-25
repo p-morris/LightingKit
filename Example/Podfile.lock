@@ -1,0 +1,21 @@
+PODS:
+  - LightingKit (0.54)
+
+DEPENDENCIES:
+  - LightingKit (from `https://github.com/p-morris/LightingKit`)
+
+EXTERNAL SOURCES:
+  LightingKit:
+    :git: https://github.com/p-morris/LightingKit
+
+CHECKOUT OPTIONS:
+  LightingKit:
+    :commit: efd6e7bee3eec21efd6265a56a008130b96070ad
+    :git: https://github.com/p-morris/LightingKit
+
+SPEC CHECKSUMS:
+  LightingKit: f23b2bc953635339aae9df9a0d57f373633b3d97
+
+PODFILE CHECKSUM: fffdbaf212a60e74e67ca0b93b9df88b2e28af5f
+
+COCOAPODS: 1.5.3

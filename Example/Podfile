@@ -6,6 +6,6 @@ target 'LightingKit Example' do
   use_frameworks!
 
   # Pods for LightingKit Example
-  pod 'LightingKit', :source => 'https://github.com/p-morris/LightingKit'
+  pod 'LightingKit', :git => 'https://github.com/p-morris/LightingKit'
 
 end

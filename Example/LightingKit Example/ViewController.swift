@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import HomeKit
+import LightingKit
 
 class ViewController: UIViewController, LightingKitDelegate {
     

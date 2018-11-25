@@ -12,9 +12,11 @@
 		729BC43521A41233002E0C0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43321A41233002E0C0D /* Main.storyboard */; };
 		729BC43721A41239002E0C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43621A41239002E0C0D /* Assets.xcassets */; };
 		729BC43A21A41239002E0C0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43821A41239002E0C0D /* LaunchScreen.storyboard */; };
+		8DAE61FDA30D48865AF6681D /* Pods_LightingKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		074E6EA29F926B7D2D718F02 /* Pods-LightingKit Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightingKit Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example.release.xcconfig"; sourceTree = "<group>"; };
 		729BC42C21A41233002E0C0D /* LightingKit Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LightingKit Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		729BC42F21A41233002E0C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		729BC43121A41233002E0C0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,7 @@
 		729BC43B21A41239002E0C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72B7B38121A69D5C004336C1 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		72B7B38321A69D5C004336C1 /* LightingKit Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LightingKit Example.entitlements"; sourceTree = "<group>"; };
+		8F2E722DB06174FDAD8695BD /* Pods-LightingKit Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightingKit Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightingKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DAE61FDA30D48865AF6681D /* Pods_LightingKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +54,8 @@
 		53C1A0377577FA58D92118FB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				8F2E722DB06174FDAD8695BD /* Pods-LightingKit Example.debug.xcconfig */,
+				074E6EA29F926B7D2D718F02 /* Pods-LightingKit Example.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -93,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 729BC43E21A41239002E0C0D /* Build configuration list for PBXNativeTarget "LightingKit Example" */;
 			buildPhases = (
+				C54823981D2BDF001F680384 /* [CP] Check Pods Manifest.lock */,
 				729BC42821A41233002E0C0D /* Sources */,
 				729BC42921A41233002E0C0D /* Frameworks */,
 				729BC42A21A41233002E0C0D /* Resources */,
+				1235476D402AC9D57EED1D46 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +164,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1235476D402AC9D57EED1D46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LightingKit/LightingKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LightingKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C54823981D2BDF001F680384 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LightingKit Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		729BC42821A41233002E0C0D /* Sources */ = {
@@ -307,6 +362,7 @@
 		};
 		729BC43F21A41239002E0C0D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F2E722DB06174FDAD8695BD /* Pods-LightingKit Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "LightingKit Example/LightingKit Example.entitlements";
@@ -326,6 +382,7 @@
 		};
 		729BC44021A41239002E0C0D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 074E6EA29F926B7D2D718F02 /* Pods-LightingKit Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "LightingKit Example/LightingKit Example.entitlements";
