@@ -11,7 +11,6 @@ import Foundation
 extension Int {
     func sanitizedBrightness() -> Int {
         // Brightness must be >= 0 && <= 100.
-        print()
         return (self < 0 ? 0 : (self > 100 ? 100 : self))
     }
 }
