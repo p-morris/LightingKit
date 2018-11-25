@@ -156,7 +156,6 @@
 		728D896321A547EE005060C4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				728D896421A54801005060C4 /* Model */,
 				72A036FD21A7C21A001E8761 /* SuccessStrategy.swift */,
 				729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */,
 				72B7B37D21A6607B004336C1 /* LightingBrowser.swift */,
@@ -203,6 +202,7 @@
 		728E44FC21A2BD6100233F9A /* LightingKit */ = {
 			isa = PBXGroup;
 			children = (
+				728D896421A54801005060C4 /* Model */,
 				72100E5B21A5172900834C4D /* HomeKit Extensions */,
 				728D896321A547EE005060C4 /* Core */,
 				728E44FD21A2BD6100233F9A /* LightingKit.h */,
