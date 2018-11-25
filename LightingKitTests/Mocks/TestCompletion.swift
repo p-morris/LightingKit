@@ -15,4 +15,9 @@ class TestCompletion {
             self.complete = completed
         }
     }
+    func getErrorCompletion() -> ((Error?) -> Void) {
+        return { (error: Error?) in
+            self.complete = true
+        }
+    }
 }
