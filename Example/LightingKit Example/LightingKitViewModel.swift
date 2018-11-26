@@ -9,23 +9,23 @@
 import Foundation
 import LightingKit
 
-protocol ObjectViewModel {
+protocol ObjectViewModel: class {
     associatedtype ObjectType: LightingKitObject
-    var router: AppRouter? { get }
     var title: String { get }
+    var selectionStyle: UITableViewCell.SelectionStyle { get }
     var objects: [ObjectType] { get }
-    func nextViewController(indexPath: IndexPath)
 }
 
-extension ObjectViewModel {
-    func nextViewController(indexPath: IndexPath) {
-        router?.pushViewController(for: objects[indexPath.row])
-    }
-}
-
-struct LightingKitViewModel<T: LightingKitObject>: ObjectViewModel {
+class LightingKitViewModel<T: LightingKitObject>: ObjectViewModel {
     typealias ObjectType = T
-    let title: String
-    weak var router: AppRouter?
+    var title: String {
+        return "\(String(describing: T.self))s"
+    }
+    var selectionStyle: UITableViewCell.SelectionStyle {
+        return .none
+    }
     let objects: [T]
+    init(objects: [T]) {
+        self.objects = objects
+    }
 }

@@ -13,22 +13,33 @@ class LightingKitTableViewController<T: LightingKitObject>: UITableViewControlle
     
     let reuseID = "cell"
     let viewModel: LightingKitViewModel<T>
+    let router: Router?
     
-    init(viewModel: LightingKitViewModel<T>) {
+    init(viewModel: LightingKitViewModel<T>, router: Router) {
         self.viewModel = viewModel
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        viewModel = LightingKitViewModel<T>(title: "", router: nil, objects: [])
+        viewModel = LightingKitViewModel<T>(objects: [])
+        router = nil
         super.init(nibName: nil, bundle: nil)
     }
     
     override func loadView() {
         super.loadView()
         title = viewModel.title
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addObject))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseID)
         tableView.reloadData()
+    }
+    
+    var textField: UITextField?
+    
+    @objc func addObject() {
+        let object: T? = nil
+        router?.route(from: self, with: object)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,12 +55,12 @@ class LightingKitTableViewController<T: LightingKitObject>: UITableViewControlle
             fatalError("Unable to dequeue \(reuseID) tableviewcell.")
         }
         cell.textLabel?.text = viewModel.objects[indexPath.row].name
-        cell.selectionStyle = .none
+        cell.selectionStyle = viewModel.selectionStyle
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.nextViewController(indexPath: indexPath)
+        router?.route(from: self, with: viewModel.objects[indexPath.row])
     }
     
 }
