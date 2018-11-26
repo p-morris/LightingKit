@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7206ACD721ABDE9A001F2D54 /* AppFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACD621ABDE9A001F2D54 /* AppFacade.swift */; };
+		7206ACE121ABEE54001F2D54 /* LightingKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACE021ABEE54001F2D54 /* LightingKitViewModel.swift */; };
+		7206ACE521ABF768001F2D54 /* LightingKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACE421ABF768001F2D54 /* LightingKitTableViewController.swift */; };
+		7206ACE721ABF8E7001F2D54 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACE621ABF8E7001F2D54 /* AppRouter.swift */; };
+		7206ACE921ABFC66001F2D54 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACE821ABFC66001F2D54 /* ControllerFactory.swift */; };
+		7206ACEB21ABFED7001F2D54 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACEA21ABFED7001F2D54 /* UIKitExtensions.swift */; };
 		729BC43021A41233002E0C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC42F21A41233002E0C0D /* AppDelegate.swift */; };
-		729BC43221A41233002E0C0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC43121A41233002E0C0D /* ViewController.swift */; };
-		729BC43521A41233002E0C0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43321A41233002E0C0D /* Main.storyboard */; };
 		729BC43721A41239002E0C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43621A41239002E0C0D /* Assets.xcassets */; };
 		729BC43A21A41239002E0C0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43821A41239002E0C0D /* LaunchScreen.storyboard */; };
 		8DAE61FDA30D48865AF6681D /* Pods_LightingKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */; };
@@ -17,10 +21,14 @@
 
 /* Begin PBXFileReference section */
 		074E6EA29F926B7D2D718F02 /* Pods-LightingKit Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightingKit Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example.release.xcconfig"; sourceTree = "<group>"; };
+		7206ACD621ABDE9A001F2D54 /* AppFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFacade.swift; sourceTree = "<group>"; };
+		7206ACE021ABEE54001F2D54 /* LightingKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingKitViewModel.swift; sourceTree = "<group>"; };
+		7206ACE421ABF768001F2D54 /* LightingKitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingKitTableViewController.swift; sourceTree = "<group>"; };
+		7206ACE621ABF8E7001F2D54 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		7206ACE821ABFC66001F2D54 /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
+		7206ACEA21ABFED7001F2D54 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		729BC42C21A41233002E0C0D /* LightingKit Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LightingKit Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		729BC42F21A41233002E0C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		729BC43121A41233002E0C0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		729BC43421A41233002E0C0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		729BC43621A41239002E0C0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		729BC43921A41239002E0C0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		729BC43B21A41239002E0C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,8 +91,12 @@
 			children = (
 				72B7B38321A69D5C004336C1 /* LightingKit Example.entitlements */,
 				729BC42F21A41233002E0C0D /* AppDelegate.swift */,
-				729BC43121A41233002E0C0D /* ViewController.swift */,
-				729BC43321A41233002E0C0D /* Main.storyboard */,
+				7206ACEA21ABFED7001F2D54 /* UIKitExtensions.swift */,
+				7206ACD621ABDE9A001F2D54 /* AppFacade.swift */,
+				7206ACE621ABF8E7001F2D54 /* AppRouter.swift */,
+				7206ACE821ABFC66001F2D54 /* ControllerFactory.swift */,
+				7206ACE021ABEE54001F2D54 /* LightingKitViewModel.swift */,
+				7206ACE421ABF768001F2D54 /* LightingKitTableViewController.swift */,
 				729BC43621A41239002E0C0D /* Assets.xcassets */,
 				729BC43821A41239002E0C0D /* LaunchScreen.storyboard */,
 				729BC43B21A41239002E0C0D /* Info.plist */,
@@ -159,7 +171,6 @@
 			files = (
 				729BC43A21A41239002E0C0D /* LaunchScreen.storyboard in Resources */,
 				729BC43721A41239002E0C0D /* Assets.xcassets in Resources */,
-				729BC43521A41233002E0C0D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,22 +228,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				729BC43221A41233002E0C0D /* ViewController.swift in Sources */,
+				7206ACE921ABFC66001F2D54 /* ControllerFactory.swift in Sources */,
+				7206ACE521ABF768001F2D54 /* LightingKitTableViewController.swift in Sources */,
+				7206ACE121ABEE54001F2D54 /* LightingKitViewModel.swift in Sources */,
 				729BC43021A41233002E0C0D /* AppDelegate.swift in Sources */,
+				7206ACE721ABF8E7001F2D54 /* AppRouter.swift in Sources */,
+				7206ACEB21ABFED7001F2D54 /* UIKitExtensions.swift in Sources */,
+				7206ACD721ABDE9A001F2D54 /* AppFacade.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		729BC43321A41233002E0C0D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				729BC43421A41233002E0C0D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		729BC43821A41239002E0C0D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
