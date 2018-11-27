@@ -9,7 +9,7 @@
 import Foundation
 import HomeKit
 
-public protocol LightingKitDelegate: class {
+public protocol LightingKitPermissionsDelegate: class {
     /**
      Executed when LightingKit has finished configuring.
      - Parameters:
@@ -17,6 +17,9 @@ public protocol LightingKitDelegate: class {
      - permissionsGranted: Indicates whether HomeKit permissions have been granted or not.
      */
     func lightingKit(_ lightingKit: LightingKit, permissionsGranted: Bool)
+}
+
+public protocol LightingKitDelegate: class {
     /**
      Executed when LightingKit has found a new `Light` that hasn't been set up with HomeKit.
      - Parameters:
@@ -30,6 +33,8 @@ public protocol LightingKitDelegate: class {
 public final class LightingKit: NSObject {
     /// The object that acts as the delegate
     public weak var delegate: LightingKitDelegate?
+    /// The object that acts as the permissions delegate
+    public weak var permissionsDelegate: LightingKitPermissionsDelegate?
     /// The `HMHomeManager` object to use.
     private var homeManager: HomeManagerProtocol?
     /// The `HomeKitPermission` to use for requesting HomeKit permissions.
@@ -48,7 +53,7 @@ public final class LightingKit: NSObject {
      */
     public func configureHomeKit() {
         guard !ready else {
-            delegate?.lightingKit(self, permissionsGranted: ready)
+            permissionsDelegate?.lightingKit(self, permissionsGranted: ready)
             return
         }
         configure()
@@ -68,7 +73,7 @@ public final class LightingKit: NSObject {
                 self.homeManager = manager
                 self.homeManager?.delegate = self
             }
-            self.delegate?.lightingKit(self, permissionsGranted: success)
+            self.permissionsDelegate?.lightingKit(self, permissionsGranted: success)
         }
     }
 }

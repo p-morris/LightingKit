@@ -86,7 +86,7 @@ class TestLightingKit: XCTestCase {
         mockPermission.success = true
         let mockManager = MockHomeManager()
         lightingKit.configure(permission: mockPermission, manager: mockManager)
-        lightingKit.delegate = mockDelegate
+        lightingKit.permissionsDelegate = mockDelegate
         lightingKit.configureHomeKit()
         XCTAssertTrue(mockDelegate.configured, "LightingKit configureHomeKit should notify delegate if already configured.")
     }

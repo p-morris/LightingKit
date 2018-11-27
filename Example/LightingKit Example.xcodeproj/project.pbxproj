@@ -7,31 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7206ACD721ABDE9A001F2D54 /* AppFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACD621ABDE9A001F2D54 /* AppFacade.swift */; };
-		7206ACE121ABEE54001F2D54 /* LightingKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACE021ABEE54001F2D54 /* LightingKitViewModel.swift */; };
-		7206ACE521ABF768001F2D54 /* LightingKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACE421ABF768001F2D54 /* LightingKitTableViewController.swift */; };
-		7206ACE721ABF8E7001F2D54 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACE621ABF8E7001F2D54 /* AppRouter.swift */; };
-		7206ACE921ABFC66001F2D54 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACE821ABFC66001F2D54 /* ControllerFactory.swift */; };
-		7206ACEB21ABFED7001F2D54 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206ACEA21ABFED7001F2D54 /* UIKitExtensions.swift */; };
 		729BC43021A41233002E0C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC42F21A41233002E0C0D /* AppDelegate.swift */; };
 		729BC43721A41239002E0C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43621A41239002E0C0D /* Assets.xcassets */; };
 		729BC43A21A41239002E0C0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43821A41239002E0C0D /* LaunchScreen.storyboard */; };
+		72AAA37821AD29D6001FA94B /* AppFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAA37721AD29D6001FA94B /* AppFacade.swift */; };
+		72AAA38821AD5217001FA94B /* UITableView+StandardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAA38721AD5217001FA94B /* UITableView+StandardCell.swift */; };
+		72AAA38A21AD5509001FA94B /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAA38921AD5509001FA94B /* Routes.swift */; };
+		72AAA38D21AD5A13001FA94B /* LightingKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAA38C21AD5A13001FA94B /* LightingKitController.swift */; };
+		72AAA38F21AD5A42001FA94B /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAA38E21AD5A42001FA94B /* DataSource.swift */; };
+		72AAA39121AD5AA4001FA94B /* LightControlsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAA39021AD5AA4001FA94B /* LightControlsController.swift */; };
+		72AAA39521AD5E82001FA94B /* UIAlertController+AddObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAA39421AD5E82001FA94B /* UIAlertController+AddObject.swift */; };
+		72AAA39721AD60C7001FA94B /* AddLightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAA39621AD60C7001FA94B /* AddLightController.swift */; };
+		72AAA39921AD8882001FA94B /* HomesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAA39821AD8882001FA94B /* HomesViewController.swift */; };
 		8DAE61FDA30D48865AF6681D /* Pods_LightingKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		074E6EA29F926B7D2D718F02 /* Pods-LightingKit Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightingKit Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example.release.xcconfig"; sourceTree = "<group>"; };
-		7206ACD621ABDE9A001F2D54 /* AppFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFacade.swift; sourceTree = "<group>"; };
-		7206ACE021ABEE54001F2D54 /* LightingKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingKitViewModel.swift; sourceTree = "<group>"; };
-		7206ACE421ABF768001F2D54 /* LightingKitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingKitTableViewController.swift; sourceTree = "<group>"; };
-		7206ACE621ABF8E7001F2D54 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
-		7206ACE821ABFC66001F2D54 /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
-		7206ACEA21ABFED7001F2D54 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		729BC42C21A41233002E0C0D /* LightingKit Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LightingKit Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		729BC42F21A41233002E0C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		729BC43621A41239002E0C0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		729BC43921A41239002E0C0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		729BC43B21A41239002E0C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72AAA37721AD29D6001FA94B /* AppFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFacade.swift; sourceTree = "<group>"; };
+		72AAA38721AD5217001FA94B /* UITableView+StandardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+StandardCell.swift"; sourceTree = "<group>"; };
+		72AAA38921AD5509001FA94B /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		72AAA38C21AD5A13001FA94B /* LightingKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingKitController.swift; sourceTree = "<group>"; };
+		72AAA38E21AD5A42001FA94B /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		72AAA39021AD5AA4001FA94B /* LightControlsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightControlsController.swift; sourceTree = "<group>"; };
+		72AAA39421AD5E82001FA94B /* UIAlertController+AddObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+AddObject.swift"; sourceTree = "<group>"; };
+		72AAA39621AD60C7001FA94B /* AddLightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLightController.swift; sourceTree = "<group>"; };
+		72AAA39821AD8882001FA94B /* HomesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomesViewController.swift; sourceTree = "<group>"; };
 		72B7B38121A69D5C004336C1 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		72B7B38321A69D5C004336C1 /* LightingKit Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LightingKit Example.entitlements"; sourceTree = "<group>"; };
 		8F2E722DB06174FDAD8695BD /* Pods-LightingKit Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightingKit Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,12 +97,15 @@
 			children = (
 				72B7B38321A69D5C004336C1 /* LightingKit Example.entitlements */,
 				729BC42F21A41233002E0C0D /* AppDelegate.swift */,
-				7206ACEA21ABFED7001F2D54 /* UIKitExtensions.swift */,
-				7206ACD621ABDE9A001F2D54 /* AppFacade.swift */,
-				7206ACE621ABF8E7001F2D54 /* AppRouter.swift */,
-				7206ACE821ABFC66001F2D54 /* ControllerFactory.swift */,
-				7206ACE021ABEE54001F2D54 /* LightingKitViewModel.swift */,
-				7206ACE421ABF768001F2D54 /* LightingKitTableViewController.swift */,
+				72AAA39821AD8882001FA94B /* HomesViewController.swift */,
+				72AAA38721AD5217001FA94B /* UITableView+StandardCell.swift */,
+				72AAA39421AD5E82001FA94B /* UIAlertController+AddObject.swift */,
+				72AAA37721AD29D6001FA94B /* AppFacade.swift */,
+				72AAA38921AD5509001FA94B /* Routes.swift */,
+				72AAA38E21AD5A42001FA94B /* DataSource.swift */,
+				72AAA38C21AD5A13001FA94B /* LightingKitController.swift */,
+				72AAA39021AD5AA4001FA94B /* LightControlsController.swift */,
+				72AAA39621AD60C7001FA94B /* AddLightController.swift */,
 				729BC43621A41239002E0C0D /* Assets.xcassets */,
 				729BC43821A41239002E0C0D /* LaunchScreen.storyboard */,
 				729BC43B21A41239002E0C0D /* Info.plist */,
@@ -228,13 +237,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7206ACE921ABFC66001F2D54 /* ControllerFactory.swift in Sources */,
-				7206ACE521ABF768001F2D54 /* LightingKitTableViewController.swift in Sources */,
-				7206ACE121ABEE54001F2D54 /* LightingKitViewModel.swift in Sources */,
+				72AAA38F21AD5A42001FA94B /* DataSource.swift in Sources */,
 				729BC43021A41233002E0C0D /* AppDelegate.swift in Sources */,
-				7206ACE721ABF8E7001F2D54 /* AppRouter.swift in Sources */,
-				7206ACEB21ABFED7001F2D54 /* UIKitExtensions.swift in Sources */,
-				7206ACD721ABDE9A001F2D54 /* AppFacade.swift in Sources */,
+				72AAA38A21AD5509001FA94B /* Routes.swift in Sources */,
+				72AAA39521AD5E82001FA94B /* UIAlertController+AddObject.swift in Sources */,
+				72AAA38D21AD5A13001FA94B /* LightingKitController.swift in Sources */,
+				72AAA38821AD5217001FA94B /* UITableView+StandardCell.swift in Sources */,
+				72AAA39121AD5AA4001FA94B /* LightControlsController.swift in Sources */,
+				72AAA39921AD8882001FA94B /* HomesViewController.swift in Sources */,
+				72AAA39721AD60C7001FA94B /* AddLightController.swift in Sources */,
+				72AAA37821AD29D6001FA94B /* AppFacade.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

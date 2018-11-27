@@ -18,7 +18,7 @@ class MockPermission: HomeKitPermission {
     }
 }
 
-class MockLightingKitDelegate: LightingKitDelegate {
+class MockLightingKitDelegate: LightingKitDelegate, LightingKitPermissionsDelegate {
     func lightingKit(_ lightingKit: LightingKit, permissionsGranted: Bool) {
         configured = true
     }
