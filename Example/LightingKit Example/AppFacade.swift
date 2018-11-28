@@ -11,33 +11,13 @@ import LightingKit
 
 class AppFacade {
     let window: UIWindow
-    let kit: LightingKit
-    init(window: UIWindow = UIWindow(), kit: LightingKit = LightingKit()) {
+    init(window: UIWindow = UIWindow()) {
         self.window = window
-        self.kit = kit
     }
     func startApp() {
-        kit.delegate = self
-        kit.configureHomeKit()
-    }
-    func configureWindow() {
-        let dataSource = DataSource(objects: kit.homes)
-        let routes = AppRoutes(kit: kit)
-        let homes = LightingKitController<Home, Home>(dataSource: dataSource, routes: routes)
-        let nav = UINavigationController()
-        nav.viewControllers = [homes]
+        let homes = HomesViewController()
+        let nav = UINavigationController(rootViewController: homes)
         window.rootViewController = nav
         window.makeKeyAndVisible()
-    }
-}
-
-extension AppFacade: LightingKitDelegate {
-    func lightingKit(_ lightingKit: LightingKit, permissionsGranted: Bool) {
-        if permissionsGranted {
-            configureWindow()
-        }
-    }
-    func lightingKit(_ lightingKit: LightingKit, foundNewLight light: Light) {
-        //
     }
 }

@@ -110,16 +110,16 @@ class TestLightingKit: XCTestCase {
         XCTAssertTrue(completion.called, "LightingKit addHome should execute completion.")
     }
     func testStopSearchCallsBrowserStop() {
-        let lightingKit = LightingKit()
         let mockBrowser = MockLightingBrowser()
-        lightingKit.findNewLights(browser: mockBrowser)
+        let lightingKit = LightingKit(browser: mockBrowser)
+        lightingKit.findNewLights()
         lightingKit.stopNewLightingSearch()
         XCTAssertTrue(mockBrowser.stopped, "LightingKit stopNewLightingSearch should stop browser from searching.")
     }
     func testFindNewLightsStartsBrowser() {
-        let lightingKit = LightingKit()
         let mockBrowser = MockLightingBrowser()
-        lightingKit.findNewLights(browser: mockBrowser)
+        let lightingKit = LightingKit(browser: mockBrowser)
+        lightingKit.findNewLights()
         XCTAssertTrue(mockBrowser.started, "LightingKit startNewLightingSearch should start browser.")
     }
 }

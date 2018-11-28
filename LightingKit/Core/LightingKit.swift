@@ -40,10 +40,16 @@ public final class LightingKit: NSObject {
     /// The `HomeKitPermission` to use for requesting HomeKit permissions.
     private var permission: HomeKitPermission?
     /// The `LightingBrowser` object to use for finding new lights.
-    private var browser: LightingKitBrowser?
+    private let browser: LightingKitBrowser
     /// Indicates whether LightingKit is ready to use.
     public var ready: Bool {
         return (homeManager?.permissionGranted ?? false)
+    }
+    public convenience override init() {
+        self.init(browser: LightingBrowser())
+    }
+    init(browser: LightingKitBrowser = LightingBrowser()) {
+        self.browser = browser
     }
     /**
      Configures the `LightingKit` object with HomeKit.
@@ -139,7 +145,7 @@ extension LightingKit {
     public func add(light: Light, toRoom room: Room, completion: @escaping (Bool) -> Void) {
         guard let home = homeManager?.homes.home(for: room),
             let room = home.rooms.filter({ room == $0 }).first,
-            let accessory = browser?.newAccessories.filter({ light == $0 }).first else {
+            let accessory = browser.newAccessories.filter({ light == $0 }).first else {
             completion(false)
             return
         }
@@ -165,16 +171,14 @@ extension LightingKit {
      Stops searching for new lights.
      */
     public func stopNewLightingSearch() {
-        browser?.stop()
-        browser = nil
+        browser.stop()
     }
     /**
      Begins searching for new lights, and notifies the `delegate` when one is found.
      - Parameters:
      - browser: The `LightingBrowser` to use for the search.
      */
-    internal func findNewLights(browser: LightingKitBrowser = LightingBrowser()) {
-        self.browser = browser
+    internal func findNewLights() {
         browser.findNewLights { [weak self] accessory in
             guard let self = self else { return }
             self.delegate?.lightingKit(self, foundNewLight: accessory.lightingKitObject())
