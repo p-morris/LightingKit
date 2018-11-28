@@ -14,7 +14,6 @@ class LightsViewController: UITableViewController {
     let kit: LightingKit
     let room: Room
     var dataSource: DataSource<Light>
-    var refreshOnAppearance = false
     
     init(kit: LightingKit, room: Room, dataSource: DataSource<Light>) {
         self.kit = kit
@@ -29,19 +28,21 @@ class LightsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Lights"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewLight))
-        tableView.registerStandardCell()
-        tableView.dataSource = dataSource
+        configureNavigationBar()
+        configureTableView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if refreshOnAppearance {
-            dataSource = DataSource(objects: kit.lights(forRoom: room))
-            tableView.dataSource = dataSource
-            refreshOnAppearance = false
-        }
+    func configureNavigationBar() {
+        title = "Lights"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addNewLight)
+        )
+    }
+    
+    func configureTableView() {
+        tableView.dataSource = dataSource
         tableView.reloadData()
     }
     
@@ -49,12 +50,12 @@ class LightsViewController: UITableViewController {
         let light = dataSource.objects[indexPath.row]
         let lightControls = LightControlsViewController(kit: kit, light: light)
         navigationController?.pushViewController(lightControls, animated: true)
-        self.refreshOnAppearance = true
     }
     
     @objc func addNewLight() {
         let addLightController = AddNewLightViewController(kit: kit, room: room)
         let nav = UINavigationController(rootViewController: addLightController)
+        addLightController.parentLightsController = self
         present(nav, animated: true, completion: nil)
     }
     

@@ -10,14 +10,18 @@ import Foundation
 import LightingKit
 
 class AppFacade {
+    
     let window: UIWindow
+    
     init(window: UIWindow = UIWindow()) {
         self.window = window
     }
+    
     func startApp() {
         let homes = HomesViewController()
         let nav = UINavigationController(rootViewController: homes)
         window.rootViewController = nav
         window.makeKeyAndVisible()
     }
+    
 }

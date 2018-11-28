@@ -11,7 +11,7 @@ import LightingKit
 
 class DataSource<T: LightingKitObject>: NSObject, UITableViewDataSource {
     
-    let objects: [T]
+    var objects: [T]
     var showLoadingIndicator = false
     
     init(objects: [T]) {
@@ -23,21 +23,26 @@ class DataSource<T: LightingKitObject>: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueStandardCell() else {
-            fatalError("Failed to dequeue standard cell")
-        }
-        if objects.count == 0 {
-            cell.textLabel?.text = "Searching for new lights..."
-            let indicator = UIActivityIndicatorView(style: .gray)
-            indicator.startAnimating()
-            cell.accessoryView = indicator
-            return cell
-        } else {
-            cell.accessoryView = nil
-            cell.textLabel?.text = objects[indexPath.row].name
-            cell.selectionStyle = .none
-            return cell
-        }
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        return objects.count > 0 ?
+               configure(cell: cell, withObject: objects[indexPath.row]) :
+               configureAsLoadingIndicator(cell: cell)
+        
+    }
+    
+    func configureAsLoadingIndicator(cell: UITableViewCell) -> UITableViewCell {
+        cell.textLabel?.text = "Searching for new lights..."
+        let indicator = UIActivityIndicatorView(style: .gray)
+        indicator.startAnimating()
+        cell.accessoryView = indicator
+        return cell
+    }
+    
+    func configure(cell: UITableViewCell, withObject object: T) -> UITableViewCell {
+        cell.accessoryView = nil
+        cell.textLabel?.text = object.name
+        cell.selectionStyle = .none
+        return cell
     }
     
 }

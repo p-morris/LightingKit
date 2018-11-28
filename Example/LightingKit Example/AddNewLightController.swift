@@ -13,19 +13,13 @@ class AddNewLightViewController: UITableViewController {
     
     let kit: LightingKit
     let room: Room
-    private (set) var lights: [Light] = [] {
-        didSet {
-            dataSource = DataSource(objects: lights)
-            tableView.dataSource = dataSource
-            tableView.reloadData()
-        }
-    }
+    weak var parentLightsController: LightsViewController?
     private (set) var dataSource: DataSource<Light>
     
     init(kit: LightingKit, room: Room) {
         self.kit = kit
         self.room = room
-        self.dataSource = DataSource<Light>(objects:lights)
+        self.dataSource = DataSource<Light>(objects:[])
         self.dataSource.showLoadingIndicator = true
         super.init(nibName: nil, bundle: nil)
     }
@@ -36,32 +30,53 @@ class AddNewLightViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
+        configureTableView()
+        searchForNewLights()
+    }
+    
+    func configureNavigationBar() {
         title = "Add light to \(room.name)"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(close))
-        tableView.registerStandardCell()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(close)
+        )
+    }
+    
+    func configureTableView() {
         tableView.dataSource = dataSource
         tableView.reloadData()
+    }
+    
+    func searchForNewLights() {
         kit.delegate = self
         kit.searchForNewLighting()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let light = lights[indexPath.row]
+        let light = dataSource.objects[indexPath.row]
         kit.add(light: light, toRoom: room) { (success) in
             if success {
-                self.lights.remove(at: indexPath.row)
+                self.dataSource.objects.remove(at: indexPath.row)
+                self.parentLightsController?.dataSource.objects.append(light)
+                self.tableView.reloadData()
             }
         }
     }
     
     @objc func close() {
-        navigationController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        kit.stopNewLightingSearch()
+        navigationController?.presentingViewController?.dismiss(animated: true, completion: {
+            self.parentLightsController?.tableView.reloadData()
+        })
     }
     
 }
 
 extension AddNewLightViewController: LightingKitDelegate {
     func lightingKit(_ lightingKit: LightingKit, foundNewLight light: Light) {
-        lights.append(light)
+        dataSource.objects.append(light)
+        tableView.reloadData()
     }
 }

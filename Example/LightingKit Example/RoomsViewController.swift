@@ -13,7 +13,7 @@ class RoomsViewController: UITableViewController {
     
     let kit: LightingKit
     let home: Home
-    private (set) var dataSource: DataSource<Room>
+    var dataSource: DataSource<Room>
     
     init(kit: LightingKit, home: Home, dataSource: DataSource<Room>) {
         self.kit = kit
@@ -28,21 +28,22 @@ class RoomsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Rooms"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewRoom))
-        tableView.registerStandardCell()
-        configureDataSource(home: nil)
+        configureNavigationBar()
+        configureTableView()
     }
     
-    func configureDataSource(home: Home?) {
-        
-        if let home = home {
-            let rooms = kit.rooms(forHome: home)
-            dataSource = DataSource(objects: rooms)
-        }
-
+    func configureTableView() {
         tableView.dataSource = dataSource
         tableView.reloadData()
+    }
+    
+    func configureNavigationBar() {
+        title = "Rooms"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addNewRoom)
+        )
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -57,8 +58,8 @@ class RoomsViewController: UITableViewController {
         alert.addObjectAction { (roomName) in
             self.kit.addRoom(name: roomName, toHome: self.home) { room in
                 if let room = room {
-                    print("Added new room: \(room.name)")
-                    self.configureDataSource(home: self.home)
+                    self.dataSource.objects.append(room)
+                    self.tableView.reloadData()
                 }
             }
         }

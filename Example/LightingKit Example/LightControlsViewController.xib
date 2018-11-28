@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LightControlsViewController" customModule="LightingKit_Example" customModuleProvider="target">
             <connections>
-                <outlet property="brightness" destination="UBR-zZ-wyM" id="elQ-AA-xBi"/>
-                <outlet property="lightBulb" destination="PQ5-FF-3MF" id="Dbx-vN-x9N"/>
-                <outlet property="power" destination="chp-7O-9Ku" id="HTa-cA-yzz"/>
+                <outlet property="brightnessSlider" destination="UBR-zZ-wyM" id="elQ-AA-xBi"/>
+                <outlet property="lightImageView" destination="PQ5-FF-3MF" id="Dbx-vN-x9N"/>
+                <outlet property="powerSwitch" destination="chp-7O-9Ku" id="HTa-cA-yzz"/>
                 <outlet property="timerButton" destination="HYj-FH-w0V" id="MMC-Xj-cDW"/>
                 <outlet property="view" destination="iN0-l3-epB" id="2Fg-h6-kaF"/>
             </connections>
@@ -47,7 +47,7 @@
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chp-7O-9Ku">
                             <rect key="frame" x="0.0" y="30.5" width="227" height="46"/>
                             <connections>
-                                <action selector="setPower" destination="-1" eventType="valueChanged" id="3K6-tK-9Gy"/>
+                                <action selector="setPower" destination="-1" eventType="valueChanged" id="f5g-Z7-F5A"/>
                             </connections>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brightness:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX5-sd-LJz">
@@ -59,7 +59,7 @@
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="UBR-zZ-wyM">
                             <rect key="frame" x="-2" y="106.5" width="229" height="45.5"/>
                             <connections>
-                                <action selector="brightnessChanged" destination="-1" eventType="valueChanged" id="x32-pr-SXR"/>
+                                <action selector="brightnessSliderValueChanged" destination="-1" eventType="valueChanged" id="arg-rd-Nbi"/>
                             </connections>
                         </slider>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYj-FH-w0V">
@@ -68,7 +68,7 @@
                             <state key="normal" title="Brightness timer"/>
                             <state key="selected" title="Stop brightness timer"/>
                             <connections>
-                                <action selector="brightnessTimer" destination="-1" eventType="touchUpInside" id="eAm-n6-9Hk"/>
+                                <action selector="brightnessTimer" destination="-1" eventType="touchUpInside" id="36V-Om-0pX"/>
                             </connections>
                         </button>
                     </subviews>

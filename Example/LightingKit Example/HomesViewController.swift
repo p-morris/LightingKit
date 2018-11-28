@@ -12,21 +12,31 @@ import LightingKit
 class HomesViewController: UITableViewController {
     
     let kit = LightingKit()
-    var dataSource: DataSource<Home>?
+    var dataSource: DataSource<Home>? {
+        didSet {
+            tableView.dataSource = dataSource
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Homes"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewHome))
-        tableView.registerStandardCell()
-        kit.permissionsDelegate = self
-        kit.configureHomeKit()
+        configureNavigationBar()
+        startLightingKit()
     }
     
-    func configureDataSource() {
-        dataSource = DataSource(objects: kit.homes)
-        tableView.dataSource = dataSource
-        tableView.reloadData()
+    func configureNavigationBar() {
+        title = "Homes"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addNewHome)
+        )
+    }
+    
+    func startLightingKit() {
+        kit.permissionsDelegate = self
+        kit.configureHomeKit()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -42,8 +52,8 @@ class HomesViewController: UITableViewController {
         alert.addObjectAction { (homeName) in
             self.kit.addHome(name: homeName) { home in
                 if let home = home {
-                    print("Added new home: \(home.name)")
-                    self.configureDataSource()
+                    self.dataSource?.objects.append(home)
+                    self.tableView.reloadData()
                 }
             }
         }
@@ -54,6 +64,6 @@ class HomesViewController: UITableViewController {
 
 extension HomesViewController: LightingKitPermissionsDelegate {
     func lightingKit(_ lightingKit: LightingKit, permissionsGranted: Bool) {
-        configureDataSource()
+        dataSource = DataSource(objects: kit.homes)
     }
 }

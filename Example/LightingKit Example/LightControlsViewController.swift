@@ -9,13 +9,21 @@
 import UIKit
 import LightingKit
 
-class LightControlsViewController: UIViewController, TimedBrightnessUpdateDelegate {
+class LightControlsViewController: UIViewController {
+    
+    enum AlertString {
+        static let timerTitle = "Set brightness timer"
+        static let timerMessage = "Enter the desired brightness (a number between 0-100), and the number of seconds to achieve it (i.e 30)."
+        static let brightnessPlaceholder = "Brightness (0 to 100)"
+        static let durationPlaceholder = "Duration in seconds (i.e 30)"
+        
+    }
     
     let kit: LightingKit
     let light: Light
-    @IBOutlet var power: UISwitch!
-    @IBOutlet var brightness: UISlider!
-    @IBOutlet var lightBulb: UIImageView!
+    @IBOutlet var powerSwitch: UISwitch!
+    @IBOutlet var brightnessSlider: UISlider!
+    @IBOutlet var lightImageView: UIImageView!
     @IBOutlet var timerButton: UIButton!
     
     init(kit: LightingKit, light: Light) {
@@ -30,34 +38,40 @@ class LightControlsViewController: UIViewController, TimedBrightnessUpdateDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        configureNavigationBar()
+        configureView()
+        setLightImageViewBrightness()
+    }
+    
+    func configureNavigationBar() {
         title = light.name.capitalized
-        power.isOn = light.power?.on ?? false
-        let brightnessValue = Float(light.brightness?.value ?? 0)
-        brightness.setValue(brightnessValue, animated: false)
-        setLightbulbBrightness()
-        lightBulb.image = lightBulb.image?.withRenderingMode(.alwaysTemplate)
-        lightBulb.tintColor = UIColor.yellow
+    }
+    
+    func configureView() {
+        lightImageView.image = lightImageView.image?.withRenderingMode(.alwaysTemplate)
+        lightImageView.tintColor = UIColor.yellow
+        powerSwitch.isOn = light.power?.on ?? false
+        brightnessSlider.setValue(Float(light.brightness?.value ?? 0), animated: false)
     }
     
     @IBAction func setPower() {
-        light.power?.on(power.isOn) { error in
-            self.setLightbulbBrightness()
+        light.power?.on(powerSwitch.isOn) { error in
+            self.setLightImageViewBrightness()
         }
     }
     
-    @IBAction func brightnessChanged() {
-        let brightnessValue = Int(roundf(brightness.value))
+    @IBAction func brightnessSliderValueChanged() {
+        let brightnessValue = Int(roundf(brightnessSlider.value))
         light.brightness?.set(brightness: brightnessValue) { error in
-            self.setLightbulbBrightness()
+            self.setLightImageViewBrightness()
         }
     }
     
-    func setLightbulbBrightness() {
+    func setLightImageViewBrightness() {
         if light.power?.on ?? false {
-            self.lightBulb.alpha = CGFloat(light.brightness?.value ?? 0) / 100
+            self.lightImageView.alpha = CGFloat(light.brightness?.value ?? 0) / 100
         } else {
-            self.lightBulb.alpha = 0.0
+            self.lightImageView.alpha = 0.0
         }
     }
     
@@ -66,42 +80,60 @@ class LightControlsViewController: UIViewController, TimedBrightnessUpdateDelega
             stopBrightnessTimer()
             return
         }
-        let alert = UIAlertController(title: "Set brightness timer", message: nil, preferredStyle: .alert)
-        alert.message = "Enter the desired brightness (a number between 0-100), and the number of seconds to achieve it (i.e 30)."
+        
+        let alert = UIAlertController(
+            title: AlertString.timerTitle,
+            message: AlertString.timerMessage,
+            preferredStyle: .alert
+        )
         alert.addTextField { (brightnessField) in
-            brightnessField.placeholder = "Brightness (0 to 100)"
+            brightnessField.placeholder = AlertString.brightnessPlaceholder
         }
         alert.addTextField { (timeField) in
-            timeField.placeholder = "Time in seconds (i.e 30)"
+            timeField.placeholder = AlertString.durationPlaceholder
         }
-        let go = UIAlertAction(title: "Go", style: .default) { _ in
-            self.light.brightness?.set(brightness: 0, completion: { (error) in
-                if error == nil, let brightnessField = alert.textFields?[0], let timeField = alert.textFields?[1] {
-                    if let brightnessText = brightnessField.text, let brightness = Int(brightnessText), let durationText = timeField.text, let duration = Double(durationText) {
-                        self.light.brightness?.set(brightness: brightness, duration: duration, brightnessDelegate: self)
-                        self.timerButton.isSelected = true
-                    }
+        alert.addAction(
+            UIAlertAction(title: "Go", style: .default) { _ in
+                if let brightness = alert.textFields?[0].intFromText(),
+                    let duration = alert.textFields?[1].timeIntervalFromText() {
+                    self.setTimer(desiredBrightness: brightness, duration: duration)
                 }
-            })
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .destructive) { _ in }
-        alert.addAction(go)
-        alert.addAction(cancel)
+            }
+        )
+        alert.addAction(
+            UIAlertAction(title: "Cancel", style: .destructive) { _ in }
+        )
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func stopBrightnessTimer() {
+    func setTimer(desiredBrightness: Int, duration: TimeInterval) {
+        guard let brightness = light.brightness else { return }
+        brightness.set(brightness: 0) { error in
+            guard error == nil else {
+                self.brightness(brightness, timedUpdateFailed: error)
+                return
+            }
+            brightness.set(brightness: desiredBrightness, duration: duration, brightnessDelegate: self)
+            self.timerButton.isSelected = true
+        }
+    }
+    
+    func stopBrightnessTimer() {
         light.brightness?.cancelTimedBrightnessUpdate()
         timerButton.isSelected = false
     }
     
+}
+
+extension LightControlsViewController: TimedBrightnessUpdateDelegate {
+    
     func brightness(_ brightness: Brightness, valueDidChange newValue: Int) {
-        self.brightness.value = Float(newValue)
-        setLightbulbBrightness()
+        self.brightnessSlider.value = Float(newValue)
+        setLightImageViewBrightness()
     }
     
     func brightness(_ brightness: Brightness, didCompleteTimedUpdate newValue: Int) {
-        setLightbulbBrightness()
+        setLightImageViewBrightness()
         timerButton.isSelected = false
     }
     
