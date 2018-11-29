@@ -57,7 +57,7 @@ public final class LightingKit: NSObject {
      permissions alert will be shown to the user. The delegate callback `lightingKit(_:permissionsGranted:)`
      will be executed when confirguration is complete.
      */
-    public func configureHomeKit() {
+    public func start() {
         guard !ready else {
             permissionsDelegate?.lightingKit(self, permissionsGranted: ready)
             return
