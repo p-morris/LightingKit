@@ -10,6 +10,6 @@ import Foundation
 
 public protocol LightingKitObject {
     var name: String { get }
-    var id: UUID { get }
-    init(name: String, id: UUID)
+    var uuid: UUID { get }
+    init(name: String, uuid: UUID)
 }

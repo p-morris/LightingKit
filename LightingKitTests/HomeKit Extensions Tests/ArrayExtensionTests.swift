@@ -22,7 +22,7 @@ class ArrayExtensionTests: XCTestCase {
         let mockHomeKitHome = MockHomeKitObject(uniqueIdentifier: uuid, name: "TestHome")
         let lightningKitHome: MockLightingKitObject? = [mockHomeKitHome].lightingKitObjects().first
         XCTAssert(lightningKitHome != nil &&
-            lightningKitHome!.id == mockHomeKitHome.uniqueIdentifier &&
+            lightningKitHome!.uuid == mockHomeKitHome.uniqueIdentifier &&
             lightningKitHome!.name == mockHomeKitHome.name,
                   "Array extension lightinKitObjects should pass correct values for init params."
         )

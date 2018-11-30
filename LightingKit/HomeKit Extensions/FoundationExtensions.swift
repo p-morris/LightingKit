@@ -9,7 +9,11 @@
 import Foundation
 
 protocol TimerProtocol {
-    static func scheduledTimer(timeInterval ti: TimeInterval, target aTarget: Any, selector aSelector: Selector, userInfo: Any?, repeats yesOrNo: Bool) -> Timer
+    static func scheduledTimer(timeInterval: TimeInterval,
+                               target aTarget: Any,
+                               selector aSelector: Selector,
+                               userInfo: Any?,
+                               repeats yesOrNo: Bool) -> Timer
     func invalidate()
 }
 

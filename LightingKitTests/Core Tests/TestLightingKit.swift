@@ -66,7 +66,7 @@ class TestLightingKit: XCTestCase {
         let lightingKit = LightingKit()
         let manager = MockHomeManager()
         lightingKit.configure(permission: mockPermission, manager: manager)
-        let home = Home(name: "", id: uuid)
+        let home = Home(name: "", uuid: uuid)
         XCTAssertEqual(lightingKit.rooms(forHome: home).count, 0, "LightingKit rooms(home:) should return empty array when not ready.")
     }
     func testLightsReturnsEmptyArrayWhenNotReady() {
@@ -76,7 +76,7 @@ class TestLightingKit: XCTestCase {
         let lightingKit = LightingKit()
         let manager = MockHomeManager()
         lightingKit.configure(permission: mockPermission, manager: manager)
-        let room = Room(name: "", id: uuid)
+        let room = Room(name: "", uuid: uuid)
         XCTAssertEqual(lightingKit.lights(forRoom: room).count, 0, "LightingKit lights(room:) should return empty array when not ready.")
     }
     func testConfigureHomeKitNotifiesDelegateWhenAlreadyConfigured() {

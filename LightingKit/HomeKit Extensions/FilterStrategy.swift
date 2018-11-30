@@ -36,7 +36,8 @@ internal class LightbulbsByRoomStrategy: FilterStrategy {
     typealias HomeKitObjectType = HMAccessory
     /**
      Used to determine whether a give `HMAccessory` object should be included in a filtered array.
-     An accessory is included when its `services` array contains a service whose `serviceType` is `HMServiceTypeLightbulb`,
+     An accessory is included when its `services` array contains a service whose
+     `serviceType` is `HMServiceTypeLightbulb`,
      and the accessories `room` is equal to the the `Room` passed in.
      - Parameters:
      - object: The `HMAccessory` object that may be included in a filtered array.

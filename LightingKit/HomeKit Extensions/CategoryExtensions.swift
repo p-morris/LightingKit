@@ -14,6 +14,7 @@ protocol HomeKitCategoryProtocol {
     var categoryType: String { get }
 }
 
+// FIXME: Better to use a type enum if we need to test for different types.
 extension HomeKitCategoryProtocol {
     /// Indicates whether the category is associated with a LightBulb accessory.
     var isLighting: Bool {

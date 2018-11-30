@@ -14,7 +14,7 @@ public struct Bridge: LightingKitObject {
     /// The name of the bridge.
     public let name: String
     /// The unique identifier for the bridge.
-    public let id: UUID
+    public let uuid: UUID
     /**
      Initializes a `Bridge` object.
      - Parameters:
@@ -22,14 +22,14 @@ public struct Bridge: LightingKitObject {
      - id: The unique identifier for the bridge.
      - returns: An initialized `Bridge` object.
      */
-    public init(name: String, id: UUID) {
+    public init(name: String, uuid: UUID) {
         self.name = name
-        self.id = id
+        self.uuid = uuid
     }
 }
 
 extension Bridge: Equatable {
     static func == (lhs: Bridge, rhs: HomeKitObjectProtocol) -> Bool {
-        return lhs.id == rhs.uniqueIdentifier
+        return lhs.uuid == rhs.uniqueIdentifier
     }
 }

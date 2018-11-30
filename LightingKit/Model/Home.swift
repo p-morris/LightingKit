@@ -14,7 +14,7 @@ public struct Home: LightingKitObject {
     /// The name of the home.
     public let name: String
     /// The unique identifier of the home.
-    public let id: UUID
+    public let uuid: UUID
     /**
      Initializes a `Home` object.
      - Parameters:
@@ -22,14 +22,14 @@ public struct Home: LightingKitObject {
      - id: The unique identifier for the light.
      - returns: An initialized `Home` object.
      */
-    public init(name: String, id: UUID) {
+    public init(name: String, uuid: UUID) {
         self.name = name
-        self.id = id
+        self.uuid = uuid
     }
 }
 
 extension Home: Equatable {
     static func == (lhs: Home, rhs: HomeKitObjectProtocol) -> Bool {
-        return lhs.id == rhs.uniqueIdentifier
+        return lhs.uuid == rhs.uniqueIdentifier
     }
 }

@@ -49,7 +49,7 @@ internal final class LightingKitPermission: NSObject, HomeKitPermission {
      and a corresponding value, else the application will exit immediately on execution of this method.
      */
     internal func requestPermission(homeManager: HomeManagerProtocol,
-                           completion: @escaping PermissionCompletion) {
+                                    completion: @escaping PermissionCompletion) {
         self.homeManager = homeManager
         self.homeManager?.delegate = self
         self.completion = completion

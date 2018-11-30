@@ -20,6 +20,8 @@ enum LightingError {
     static let unknownBrightness = NSError(
         domain: "BrightnessUnknown",
         code: 2,
-        userInfo: [NSLocalizedDescriptionKey: "Unable to access current brightness value of lighting. Communication error."]
+        userInfo: [
+            NSLocalizedDescriptionKey: "Unable to access current brightness value of lighting. Communication error."
+        ]
     )
 }

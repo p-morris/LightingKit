@@ -23,7 +23,7 @@ extension HomeKitObjectProtocol {
      - Returns: An initialized instance of a concrete `LightingKitObject` class.
      */
     func lightingKitObject<T: LightingKitObject>() -> T {
-        return T.init(name: self.name, id: self.uniqueIdentifier)
+        return T.init(name: self.name, uuid: self.uniqueIdentifier)
     }
 }
 

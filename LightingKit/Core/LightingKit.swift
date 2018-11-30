@@ -91,7 +91,7 @@ public final class LightingKit: NSObject {
     }
 }
 
-//MARK:- Homes
+// MARK: - Homes
 extension LightingKit {
     /// An array of `Home` objects currently available for use.
     /// Empty if non are available (including when LightningKit is not ready)
@@ -112,7 +112,7 @@ extension LightingKit {
     }
 }
 
-//MARK:- Rooms
+// MARK: - Rooms
 extension LightingKit {
     /**
      Returns the currently available Rooms.
@@ -158,7 +158,11 @@ extension LightingKit {
         }
         home.addAccessory(accessory) { _ in
             home.assignAccessory(accessory, to: room, completionHandler: { error in
-                light.brightness = Brightness(homeKitCharacteristic: accessory.services.light?.characteristics.brightness)
+                // FIXME: OCP - Should be extendable without modification. If I want to add hue support,
+                // I need to amend the class.
+                light.brightness = Brightness(
+                    homeKitCharacteristic: accessory.services.light?.characteristics.brightness
+                )
                 light.power = Power(homeKitCharacteristic: accessory.services.light?.characteristics.power)
                 completion(error == nil)
             })
@@ -190,7 +194,7 @@ extension LightingKit {
     }
 }
 
-//MARK:- Lights
+// MARK: - Lights
 extension LightingKit {
     /**
      Begins searching for new lights.
@@ -251,7 +255,7 @@ extension LightingKit {
     }
 }
 
-//MARK:- homeManager delegate
+// MARK: - homeManager delegate
 extension LightingKit: HMHomeManagerDelegate {
 
 }

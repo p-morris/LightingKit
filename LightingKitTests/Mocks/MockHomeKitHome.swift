@@ -17,9 +17,9 @@ struct MockHomeKitObject: HomeKitObjectProtocol {
 
 struct MockLightingKitObject: LightingKitObject {
     let name: String
-    let id: UUID
-    init(name: String, id: UUID) {
+    let uuid: UUID
+    init(name: String, uuid: UUID) {
         self.name = name
-        self.id = id
+        self.uuid = uuid
     }
 }

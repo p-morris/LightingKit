@@ -12,7 +12,7 @@ import HomeKit
 /// Used to change the power state of a `Light` to on  or off.
 public final class Power: Characteristic {
     /// The current on/off state.
-    public var on: Bool {
+    public var isOn: Bool {
         return homeKitCharacteristic.value as? Bool ?? false
     }
     /// The power characteristic of the light
@@ -35,7 +35,7 @@ public final class Power: Characteristic {
      - on: A `Bool` representing whether the `Light` should be turned on (`true`) or off (`false`).
      - completion: The closure to execute when the power value has been updated.
      */
-    public func on(_ on: Bool, completion: @escaping (Error?) -> Void) {
-        homeKitCharacteristic.writeValue(on, completionHandler: completion)
+    public func on(_ isOn: Bool, completion: @escaping (Error?) -> Void) {
+        homeKitCharacteristic.writeValue(isOn, completionHandler: completion)
     }
 }

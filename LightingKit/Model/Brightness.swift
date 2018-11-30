@@ -75,7 +75,7 @@ public final class Brightness: Characteristic {
     }
 }
 
-//MARK:- Timed Brightness Updates
+// MARK: - Timed Brightness Updates
 extension Brightness {
     /**
      Sets the brightness of the `Light` to a new value incrementally over time.
@@ -109,7 +109,12 @@ extension Brightness {
         }
 
         let targetBrightness = brightness.sanitizedBrightness()
-        scheduleBrightnessTimer(start: currentBrightness, end: targetBrightness, duration: duration, delegate: brightnessDelegate)
+        scheduleBrightnessTimer(
+            start: currentBrightness,
+            end: targetBrightness,
+            duration: duration,
+            delegate: brightnessDelegate
+        )
     }
     /**
      Schedules `timer` to update brightness over specified amount of time.
@@ -120,10 +125,10 @@ extension Brightness {
      - delegate: The object which should act as the operation's delegate.
      */
     internal func scheduleBrightnessTimer(start: Int,
-                                         end: Int,
-                                         duration: TimeInterval,
-                                         delegate: TimedBrightnessUpdateDelegate,
-                                         timerType: TimerProtocol.Type = Timer.self) {
+                                          end: Int,
+                                          duration: TimeInterval,
+                                          delegate: TimedBrightnessUpdateDelegate,
+                                          timerType: TimerProtocol.Type = Timer.self) {
         self.targetBrightness = end
         self.startingBrightness = start
         self.delegate = delegate
@@ -159,10 +164,8 @@ extension Brightness {
             cancelTimedBrightnessUpdate()
             return
         }
-        
         let newBrightness = end > start ? current + 1 : current - 1
         set(brightness: newBrightness, completion: brightnessIncremented)
-        
     }
     /**
      Notifies the delegate of the current start of the timed brightness update operation.

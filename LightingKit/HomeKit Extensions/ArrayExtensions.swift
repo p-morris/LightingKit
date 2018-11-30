@@ -99,6 +99,7 @@ internal extension Array where Element: HMHome {
     func lightingKitLights(for bridge: Bridge) -> [Light] {
         guard let home = home(for: bridge) else { return [] }
         guard let bridge = home.accessories.filter({ bridge == $0 }).first else { return [] }
+        // FIXME: OCP - what if matching algorithm needs to change?
         return home.accessories.filter({
             $0.category.isLighting &&
             bridge.uniqueIdentifiersForBridgedAccessories?.contains($0.uniqueIdentifier) ?? false

@@ -14,7 +14,7 @@ class AbstractionsTests: XCTestCase {
         let uuid = UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!
         let mockHomeKitObject = MockHomeKitObject(uniqueIdentifier: uuid, name: "")
         let light: Light = mockHomeKitObject.lightingKitObject()
-        XCTAssert(light.name == mockHomeKitObject.name && light.id.uuidString == mockHomeKitObject.uniqueIdentifier.uuidString,
+        XCTAssert(light.name == mockHomeKitObject.name && light.uuid.uuidString == mockHomeKitObject.uniqueIdentifier.uuidString,
                   "HomeKitObject extensions lightingKitObject shiould return LightingKitObject with properties matching HomeKit object."
         )
     }
