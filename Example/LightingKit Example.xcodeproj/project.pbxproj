@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		72517D8521AEBD900075B696 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72517D8421AEBD900075B696 /* UITextField.swift */; };
+		726A537821B1588F00BFE9B0 /* SelectBridgedLightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A537721B1588F00BFE9B0 /* SelectBridgedLightsViewController.swift */; };
 		729BC43021A41233002E0C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC42F21A41233002E0C0D /* AppDelegate.swift */; };
 		729BC43721A41239002E0C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43621A41239002E0C0D /* Assets.xcassets */; };
 		729BC43A21A41239002E0C0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729BC43821A41239002E0C0D /* LaunchScreen.storyboard */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		074E6EA29F926B7D2D718F02 /* Pods-LightingKit Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightingKit Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example.release.xcconfig"; sourceTree = "<group>"; };
 		72517D8421AEBD900075B696 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		726A537721B1588F00BFE9B0 /* SelectBridgedLightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBridgedLightsViewController.swift; sourceTree = "<group>"; };
 		729BC42C21A41233002E0C0D /* LightingKit Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LightingKit Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		729BC42F21A41233002E0C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		729BC43621A41239002E0C0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				72AAA39A21AD8C32001FA94B /* RoomsViewController.swift */,
 				72AAA39C21AD8DA0001FA94B /* LightsVIewController.swift */,
 				72AAA3A021AD9240001FA94B /* AddNewLightController.swift */,
+				726A537721B1588F00BFE9B0 /* SelectBridgedLightsViewController.swift */,
 				72AAA39E21AD8E6F001FA94B /* LightControlsViewController.swift */,
 				72C7E5E821AE7BA900B04A23 /* LightControlsViewController.xib */,
 				729BC43821A41239002E0C0D /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726A537821B1588F00BFE9B0 /* SelectBridgedLightsViewController.swift in Sources */,
 				72AAA38F21AD5A42001FA94B /* DataSource.swift in Sources */,
 				72517D8521AEBD900075B696 /* UITextField.swift in Sources */,
 				729BC43021A41233002E0C0D /* AppDelegate.swift in Sources */,

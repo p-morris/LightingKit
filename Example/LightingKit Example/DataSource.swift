@@ -12,6 +12,7 @@ import LightingKit
 class DataSource: NSObject, UITableViewDataSource {
     
     var objects: [LightingKitObject]
+    var selectionStyle: UITableViewCell.SelectionStyle = .none
     var showLoadingIndicator = false
     
     init(objects: [LightingKitObject]) {
@@ -41,7 +42,7 @@ class DataSource: NSObject, UITableViewDataSource {
     func configure(cell: UITableViewCell, withObject object: LightingKitObject) -> UITableViewCell {
         cell.accessoryView = nil
         cell.textLabel?.text = object.name + (object is Bridge ? " (Bridge)" : "")
-        cell.selectionStyle = .none
+        cell.selectionStyle = selectionStyle
         return cell
     }
     

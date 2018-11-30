@@ -189,6 +189,28 @@ extension LightingKit {
             )
         }
     }
+    /**
+     Attempts to assign lights (that have already been setup) to the specified room.
+     - Parameters:
+     - lights: The `Lights` to assign.
+     - room: The `Room` that `lights should be assigned to.
+     - completion: The closure to be executed after the operation is completed.
+     */
+    public func assignLights(lights: [Light], toRoom room: Room, completion: @escaping () -> Void) {
+        guard lights.count > 0 else { return }
+        guard let home = homeManager?.homes.home(for: room) else { return }
+        guard let room = home.rooms.filter({ room == $0 }).first else { return }
+        var count = 0
+        lights.forEach { light in
+            guard let accessory = home.accessories.filter({ light == $0 }).first else { return }
+            home.assignAccessory(accessory, to: room) { _ in
+                count += 1
+                if count == lights.count {
+                    completion()
+                }
+            }
+        }
+    }
 }
 
 // MARK: - Lights
