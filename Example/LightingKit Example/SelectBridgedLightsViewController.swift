@@ -14,6 +14,7 @@ class SelectBridgedLightsViewController: UITableViewController {
     let dataSource: DataSource
     let room: Room?
     let kit: LightingKit?
+    weak var parentLightsController: LightsViewController?
     
     init(lights: [Light], room: Room, kit: LightingKit) {
         self.dataSource = DataSource(objects: lights)
@@ -40,8 +41,14 @@ class SelectBridgedLightsViewController: UITableViewController {
     }
     
     @objc func save() {
+        guard let room = room else { return }
         let lights = selectedLights()
-        
+        kit?.assignLights(lights: lights, toRoom: room) { lights in
+            self.navigationController?.presentingViewController?.dismiss(animated: true) {
+                self.parentLightsController?.dataSource.objects.append(lights)
+                self.parentLightsController?.tableView.reloadData()
+            }
+        }
     }
     
     func selectedLights() -> [Light] {

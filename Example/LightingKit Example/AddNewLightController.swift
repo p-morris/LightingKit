@@ -80,6 +80,7 @@ class AddNewLightViewController: UITableViewController {
                 self.dataSource.objects.remove(at: indexPath.row)
                 if let lights = lights {
                     let selectController = SelectBridgedLightsViewController(lights: lights, room: self.room, kit: self.kit)
+                    selectController.parentLightsController = self.parentLightsController
                     self.navigationController?.pushViewController(selectController, animated: true)
                 }
             }

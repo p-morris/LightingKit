@@ -196,17 +196,22 @@ extension LightingKit {
      - room: The `Room` that `lights should be assigned to.
      - completion: The closure to be executed after the operation is completed.
      */
-    public func assignLights(lights: [Light], toRoom room: Room, completion: @escaping () -> Void) {
+    // FIXME: OCP - Needs refactoring and lifting out of this class. Likely to change.
+    public func assignLights(lights: [Light], toRoom room: Room, completion: @escaping ([Light]) -> Void) {
         guard lights.count > 0 else { return }
         guard let home = homeManager?.homes.home(for: room) else { return }
         guard let room = home.rooms.filter({ room == $0 }).first else { return }
         var count = 0
+        var addedLights: [Light] = []
         lights.forEach { light in
             guard let accessory = home.accessories.filter({ light == $0 }).first else { return }
-            home.assignAccessory(accessory, to: room) { _ in
+            home.assignAccessory(accessory, to: room) { error in
                 count += 1
+                if error == nil {
+                    addedLights.append(light)
+                }
                 if count == lights.count {
-                    completion()
+                    completion(addedLights)
                 }
             }
         }
