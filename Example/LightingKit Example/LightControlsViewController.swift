@@ -50,7 +50,7 @@ class LightControlsViewController: UIViewController {
     func configureView() {
         lightImageView.image = lightImageView.image?.withRenderingMode(.alwaysTemplate)
         lightImageView.tintColor = UIColor.yellow
-        powerSwitch.isOn = light.power?.on ?? false
+        powerSwitch.isOn = light.power?.isOn ?? false
         brightnessSlider.setValue(Float(light.brightness?.value ?? 0), animated: false)
     }
     
@@ -68,7 +68,7 @@ class LightControlsViewController: UIViewController {
     }
     
     func setLightImageViewBrightness() {
-        if light.power?.on ?? false {
+        if light.power?.isOn ?? false {
             self.lightImageView.alpha = CGFloat(light.brightness?.value ?? 0) / 100
         } else {
             self.lightImageView.alpha = 0.0

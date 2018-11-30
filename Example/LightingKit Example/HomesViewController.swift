@@ -36,7 +36,7 @@ class HomesViewController: UITableViewController {
     
     func startLightingKit() {
         kit.permissionsDelegate = self
-        kit.configureHomeKit()
+        kit.start()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

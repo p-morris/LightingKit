@@ -14,6 +14,8 @@
 		72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6021A517D800834C4D /* ArrayExtensions.swift */; };
 		72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6221A5187400834C4D /* FilterStrategy.swift */; };
 		72385CAB21AAD1C8004983E9 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72385CAA21AAD1C8004983E9 /* HomeKit.framework */; };
+		726A537421B1489D00BFE9B0 /* AccessoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A537321B1489D00BFE9B0 /* AccessoryExtensions.swift */; };
+		726A537621B148C000BFE9B0 /* ServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A537521B148C000BFE9B0 /* ServiceExtensions.swift */; };
 		726F8A7B21AA65BD0086A34B /* CharacteristicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A7A21AA65BD0086A34B /* CharacteristicExtensions.swift */; };
 		726F8A7D21AA66AE0086A34B /* CategoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A7C21AA66AE0086A34B /* CategoryExtensions.swift */; };
 		726F8A7F21AA672F0086A34B /* HomeKitObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A7E21AA672F0086A34B /* HomeKitObjectExtensions.swift */; };
@@ -76,6 +78,8 @@
 		72100E6021A517D800834C4D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		72100E6221A5187400834C4D /* FilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
 		72385CAA21AAD1C8004983E9 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		726A537321B1489D00BFE9B0 /* AccessoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryExtensions.swift; sourceTree = "<group>"; };
+		726A537521B148C000BFE9B0 /* ServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceExtensions.swift; sourceTree = "<group>"; };
 		726F8A7A21AA65BD0086A34B /* CharacteristicExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicExtensions.swift; sourceTree = "<group>"; };
 		726F8A7C21AA66AE0086A34B /* CategoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExtensions.swift; sourceTree = "<group>"; };
 		726F8A7E21AA672F0086A34B /* HomeKitObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitObjectExtensions.swift; sourceTree = "<group>"; };
@@ -149,7 +153,9 @@
 				726F8A8C21AA73CE0086A34B /* FoundationExtensions.swift */,
 				726F8A7E21AA672F0086A34B /* HomeKitObjectExtensions.swift */,
 				726F8A7A21AA65BD0086A34B /* CharacteristicExtensions.swift */,
+				726A537321B1489D00BFE9B0 /* AccessoryExtensions.swift */,
 				726F8A7C21AA66AE0086A34B /* CategoryExtensions.swift */,
+				726A537521B148C000BFE9B0 /* ServiceExtensions.swift */,
 				72100E6021A517D800834C4D /* ArrayExtensions.swift */,
 				72100E6221A5187400834C4D /* FilterStrategy.swift */,
 				72A0370521A7CEA1001E8761 /* HMHomeManagerExtensions.swift */,
@@ -428,11 +434,13 @@
 				729BB52821B026BF00EB89E1 /* Bridge.swift in Sources */,
 				72A0372221A84795001E8761 /* Brightness.swift in Sources */,
 				72100E5521A5014200834C4D /* Home.swift in Sources */,
+				726A537421B1489D00BFE9B0 /* AccessoryExtensions.swift in Sources */,
 				726F8A7B21AA65BD0086A34B /* CharacteristicExtensions.swift in Sources */,
 				72A0372621A850F1001E8761 /* TimeInterval+FadeBrightness.swift in Sources */,
 				72100E5921A5056F00834C4D /* Light.swift in Sources */,
 				72A0371A21A7F3B4001E8761 /* HMAccessoryBrowserExtensions.swift in Sources */,
 				7278437221A9E79000FD2445 /* Error.swift in Sources */,
+				726A537621B148C000BFE9B0 /* ServiceExtensions.swift in Sources */,
 				726F8A8D21AA73CE0086A34B /* FoundationExtensions.swift in Sources */,
 				72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */,
 			);

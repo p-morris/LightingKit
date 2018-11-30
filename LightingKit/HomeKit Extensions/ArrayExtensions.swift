@@ -68,7 +68,10 @@ internal extension Array where Element: HMHome {
      - Returns: An array of `Room` objects associated with `home`.
      */
     func rooms(for home: Home) -> [Room] {
-        return filter({ home == $0 }).first?.rooms.lightingKitObjects() ?? []
+        guard let home = filter({ home == $0 }).first else { return [] }
+        var rooms: [Room] = [home.roomForEntireHome().lightingKitObject()]
+        rooms.append(contentsOf: home.rooms.lightingKitObjects())
+        return rooms
     }
     /**
      Returns all the `Light` objects associated with a given `Home`.
@@ -101,7 +104,7 @@ internal extension Array where Element: HMHome {
         guard let bridge = home.accessories.filter({ bridge == $0 }).first else { return [] }
         // FIXME: OCP - what if matching algorithm needs to change?
         return home.accessories.filter({
-            $0.category.isLighting &&
+            $0.isLighting &&
             bridge.uniqueIdentifiersForBridgedAccessories?.contains($0.uniqueIdentifier) ?? false
         }).lightingKitLights()
     }

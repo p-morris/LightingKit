@@ -50,23 +50,22 @@ class AddNewLightViewController: UITableViewController {
     }
     
     func searchForNewLights() {
-        kit.delegate = self
+        kit.searchDelegate = self
         kit.searchForNewLighting()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let object = dataSource.objects[indexPath.row]
-        
-        switch object {
-        case is Light: break
-        case is Bridge: break
-        default: break
+        if let light = object as? Light {
+            add(light: light, indexPath: indexPath)
+        } else if let bridge = object as? Bridge {
+            add(bridge: bridge, indexPath: indexPath)
         }
- 
     }
     
     func add(light: Light, indexPath: IndexPath) {
-        kit.add(light: light, toRoom: room) { success in
+        
+        kit.add(newLight: light, toRoom: room) { success in
             if success {
                 self.dataSource.objects.remove(at: indexPath.row)
                 self.parentLightsController?.dataSource.objects.append(light)
@@ -76,7 +75,7 @@ class AddNewLightViewController: UITableViewController {
     }
     
     func add(bridge: Bridge, indexPath: IndexPath) {
-        kit.add(bridge: bridge, toRoom: room) { success, lights in
+        kit.add(newBridge: bridge, toRoom: room) { success, lights in
             if success {
                 self.dataSource.objects.remove(at: indexPath.row)
                 if let lights = lights {
@@ -96,7 +95,7 @@ class AddNewLightViewController: UITableViewController {
     
 }
 
-extension AddNewLightViewController: LightingKitDelegate {
+extension AddNewLightViewController: LightingKitAccessorySearchDelegate {
     func add(object: LightingKitObject) {
         dataSource.objects.append(object)
         tableView.reloadData()

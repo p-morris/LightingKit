@@ -27,7 +27,7 @@ internal class HomesByRoomStrategy: FilterStrategy {
      - Returns: `true` if the `HMHome` should be included in the filtered array, false otherwise.
      */
     func include(object: HomeKitObjectType, compareWith room: Room) -> Bool {
-        return object.rooms.contains { room == $0 }
+        return object.rooms.contains { room == $0 } || room == object.roomForEntireHome()
     }
 }
 
@@ -46,6 +46,6 @@ internal class LightbulbsByRoomStrategy: FilterStrategy {
      */
     func include(object: HomeKitObjectType, compareWith room: Room) -> Bool {
         guard let homeKitRoom = object.room else { return false }
-        return object.category.isLighting && room == homeKitRoom
+        return object.isLighting && room == homeKitRoom
     }
 }

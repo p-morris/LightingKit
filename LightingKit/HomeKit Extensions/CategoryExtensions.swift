@@ -16,6 +16,7 @@ protocol HomeKitCategoryProtocol {
 
 // FIXME: Better to use a type enum if we need to test for different types.
 extension HomeKitCategoryProtocol {
+    // FIXME: Bridged accessories always return HMAccessoryCategoryTypeOther. Need to change this logic.
     /// Indicates whether the category is associated with a LightBulb accessory.
     var isLighting: Bool {
         return categoryType == HMAccessoryCategoryTypeLightbulb
