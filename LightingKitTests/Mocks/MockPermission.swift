@@ -18,7 +18,11 @@ class MockPermission: HomeKitPermission {
     }
 }
 
-class MockLightingKitDelegate: LightingKitDelegate, LightingKitPermissionsDelegate {
+class MockLightingKitDelegate: LightingKitAccessorySearchDelegate, LightingKitPermissionsDelegate {
+    func lightingKit(_ lightingKit: LightingKit, foundNewBridge bridge: Bridge) {
+        //
+    }
+    
     func lightingKit(_ lightingKit: LightingKit, permissionsGranted: Bool) {
         configured = true
     }

@@ -66,7 +66,7 @@ class LightingBrowser: NSObject, LightingKitBrowser {
 
 extension LightingBrowser: HMAccessoryBrowserDelegate {
     func accessoryBrowser(_ browser: HMAccessoryBrowser, didFindNewAccessory accessory: HMAccessory) {
-        if accessory.category.isLighting {
+        if accessory.category.isLighting || accessory.category.isBridge {
             newAccessories.append(accessory)
             completion?(accessory)
         }

@@ -46,6 +46,11 @@ internal extension Array where Element: HomeKitAccessoryProtocol {
 
 /// Used to add utility functions to arrays of `HMHome` objects
 internal extension Array where Element: HMHome {
+    func home(for bridge: Bridge) -> HMHome? {
+        return filter {
+            return $0.accessories.contains(where: { bridge == $0 })
+        }.first
+    }
     /**
      Returns  the `HMHome` object required by the filtering strategy passed in.
      - Parameters:
@@ -84,6 +89,20 @@ internal extension Array where Element: HMHome {
     func lightingKitLights(for room: Room) -> [Light] {
         guard let home = home(for: room) else { return [] }
         return home.accessories.lightingKitLights(for: room)
+    }
+    /**
+     Returns all the `Light` objects associated with a given `Bridge`.
+     - Parameters:
+     - bridge: The `Bridge` which the lights should be associated with.
+     - Returns: An array of `Light` objects associated with `bridge`
+     */
+    func lightingKitLights(for bridge: Bridge) -> [Light] {
+        guard let home = home(for: bridge) else { return [] }
+        guard let bridge = home.accessories.filter({ bridge == $0 }).first else { return [] }
+        return home.accessories.filter({
+            $0.category.isLighting &&
+            bridge.uniqueIdentifiersForBridgedAccessories?.contains($0.uniqueIdentifier) ?? false
+        }).lightingKitLights()
     }
 }
 

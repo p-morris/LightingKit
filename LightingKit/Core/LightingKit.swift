@@ -19,7 +19,7 @@ public protocol LightingKitPermissionsDelegate: class {
     func lightingKit(_ lightingKit: LightingKit, permissionsGranted: Bool)
 }
 
-public protocol LightingKitDelegate: class {
+public protocol LightingKitAccessorySearchDelegate: class {
     /**
      Executed when LightingKit has found a new `Light` that hasn't been set up with HomeKit.
      - Parameters:
@@ -27,12 +27,19 @@ public protocol LightingKitDelegate: class {
      - light: The `Light` that was found.
      */
     func lightingKit(_ lightingKit: LightingKit, foundNewLight light: Light)
+    /**
+     Executed when LightingKit has found a new `Bridge` that hasn't been set up with HomeKit.
+     - Parameters:
+     - lightingKit: The `LightingKit` object that found the `Light`.
+     - bridge: The `Bridge` that was found.
+     */
+    func lightingKit(_ lightingKit: LightingKit, foundNewBridge bridge: Bridge)
 }
 
 /// Used to access Homes, Rooms and Lights via HomeKit
 public final class LightingKit: NSObject {
     /// The object that acts as the delegate
-    public weak var delegate: LightingKitDelegate?
+    public weak var searchDelegate: LightingKitAccessorySearchDelegate?
     /// The object that acts as the permissions delegate
     public weak var permissionsDelegate: LightingKitPermissionsDelegate?
     /// The `HMHomeManager` object to use.
@@ -135,14 +142,14 @@ extension LightingKit {
         }
     }
     /**
-     Attempts to add light room to the specified room.
+     Attempts to add a new light (that has yet to be set up) to the specified room.
      - Parameters:
-     - light: The light to add..
-     - room: The `Room` to ass `light` to.
+     - light: The `Light` to add.
+     - room: The `Room` to add `light` to.
      - completion: The closure to execute on completion. If successful, `true` will be passed in
      otherwise `false`.
      */
-    public func add(light: Light, toRoom room: Room, completion: @escaping (Bool) -> Void) {
+    public func add(newLight light: Light, toRoom room: Room, completion: @escaping (Bool) -> Void) {
         guard let home = homeManager?.homes.home(for: room),
             let room = home.rooms.filter({ room == $0 }).first,
             let accessory = browser.newAccessories.filter({ light == $0 }).first else {
@@ -153,6 +160,27 @@ extension LightingKit {
             home.assignAccessory(accessory, to: room, completionHandler: { error in
                 light.brightness = Brightness(homeKitCharacteristic: accessory.services.light?.characteristics.brightness)
                 light.power = Power(homeKitCharacteristic: accessory.services.light?.characteristics.power)
+                completion(error == nil)
+            })
+        }
+    }
+    /**
+     Attempts to add a new bridge (that has yet to be set up) to the specified room.
+     - Parameters:
+     - bridge: The `Bridge` to add..
+     - room: The `Room` to add `bridge` to.
+     - completion: The closure to execute on completion. If successful, `true` will be passed in
+     otherwise `false`.
+     */
+    public func add(newBridge bridge: Bridge, toRoom room: Room, completion: @escaping (Bool) -> Void) {
+        guard let home = homeManager?.homes.home(for: room),
+            let room = home.rooms.filter({ room == $0 }).first,
+            let accessory = browser.newAccessories.filter({ bridge == $0 }).first else {
+                completion(false)
+                return
+        }
+        home.addAccessory(accessory) { _ in
+            home.assignAccessory(accessory, to: room, completionHandler: { error in
                 completion(error == nil)
             })
         }
@@ -181,7 +209,11 @@ extension LightingKit {
     internal func findNewLights() {
         browser.findNewLights { [weak self] accessory in
             guard let self = self else { return }
-            self.delegate?.lightingKit(self, foundNewLight: accessory.lightingKitObject())
+            if accessory.category.isBridge {
+                self.searchDelegate?.lightingKit(self, foundNewBridge: accessory.lightingKitObject())
+            } else {
+                self.searchDelegate?.lightingKit(self, foundNewLight: accessory.lightingKitObject())
+            }
         }
     }
     /**
@@ -203,6 +235,16 @@ extension LightingKit {
      */
     public func lights(forRoom room: Room) -> [Light] {
         return homeManager?.homes.lightingKitLights(for: room) ?? []
+    }
+    /**
+     Returns the currently available Lights for a given bridge.
+     - Parameters:
+     - bridge: The `Bridge` the `Light` objects returned should be associated with.
+     - Returns: An array of `Light` objects, all of which belong to `bridge`.
+     - Note: Returns and empty array if there are no lights, or if `LightingKit` is not ready.
+     */
+    public func lights(forBridge bridge: Bridge) -> [Light] {
+        return homeManager?.homes.lightingKitLights(for: bridge) ?? []
     }
 }
 

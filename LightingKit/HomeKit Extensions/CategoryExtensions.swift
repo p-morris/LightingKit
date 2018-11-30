@@ -19,6 +19,10 @@ extension HomeKitCategoryProtocol {
     var isLighting: Bool {
         return categoryType == HMAccessoryCategoryTypeLightbulb
     }
+    /// Indicates whether the category is associated with a Bridge accessory.
+    var isBridge: Bool {
+        return categoryType == HMAccessoryCategoryTypeBridge
+    }
 }
 
 extension HMAccessoryCategory: HomeKitCategoryProtocol { }
