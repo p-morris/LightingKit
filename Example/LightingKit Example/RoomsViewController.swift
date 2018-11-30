@@ -13,9 +13,9 @@ class RoomsViewController: UITableViewController {
     
     let kit: LightingKit
     let home: Home
-    var dataSource: DataSource<Room>
+    var dataSource: DataSource
     
-    init(kit: LightingKit, home: Home, dataSource: DataSource<Room>) {
+    init(kit: LightingKit, home: Home, dataSource: DataSource) {
         self.kit = kit
         self.home = home
         self.dataSource = dataSource
@@ -47,8 +47,8 @@ class RoomsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let room = dataSource.objects[indexPath.row]
-        let lightsSource = DataSource<Light>(objects: kit.lights(forRoom: room))
+        guard let room = dataSource.objects[indexPath.row] as? Room else { return }
+        let lightsSource = DataSource(objects: kit.lights(forRoom: room))
         let lightsController = LightsViewController(kit: kit, room: room, dataSource: lightsSource)
         navigationController?.pushViewController(lightsController, animated: true)
     }

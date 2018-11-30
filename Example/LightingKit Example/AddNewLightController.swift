@@ -14,12 +14,12 @@ class AddNewLightViewController: UITableViewController {
     let kit: LightingKit
     let room: Room
     weak var parentLightsController: LightsViewController?
-    private (set) var dataSource: DataSource<Light>
+    private (set) var dataSource: DataSource
     
     init(kit: LightingKit, room: Room) {
         self.kit = kit
         self.room = room
-        self.dataSource = DataSource<Light>(objects:[])
+        self.dataSource = DataSource(objects:[])
         self.dataSource.showLoadingIndicator = true
         super.init(nibName: nil, bundle: nil)
     }
@@ -55,11 +55,33 @@ class AddNewLightViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let light = dataSource.objects[indexPath.row]
-        kit.add(light: light, toRoom: room) { (success) in
+        let object = dataSource.objects[indexPath.row]
+        
+        switch object {
+        case is Light: break
+        case is Bridge: break
+        default: break
+        }
+ 
+    }
+    
+    func add(light: Light, indexPath: IndexPath) {
+        kit.add(light: light, toRoom: room) { success in
             if success {
                 self.dataSource.objects.remove(at: indexPath.row)
                 self.parentLightsController?.dataSource.objects.append(light)
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func add(bridge: Bridge, indexPath: IndexPath) {
+        kit.add(bridge: bridge, toRoom: room) { success, lights in
+            if success {
+                self.dataSource.objects.remove(at: indexPath.row)
+                if let lights = lights {
+                    self.parentLightsController?.dataSource.objects.append(contentsOf: lights)
+                }
                 self.tableView.reloadData()
             }
         }
@@ -75,8 +97,14 @@ class AddNewLightViewController: UITableViewController {
 }
 
 extension AddNewLightViewController: LightingKitDelegate {
-    func lightingKit(_ lightingKit: LightingKit, foundNewLight light: Light) {
-        dataSource.objects.append(light)
+    func add(object: LightingKitObject) {
+        dataSource.objects.append(object)
         tableView.reloadData()
+    }
+    func lightingKit(_ lightingKit: LightingKit, foundNewLight light: Light) {
+        add(object: light)
+    }
+    func lightingKit(_ lightingKit: LightingKit, foundNewBridge bridge: Bridge) {
+        add(object: bridge)
     }
 }

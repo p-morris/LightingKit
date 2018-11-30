@@ -169,19 +169,22 @@ extension LightingKit {
      - Parameters:
      - bridge: The `Bridge` to add..
      - room: The `Room` to add `bridge` to.
-     - completion: The closure to execute on completion. If successful, `true` will be passed in
-     otherwise `false`.
+     - completion: The closure to execute on completion. If successful, `true` will be passed otherwise `false`.
+      If `bridge` contains any bridged lighting an array of `Light` objects will also be passed, otherwise `nil`.
      */
-    public func add(newBridge bridge: Bridge, toRoom room: Room, completion: @escaping (Bool) -> Void) {
+    public func add(newBridge bridge: Bridge, toRoom room: Room, completion: @escaping (Bool, [Light]?) -> Void) {
         guard let home = homeManager?.homes.home(for: room),
             let room = home.rooms.filter({ room == $0 }).first,
             let accessory = browser.newAccessories.filter({ bridge == $0 }).first else {
-                completion(false)
+                completion(false, nil)
                 return
         }
         home.addAccessory(accessory) { _ in
             home.assignAccessory(accessory, to: room, completionHandler: { error in
-                completion(error == nil)
+                completion(
+                    error == nil,
+                    self.homeManager?.homes.lightingKitLights(for: bridge)
+                )
             })
         }
     }

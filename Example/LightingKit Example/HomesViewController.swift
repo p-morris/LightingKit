@@ -12,7 +12,7 @@ import LightingKit
 class HomesViewController: UITableViewController {
     
     let kit = LightingKit()
-    var dataSource: DataSource<Home>? {
+    var dataSource: DataSource? {
         didSet {
             tableView.dataSource = dataSource
             tableView.reloadData()
@@ -40,9 +40,9 @@ class HomesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let home = dataSource?.objects[indexPath.row] else { return }
+        guard let home = dataSource?.objects[indexPath.row] as? Home else { return }
         let rooms = kit.rooms(forHome: home)
-        let roomsDataSource = DataSource<Room>(objects: rooms)
+        let roomsDataSource = DataSource(objects: rooms)
         let roomsController = RoomsViewController(kit: kit, home: home, dataSource: roomsDataSource)
         navigationController?.pushViewController(roomsController, animated: true)
     }

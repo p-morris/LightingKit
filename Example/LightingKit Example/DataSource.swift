@@ -9,12 +9,12 @@
 import Foundation
 import LightingKit
 
-class DataSource<T: LightingKitObject>: NSObject, UITableViewDataSource {
+class DataSource: NSObject, UITableViewDataSource {
     
-    var objects: [T]
+    var objects: [LightingKitObject]
     var showLoadingIndicator = false
     
-    init(objects: [T]) {
+    init(objects: [LightingKitObject]) {
         self.objects = objects
     }
     
@@ -38,9 +38,9 @@ class DataSource<T: LightingKitObject>: NSObject, UITableViewDataSource {
         return cell
     }
     
-    func configure(cell: UITableViewCell, withObject object: T) -> UITableViewCell {
+    func configure(cell: UITableViewCell, withObject object: LightingKitObject) -> UITableViewCell {
         cell.accessoryView = nil
-        cell.textLabel?.text = object.name
+        cell.textLabel?.text = object.name + (object is Bridge ? " (Bridge)" : "")
         cell.selectionStyle = .none
         return cell
     }
