@@ -12,8 +12,8 @@ import LightingKit
 class SelectBridgedLightsViewController: UITableViewController {
     
     let dataSource: DataSource
-    let room: Room?
-    let kit: LightingKit?
+    let room: Room
+    let kit: LightingKit
     weak var parentLightsController: LightsViewController?
     
     init(lights: [Light], room: Room, kit: LightingKit) {
@@ -24,28 +24,24 @@ class SelectBridgedLightsViewController: UITableViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        dataSource = DataSource(objects: [])
-        self.room = nil
-        self.kit = nil
-        super.init(nibName: nil, bundle: nil)
+        fatalError()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource.selectionStyle = .gray
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
-        title = "Add lights to \(room?.name ?? "room")"
+        title = "Add lights to \(room.name)"
         tableView.allowsMultipleSelection = true
         tableView.dataSource = dataSource
         tableView.reloadData()
     }
     
     @objc func save() {
-        guard let room = room else { return }
         let lights = selectedLights()
-        kit?.assignLights(lights: lights, toRoom: room) { lights in
+        kit.assignLights(lights: lights, toRoom: room) { lights in
             self.navigationController?.presentingViewController?.dismiss(animated: true) {
-                self.parentLightsController?.dataSource.objects.append(lights)
+                self.parentLightsController?.dataSource.objects.append(contentsOf: lights)
                 self.parentLightsController?.tableView.reloadData()
             }
         }
