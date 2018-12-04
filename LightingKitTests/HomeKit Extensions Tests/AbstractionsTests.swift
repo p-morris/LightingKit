@@ -21,14 +21,11 @@ class AbstractionsTests: XCTestCase {
     func testCategoryIsLightingReturnsTrueForLighting() {
         let mockCategory = MockCategory()
         mockCategory.isLight = true
-        XCTAssertTrue(mockCategory.isLighting, "HomeKitCategoryProtocol extension should return true when category type is lighting.")
+        XCTAssertEqual(mockCategory.type, HomeKitCategoryType.lighting, "HomeKitCategoryProtocol extension should return .lighting when category type is lighting.")
     }
     func testCategoryIsLightingReturnsFalseForNonLighting() {
         let mockCategory = MockCategory()
         mockCategory.isLight = false
-        XCTAssertFalse(
-            mockCategory.isLighting,
-            "HomeKitCategoryProtocol extension should return false when category type is not lighting."
-        )
+        XCTAssertNotEqual(mockCategory.type, HomeKitCategoryType.lighting, "HomeKitCategoryProtocol extension should not return .lighting when category type is not lighting.")
     }
 }

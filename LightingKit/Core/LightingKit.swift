@@ -48,6 +48,8 @@ public final class LightingKit: NSObject {
     private var permission: HomeKitPermission?
     /// The `LightingBrowser` object to use for finding new lights.
     private let browser: LightingKitBrowser
+    /// The `HomeKitServiceBuilder` to use for building accesory services
+    private let serviceBuilder: HomeKitServiceBuilder
     /// Indicates whether LightingKit is ready to use.
     public var ready: Bool {
         return (homeManager?.permissionGranted ?? false)
@@ -55,8 +57,9 @@ public final class LightingKit: NSObject {
     public convenience override init() {
         self.init(browser: LightingBrowser())
     }
-    init(browser: LightingKitBrowser = LightingBrowser()) {
+    init(browser: LightingKitBrowser = LightingBrowser(), serviceBuilder: HomeKitServiceBuilder = LightServiceBuilder()) {
         self.browser = browser
+        self.serviceBuilder = serviceBuilder
     }
     /**
      Configures the `LightingKit` object with HomeKit.
@@ -157,15 +160,10 @@ extension LightingKit {
             return
         }
         home.addAccessory(accessory) { _ in
-            home.assignAccessory(accessory, to: room, completionHandler: { error in
-                // FIXME: OCP - Should be extendable without modification. If I want to add hue support,
-                // I need to amend the class.
-                light.brightness = Brightness(
-                    homeKitCharacteristic: accessory.services.light?.characteristics.brightness
-                )
-                light.power = Power(homeKitCharacteristic: accessory.services.light?.characteristics.power)
+            home.assignAccessory(accessory, to: room) { error in
+                self.serviceBuilder.assignServices(to: light, with: accessory.services.light?.characteristics)
                 completion(error == nil)
-            })
+            }
         }
     }
     /**
@@ -240,7 +238,7 @@ extension LightingKit {
     internal func findNewLights() {
         browser.findNewLights { [weak self] accessory in
             guard let self = self else { return }
-            if accessory.category.isBridge {
+            if accessory.category.type == .bridge {
                 self.searchDelegate?.lightingKit(self, foundNewBridge: accessory.lightingKitObject())
             } else {
                 self.searchDelegate?.lightingKit(self, foundNewLight: accessory.lightingKitObject())

@@ -9,22 +9,30 @@
 import Foundation
 import HomeKit
 
+/// Represents a category type for Homekit accessories
+enum HomeKitCategoryType {
+    case lighting
+    case bridge
+    case other
+    case none
+}
+
 /// An abstraction for HomeKit category objects
 protocol HomeKitCategoryProtocol {
     var categoryType: String { get }
 }
 
-// FIXME: Better to use a type enum if we need to test for different types.
 extension HomeKitCategoryProtocol {
-    // FIXME: Bridged accessories always return HMAccessoryCategoryTypeOther. Need to change this logic.
-    /// Indicates whether the category is associated with a LightBulb accessory.
-    var isLighting: Bool {
-        return categoryType == HMAccessoryCategoryTypeLightbulb
+    /// Used to represent the type of the category
+    var type: HomeKitCategoryType {
+        switch categoryType {
+        case HMAccessoryCategoryTypeLightbulb: return .lighting
+        case HMAccessoryCategoryTypeBridge: return .bridge
+        case HMAccessoryCategoryTypeOther: return .other
+        default: return .none
+        }
     }
-    /// Indicates whether the category is associated with a Bridge accessory.
-    var isBridge: Bool {
-        return categoryType == HMAccessoryCategoryTypeBridge
-    }
+
 }
 
 extension HMAccessoryCategory: HomeKitCategoryProtocol { }

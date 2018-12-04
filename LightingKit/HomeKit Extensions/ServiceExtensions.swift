@@ -15,7 +15,7 @@ protocol HomeKitServiceProtocol {
 }
 
 extension HomeKitServiceProtocol {
-    /// Indicates whether the category is associated with a LightBulb accessory.
+    /// Indicates whether the service is associated with a LightBulb accessory.
     var isLighting: Bool {
         return serviceType == HMServiceTypeLightbulb
     }

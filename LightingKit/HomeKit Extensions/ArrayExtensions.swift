@@ -32,12 +32,13 @@ internal extension Array where Element: HomeKitAccessoryProtocol {
      - Returns: An array of `Light` objects representing the HomeKit accessories contained in
      the array.
      */
-    func lightingKitLights() -> [Light] {
+    func lightingKitLights(servicesBuilder builder: HomeKitServiceBuilder
+                           = LightServiceBuilder(handlers: [PowerServiceHandler(), BrightnessServiceHandler()]))
+                           -> [Light] {
         var lights: [Light] = []
         forEach { object in
             let light: Light = object.lightingKitObject()
-            light.brightness = Brightness(homeKitCharacteristic: object.services.light?.characteristics.brightness)
-            light.power = Power(homeKitCharacteristic: object.services.light?.characteristics.power)
+            builder.assignServices(to: light, with: object.services.light?.characteristics)
             lights.append(light)
         }
         return lights
@@ -81,7 +82,7 @@ internal extension Array where Element: HMHome {
      */
     func lightingKitLights(for home: Home) -> [Light] {
         guard let home = filter({ home == $0 }).first else { return [] }
-        return home.accessories.filter({ $0.category.isLighting }).lightingKitLights()
+        return home.accessories.filter({ $0.category.type == .lighting }).lightingKitLights()
     }
     /**
      Returns all the `Light` objects associated with a given `Room`.

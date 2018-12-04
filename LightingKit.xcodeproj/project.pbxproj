@@ -14,6 +14,9 @@
 		72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6021A517D800834C4D /* ArrayExtensions.swift */; };
 		72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6221A5187400834C4D /* FilterStrategy.swift */; };
 		72385CAB21AAD1C8004983E9 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72385CAA21AAD1C8004983E9 /* HomeKit.framework */; };
+		72484BC321B65B5300617BA7 /* ServiceBuilderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72484BC221B65B5300617BA7 /* ServiceBuilderChain.swift */; };
+		72484BC521B65F5D00617BA7 /* ServiceBuilderChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72484BC421B65F5D00617BA7 /* ServiceBuilderChainTests.swift */; };
+		72484BC721B6625D00617BA7 /* MockServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72484BC621B6625D00617BA7 /* MockServiceHandler.swift */; };
 		726A537421B1489D00BFE9B0 /* AccessoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A537321B1489D00BFE9B0 /* AccessoryExtensions.swift */; };
 		726A537621B148C000BFE9B0 /* ServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A537521B148C000BFE9B0 /* ServiceExtensions.swift */; };
 		726F8A7B21AA65BD0086A34B /* CharacteristicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A7A21AA65BD0086A34B /* CharacteristicExtensions.swift */; };
@@ -78,6 +81,9 @@
 		72100E6021A517D800834C4D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		72100E6221A5187400834C4D /* FilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
 		72385CAA21AAD1C8004983E9 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		72484BC221B65B5300617BA7 /* ServiceBuilderChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceBuilderChain.swift; sourceTree = "<group>"; };
+		72484BC421B65F5D00617BA7 /* ServiceBuilderChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceBuilderChainTests.swift; sourceTree = "<group>"; };
+		72484BC621B6625D00617BA7 /* MockServiceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceHandler.swift; sourceTree = "<group>"; };
 		726A537321B1489D00BFE9B0 /* AccessoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryExtensions.swift; sourceTree = "<group>"; };
 		726A537521B148C000BFE9B0 /* ServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceExtensions.swift; sourceTree = "<group>"; };
 		726F8A7A21AA65BD0086A34B /* CharacteristicExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicExtensions.swift; sourceTree = "<group>"; };
@@ -191,6 +197,7 @@
 				72100E5421A5014200834C4D /* Home.swift */,
 				72100E5621A503D600834C4D /* Room.swift */,
 				72100E5821A5056F00834C4D /* Light.swift */,
+				72484BC221B65B5300617BA7 /* ServiceBuilderChain.swift */,
 				729BB52721B026BF00EB89E1 /* Bridge.swift */,
 				7278437521A9EFF900FD2445 /* Characteristic.swift */,
 				72A0372321A8479D001E8761 /* Power.swift */,
@@ -257,6 +264,7 @@
 				726F8A8221AA69630086A34B /* MockCharacteristic.swift */,
 				726F8A8621AA6DB90086A34B /* MockBrightnessDelegate.swift */,
 				726F8A8E21AA75120086A34B /* MockTimer.swift */,
+				72484BC621B6625D00617BA7 /* MockServiceHandler.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -275,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				72A0371121A7F16D001E8761 /* ModelTests.swift */,
+				72484BC421B65F5D00617BA7 /* ServiceBuilderChainTests.swift */,
 				72A0371321A7F1C8001E8761 /* SuccessStrategyTests.swift */,
 				729BC41721A4005D002E0C0D /* LightingKitPermissionsTests.swift */,
 				72A0371521A7F2E8001E8761 /* LightingKitBrowserTests.swift */,
@@ -424,6 +433,7 @@
 				72B7B37E21A6607B004336C1 /* LightingBrowser.swift in Sources */,
 				72A0372421A8479D001E8761 /* Power.swift in Sources */,
 				729BC40D21A3F323002E0C0D /* LightingKitPermissions.swift in Sources */,
+				72484BC321B65B5300617BA7 /* ServiceBuilderChain.swift in Sources */,
 				726F8A7D21AA66AE0086A34B /* CategoryExtensions.swift in Sources */,
 				7278437621A9EFF900FD2445 /* Characteristic.swift in Sources */,
 				72100E5721A503D600834C4D /* Room.swift in Sources */,
@@ -470,9 +480,11 @@
 				729BC41A21A400F4002E0C0D /* TestCompletion.swift in Sources */,
 				728D896F21A55B60005060C4 /* TestLightingKit.swift in Sources */,
 				726F8A8121AA69470086A34B /* PowerTests.swift in Sources */,
+				72484BC721B6625D00617BA7 /* MockServiceHandler.swift in Sources */,
 				72A0370021A7C715001E8761 /* AbstractionsTests.swift in Sources */,
 				72A0371221A7F16D001E8761 /* ModelTests.swift in Sources */,
 				72A0371821A7F344001E8761 /* MockAccessoryBrowser.swift in Sources */,
+				72484BC521B65F5D00617BA7 /* ServiceBuilderChainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
