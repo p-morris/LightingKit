@@ -39,9 +39,9 @@ class SelectBridgedLightsViewController: UITableViewController {
     
     @objc func save() {
         let lights = selectedLights()
-        kit.assignLights(lights: lights, toRoom: room) { lights in
+        kit.assignLights(lights: lights, toRoom: room) { added, _ in
             self.navigationController?.presentingViewController?.dismiss(animated: true) {
-                self.parentLightsController?.dataSource.objects.append(contentsOf: lights)
+                self.parentLightsController?.dataSource.objects.append(contentsOf: added)
                 self.parentLightsController?.tableView.reloadData()
             }
         }
