@@ -12,7 +12,12 @@ import HomeKit
 
 class MockCategory: HomeKitCategoryProtocol {
     var isLight = false
+    var testType: String?
     var categoryType: String {
-        return isLight ? HMAccessoryCategoryTypeLightbulb : HMAccessoryCategoryTypeFan
+        if let type = testType {
+            return type
+        } else {
+            return isLight ? HMAccessoryCategoryTypeLightbulb : HMAccessoryCategoryTypeFan
+        }
     }
 }

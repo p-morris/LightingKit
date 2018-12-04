@@ -61,6 +61,9 @@
 		72A0372421A8479D001E8761 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A0372321A8479D001E8761 /* Power.swift */; };
 		72A0372621A850F1001E8761 /* TimeInterval+FadeBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A0372521A850F1001E8761 /* TimeInterval+FadeBrightness.swift */; };
 		72A5740721B6798D005A6603 /* CharacteristicExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5740621B6798D005A6603 /* CharacteristicExtensionTests.swift */; };
+		72A5740921B67A65005A6603 /* CategoryExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5740821B67A65005A6603 /* CategoryExtensionTests.swift */; };
+		72A5740B21B67BCC005A6603 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5740A21B67BCC005A6603 /* MockService.swift */; };
+		72A5740D21B67C2C005A6603 /* ServiceExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5740C21B67C2C005A6603 /* ServiceExtensionTests.swift */; };
 		72B7B37E21A6607B004336C1 /* LightingBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B37D21A6607B004336C1 /* LightingBrowser.swift */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +135,9 @@
 		72A0372321A8479D001E8761 /* Power.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
 		72A0372521A850F1001E8761 /* TimeInterval+FadeBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+FadeBrightness.swift"; sourceTree = "<group>"; };
 		72A5740621B6798D005A6603 /* CharacteristicExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicExtensionTests.swift; sourceTree = "<group>"; };
+		72A5740821B67A65005A6603 /* CategoryExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExtensionTests.swift; sourceTree = "<group>"; };
+		72A5740A21B67BCC005A6603 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		72A5740C21B67C2C005A6603 /* ServiceExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceExtensionTests.swift; sourceTree = "<group>"; };
 		72B7B37D21A6607B004336C1 /* LightingBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,6 +273,7 @@
 				726F8A8621AA6DB90086A34B /* MockBrightnessDelegate.swift */,
 				726F8A8E21AA75120086A34B /* MockTimer.swift */,
 				72484BC621B6625D00617BA7 /* MockServiceHandler.swift */,
+				72A5740A21B67BCC005A6603 /* MockService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -295,6 +302,8 @@
 				726F8A8821AA6E600086A34B /* TimeIntervalExtensionTests.swift */,
 				726F8A8A21AA6F050086A34B /* IntExtensionTests.swift */,
 				72A5740621B6798D005A6603 /* CharacteristicExtensionTests.swift */,
+				72A5740821B67A65005A6603 /* CategoryExtensionTests.swift */,
+				72A5740C21B67C2C005A6603 /* ServiceExtensionTests.swift */,
 			);
 			path = "Core Tests";
 			sourceTree = "<group>";
@@ -467,6 +476,7 @@
 				726F8A8721AA6DB90086A34B /* MockBrightnessDelegate.swift in Sources */,
 				72A0370221A7CAB4001E8761 /* HomeManagerExtensionsTests.swift in Sources */,
 				726F8A8B21AA6F050086A34B /* IntExtensionTests.swift in Sources */,
+				72A5740D21B67C2C005A6603 /* ServiceExtensionTests.swift in Sources */,
 				726F8A8921AA6E600086A34B /* TimeIntervalExtensionTests.swift in Sources */,
 				72A0370421A7CC02001E8761 /* MockCategory.swift in Sources */,
 				72A0371421A7F1C8001E8761 /* SuccessStrategyTests.swift in Sources */,
@@ -482,9 +492,11 @@
 				728D896921A5489C005060C4 /* MockHomeKitHome.swift in Sources */,
 				729BC41C21A40DEF002E0C0D /* MockSuccessStrategy.swift in Sources */,
 				729BC41A21A400F4002E0C0D /* TestCompletion.swift in Sources */,
+				72A5740921B67A65005A6603 /* CategoryExtensionTests.swift in Sources */,
 				728D896F21A55B60005060C4 /* TestLightingKit.swift in Sources */,
 				726F8A8121AA69470086A34B /* PowerTests.swift in Sources */,
 				72484BC721B6625D00617BA7 /* MockServiceHandler.swift in Sources */,
+				72A5740B21B67BCC005A6603 /* MockService.swift in Sources */,
 				72A0370021A7C715001E8761 /* AbstractionsTests.swift in Sources */,
 				72A0371221A7F16D001E8761 /* ModelTests.swift in Sources */,
 				72A0371821A7F344001E8761 /* MockAccessoryBrowser.swift in Sources */,
