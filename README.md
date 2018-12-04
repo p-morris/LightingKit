@@ -39,13 +39,13 @@ Install LightingKit by running:
 
 ## Getting started
 
-### Add HomeKit Usage Description to `Info.plist`
+### 1) Add HomeKit Usage Description to `Info.plist`
 
 Open your project's `Info.plist` file, and add the `Privacy - HomeKit Usage Description` key.
 
-Its value should be a `String` which is the message that should be shown to the user of your app when they asked to grant your app HomeKit permissions.
+Its value should be a `String` which is the message that should be shown to the user, when they asked to for HomeKit permissions.
 
-### Create a `LightingKit` object
+### 2) Create a `LightingKit` object
 
 Import the LightingKit library into the file you'd like to use it in:
 
@@ -57,7 +57,7 @@ Create a `LightingKit` object using the standard initializer:
 
 `let kit = LightingKit()`
 
-### Connect to HomeKit
+### 3) Connect to HomeKit
 
 Execute your `LightingKit` object's `start()` function to connect to HomeKit:
 
@@ -65,11 +65,11 @@ Execute your `LightingKit` object's `start()` function to connect to HomeKit:
 
 **Important!** - Starting `LightingKit` using the `start()` function, will prompt the user for HomeKit permissions (if permission has not already been given).
 
-### LightingKitPermissionsDelegate
+### 4) Get a callback when LightingKit is ready
 
 Starting LightingKit isn't much use if you don't check to see what happened!
 
-Make your class conform to the `LightingKitPermissionsDelegate` protocol in order to receive a callback when `LightingKit` is ready:
+Have your class conform to the `LightingKitPermissionsDelegate` protocol in order to receive a callback when `LightingKit` is ready:
 
 ```
 extension ViewController: LightingKitPermissionsDelegate {
