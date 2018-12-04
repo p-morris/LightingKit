@@ -1,5 +1,17 @@
 # LightingKit
-## A simple library, for discovering and controlling HomeKit Lights on iOS.
+## A simple library for discovering and controlling HomeKit Lights on iOS.
+
+### Table of Contents
+
+- [Introduction](#introduction)
+- [Installing LightingKit](#installing-lightingkit)
+- [Getting started](#getting-started)
+- [Homes, Rooms and Lights](#homes,-rooms-and-lights)
+- [Controlling lights](#controlling-lights)
+- [Setting up new lights](#setting-up-new-lights)
+- [Bridges and bridged lights](#bridges-and-bridged-lights)
+- [Issues and requests](#issues-and-requests)
+
 ### Introduction
 LightingKit is a simple iOS library for discovering and using lighting accessories via HomeKit. It is specifically designed for dealing with lightbulb accessories.
 
@@ -43,7 +55,7 @@ Install LightingKit by running:
 
 Open your project's `Info.plist` file, and add the `Privacy - HomeKit Usage Description` key.
 
-Its value should be a `String` which is the message that should be shown to the user, when they asked to for HomeKit permissions.
+Its value should be a `String`. This will be shown to the user when they are asked for HomeKit permissions.
 
 ### 2) Create a `LightingKit` object
 
@@ -69,7 +81,11 @@ Execute your `LightingKit` object's `start()` function to connect to HomeKit:
 
 Starting LightingKit isn't much use if you don't check to see what happened!
 
-Have your class conform to the `LightingKitPermissionsDelegate` protocol in order to receive a callback when `LightingKit` is ready:
+To get callbacks, set the `LightingKit` object's `permissionsDelegate` property:
+
+`kit.permissionsDelegate = self`
+
+Then, have your class conform to the `LightingKitPermissionsDelegate` protocol in order to receive a callback when `LightingKit` is ready:
 
 ```
 extension ViewController: LightingKitPermissionsDelegate {
@@ -83,7 +99,7 @@ extension ViewController: LightingKitPermissionsDelegate {
 }
 ```
 
-## Adding Homes, Rooms and Lights
+## Homes, Rooms and Lights
 
 In LightingKit, a user has Homes, Rooms and Lights.
 
@@ -138,7 +154,7 @@ You can get an array all of the lights within a particular room like this:
 
 `let lights = kit.lights(forRoom: aRoom)`
 
-## Controlling a `Light`
+## Controlling lights
 
 ### Turning a light on and off
 
@@ -146,8 +162,8 @@ With a particular `Light` object in hand, you turn it on and off, via its `power
 
 ```
 light.power?.on(true, completion: { (error) in
-    if error != nil {
-        // Light on!
+    if error == nil {
+        // Light was turned on!
     }
 })
 
@@ -156,7 +172,7 @@ You can check to see if a `Light` is currently powered on as well. The `Power` p
 
 ```
 if let power = light.power, power.isOn {
-    // The light is turned on!
+    // The light is currently turned on!
 }
 ```
 
@@ -177,7 +193,7 @@ light.brightness?.set(brightness: 50, completion: { (error) in
     }
 })
 ```
-### Fading the brighness over time
+### Setting the brightness over time
 
 You can also update the brightness value of a `Light` over a set duration.
 
@@ -206,13 +222,13 @@ extension ViewController: TimedBrightnessUpdateDelegate {
 ```
 ## Setting up new lights
 
-If a light has never been added to HomeKit, then you will have to add it before you can control it.
+If a light has never been added to HomeKit, then it will have to be added and set up before you can control it with LightingKit.
 
 Adding a `Light` to HomeKit involves two simple steps: searching for new lights, and then adding them to a room.
 
 ### 1) Searching for lights to set up
 
-Simple set the `searchDelegate` property of your `LightingKit` object, and then start the search:
+Set the `searchDelegate` property of your `LightingKit` object, and then start the search:
 
 ```
 kit.searchDelegate = self
@@ -243,7 +259,7 @@ kit.add(newLight: light, toRoom: room) { (success) in
 ```
 **Important!** - Adding a new light to a room will trigger the iOS HomeKit accessory setup process within your app.
 
-Once a new `Light` has success been added to a `Room`, you can control it as usual!
+Once a new `Light` has successfully been added to a `Room`, you can control it as usual!
 
 ## Bridges and bridged lights
 
@@ -251,7 +267,7 @@ Some smartlights require a "bridge" in order to connect to a network. Philip's H
 
 The bridge *itself* is a hardware accessory that needs to be added to HomeKit.
 
-Once a bridge is added, all of the accessories that are connected *to* that bridge are **automatically** added to HomeKit for the user.
+Once a bridge is added, all of the accessories that are connected *to* that bridge are **automatically** available via LightingKit. There's no need to go through and set up each bridge-connected light one by one.
 
 ### Setting up a new `Bridge`
 
@@ -272,15 +288,10 @@ kit.add(newBridge: bridge, toHome: home) { (success, lights) in
     }
 }
 ```
-On `completion`, the `success` boolean will indicate if the setup was successful.
 
-If `LightingKit` found any lighting accessories connected to the bridge, they will be passed in the completion.
+If any lighting accessories are connected to the bridge, they will be passed as an array of `Light` objects, in the `completion`; in the above example, `lights` is an optional array of `Light` objects (and will be set to `nil` if no lights were connected to the bridge).
 
-`lights` is an optional array of `Light` objects (and will be set to `nil` if no lights were connected to the bridge).
-
-**Important!** - After a `Bridge` is set up, any lights that are connected to it are automatically added to the "Default room" of the `Home` that was passed to the `add(newBridge:toHome:)` function.
-
-If you wish, you can take the lights that were connected to the bridge, and add them to a room:
+**Important!** - After a `Bridge` is set up, any lights that are connected to it are automatically added to the "Default room" of the specified `Home`. If you wish, you can assign those lights to a `Room` of your choice:
 
 ```
 kit.assignLights(lights: newLights, toRoom: room) { (assigned, failed) in
