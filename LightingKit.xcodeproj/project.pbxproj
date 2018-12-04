@@ -60,6 +60,7 @@
 		72A0372221A84795001E8761 /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A0372121A84795001E8761 /* Brightness.swift */; };
 		72A0372421A8479D001E8761 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A0372321A8479D001E8761 /* Power.swift */; };
 		72A0372621A850F1001E8761 /* TimeInterval+FadeBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A0372521A850F1001E8761 /* TimeInterval+FadeBrightness.swift */; };
+		72A5740721B6798D005A6603 /* CharacteristicExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5740621B6798D005A6603 /* CharacteristicExtensionTests.swift */; };
 		72B7B37E21A6607B004336C1 /* LightingBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B37D21A6607B004336C1 /* LightingBrowser.swift */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +131,7 @@
 		72A0372121A84795001E8761 /* Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brightness.swift; sourceTree = "<group>"; };
 		72A0372321A8479D001E8761 /* Power.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
 		72A0372521A850F1001E8761 /* TimeInterval+FadeBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+FadeBrightness.swift"; sourceTree = "<group>"; };
+		72A5740621B6798D005A6603 /* CharacteristicExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicExtensionTests.swift; sourceTree = "<group>"; };
 		72B7B37D21A6607B004336C1 /* LightingBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -292,6 +294,7 @@
 				726F8A8421AA6BF70086A34B /* BrightnessTests.swift */,
 				726F8A8821AA6E600086A34B /* TimeIntervalExtensionTests.swift */,
 				726F8A8A21AA6F050086A34B /* IntExtensionTests.swift */,
+				72A5740621B6798D005A6603 /* CharacteristicExtensionTests.swift */,
 			);
 			path = "Core Tests";
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				72A0370E21A7CFA6001E8761 /* ArrayExtensionTests.swift in Sources */,
 				726F8A8521AA6BF70086A34B /* BrightnessTests.swift in Sources */,
 				729BC41821A4005D002E0C0D /* LightingKitPermissionsTests.swift in Sources */,
+				72A5740721B6798D005A6603 /* CharacteristicExtensionTests.swift in Sources */,
 				72A0371E21A80154001E8761 /* MockLightingBrowser.swift in Sources */,
 				728D896921A5489C005060C4 /* MockHomeKitHome.swift in Sources */,
 				729BC41C21A40DEF002E0C0D /* MockSuccessStrategy.swift in Sources */,

@@ -63,4 +63,17 @@ class TestModelEquatable: XCTestCase {
         let light2 = MockHomeKitObject(uniqueIdentifier: uuid2, name: "Test")
         XCTAssertFalse(light == light2, "Light equatable should return false for non-equal home kit light.")
     }
+    func testBridgeEqualToHomeKitObject() {
+        let uuid = UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!
+        let bridge = Bridge(name: "Test bridge", uuid: uuid)
+        let mockBridge = MockHomeKitObject(uniqueIdentifier: uuid, name: "Test")
+        XCTAssertTrue(bridge == mockBridge, "Bridge equatable should return true for equal home kit bridge")
+    }
+    func testBridgeNotEqualToHomeKitObject() {
+        let uuid = UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!
+        let uuid2 = UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5E")!
+        let bridge = Bridge(name: "Test bridge", uuid: uuid)
+        let bridge2 = MockHomeKitObject(uniqueIdentifier: uuid2, name: "Test")
+        XCTAssertFalse(bridge == bridge2, "Bridge equatable should return false for non-equal home kit light.")
+    }
 }

@@ -237,4 +237,14 @@ class BrightnessTests: XCTestCase {
         brightness.brightnessIncremented(error: nil)
         XCTAssertTrue(delegate.didChange, "Brightness brightnessIncremented should notify delegate when brightness changes.")
     }
+    func testBrightnessCancelInvalidatesTimer() {
+        let characteristic = MockCharacteristic()
+        characteristic.characteristicType = HMCharacteristicTypeBrightness
+        characteristic.value = 100
+        let brightness = Brightness(homeKitCharacteristic: characteristic)!
+        let delegate = MockBrightnessDelegate()
+        brightness.scheduleBrightnessTimer(start: 100, end: 0, duration: 1, delegate: delegate, timerType: MockTimer.self)
+        brightness.cancelTimedBrightnessUpdate()
+        XCTAssertTrue(MockTimer.wasInvalidated, "Brightness brightnessIncremented should invalidete timer on error")
+    }
 }
