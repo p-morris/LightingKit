@@ -103,7 +103,6 @@ internal extension Array where Element: HMHome {
     func lightingKitLights(for bridge: Bridge) -> [Light] {
         guard let home = home(for: bridge) else { return [] }
         guard let bridge = home.accessories.filter({ bridge == $0 }).first else { return [] }
-        // FIXME: OCP - what if matching algorithm needs to change?
         return home.accessories.filter({
             $0.isLighting &&
             bridge.uniqueIdentifiersForBridgedAccessories?.contains($0.uniqueIdentifier) ?? false
@@ -132,6 +131,20 @@ internal extension Array where Element: HMAccessory {
      */
     func lightingKitLights(for room: Room) -> [Light] {
         return lightBulbAccessories(for: room).lightingKitLights()
+    }
+    /**
+     Returns all elements where associated `Light` object is found within a given
+     array of `Light` objects.
+     - Parameters:
+     - lights: The `Light` objects to use for matching.
+     - Returns: An array of elements matching with `lights`
+     */
+    func lightBulbAccessories(matching lights: [Light]) -> [Element] {
+        return filter { (accessory) -> Bool in
+            lights.contains(where: { (light) -> Bool in
+                light == accessory
+            })
+        }
     }
 }
 

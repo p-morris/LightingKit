@@ -57,7 +57,8 @@ public final class LightingKit: NSObject {
     public convenience override init() {
         self.init(browser: LightingBrowser())
     }
-    init(browser: LightingKitBrowser = LightingBrowser(), serviceBuilder: HomeKitServiceBuilder = LightServiceBuilder()) {
+    init(browser: LightingKitBrowser = LightingBrowser(),
+         serviceBuilder: HomeKitServiceBuilder = LightServiceBuilder()) {
         self.browser = browser
         self.serviceBuilder = serviceBuilder
     }
@@ -191,25 +192,23 @@ extension LightingKit {
      Attempts to assign lights (that have already been setup) to the specified room.
      - Parameters:
      - lights: The `Lights` to assign.
-     - room: The `Room` that `lights should be assigned to.
+     - room: The `Room` that `lights` should be assigned to.
      - completion: The closure to be executed after the operation is completed.
      */
-    // FIXME: OCP - Needs refactoring and lifting out of this class. Likely to change.
-    public func assignLights(lights: [Light], toRoom room: Room, completion: @escaping ([Light]) -> Void) {
-        guard lights.count > 0 else { return }
-        guard let home = homeManager?.homes.home(for: room) else { return }
-        guard let room = home.rooms.filter({ room == $0 }).first else { return }
-        var count = 0
-        var addedLights: [Light] = []
+    public func assignLights(lights: [Light],
+                             toRoom room: Room,
+                             completion: @escaping (_ added: [Light], _ failed: [Light]) -> Void) {
+        guard let home = homeManager?.homes.home(for: room),
+            let room = home.rooms.filter({ room == $0 }).first else { return }
+        var added: [Light] = []
+        var failed: [Light] = []
         lights.forEach { light in
-            guard let accessory = home.accessories.filter({ light == $0 }).first else { return }
-            home.assignAccessory(accessory, to: room) { error in
-                count += 1
-                if error == nil {
-                    addedLights.append(light)
-                }
-                if count == lights.count {
-                    completion(addedLights)
+            if let accessory = home.accessories.filter({ light == $0 }).first {
+                home.assignAccessory(accessory, to: room) { error in
+                    _ = error == nil ? added.append(light) : failed.append(light)
+                    if added.count + failed.count == lights.count {
+                        completion(added, failed)
+                    }
                 }
             }
         }

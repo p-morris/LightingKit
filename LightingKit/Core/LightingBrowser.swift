@@ -66,7 +66,6 @@ class LightingBrowser: NSObject, LightingKitBrowser {
 
 extension LightingBrowser: HMAccessoryBrowserDelegate {
     func accessoryBrowser(_ browser: HMAccessoryBrowser, didFindNewAccessory accessory: HMAccessory) {
-        // FIXME: OCP - if I need to support more types in future, then I need to modify the class.
         if accessory.category.type == .lighting || accessory.category.type == .bridge {
             newAccessories.append(accessory)
             completion?(accessory)
