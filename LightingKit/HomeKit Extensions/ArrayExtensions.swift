@@ -132,20 +132,6 @@ internal extension Array where Element: HMAccessory {
     func lightingKitLights(for room: Room) -> [Light] {
         return lightBulbAccessories(for: room).lightingKitLights()
     }
-    /**
-     Returns all elements where associated `Light` object is found within a given
-     array of `Light` objects.
-     - Parameters:
-     - lights: The `Light` objects to use for matching.
-     - Returns: An array of elements matching with `lights`
-     */
-    func lightBulbAccessories(matching lights: [Light]) -> [Element] {
-        return filter { (accessory) -> Bool in
-            lights.contains(where: { (light) -> Bool in
-                light == accessory
-            })
-        }
-    }
 }
 
 /// Used to add computed properties to support easy access to brightness and power characteristics
