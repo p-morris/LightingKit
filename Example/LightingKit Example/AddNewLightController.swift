@@ -80,7 +80,12 @@ class AddNewLightViewController: UITableViewController {
                 self.dataSource.objects.remove(at: indexPath.row)
                 if let lights = lights {
                     let selectController = SelectBridgedLightsViewController(lights: lights, room: self.room, kit: self.kit)
-                    selectController.parentLightsController = self.parentLightsController
+                    selectController.completion = { [weak self] added, failed in
+                        self?.presentingViewController?.dismiss(animated: true) {
+                            self?.parentLightsController?.dataSource.objects.append(contentsOf: added)
+                            self?.parentLightsController?.tableView.reloadData()
+                        }
+                    }
                     self.navigationController?.pushViewController(selectController, animated: true)
                 }
             }
