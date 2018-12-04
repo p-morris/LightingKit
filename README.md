@@ -6,7 +6,7 @@
 - [Introduction](#introduction)
 - [Installing LightingKit](#installing-lightingkit)
 - [Getting started](#getting-started)
-- [Homes, Rooms and Lights](#homes,-rooms-and-lights)
+- [Homes, Rooms and Lights](#homes-rooms-and-lights)
 - [Controlling lights](#controlling-lights)
 - [Setting up new lights](#setting-up-new-lights)
 - [Bridges and bridged lights](#bridges-and-bridged-lights)
