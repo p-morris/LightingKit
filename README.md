@@ -247,3 +247,35 @@ Once a new `Light` has success been added to a `Room`, you can control it as usu
 
 ## Bridges and bridged lights
 
+Some smartlights require a "bridge" in order to connect to a network. Philip's Hue lighting, for example, requires such a bridge.
+
+The bridge *itself* is a hardware accessory that needs to be added to HomeKit.
+
+Once a bridge is added, all of the accessories that are connected *to* that bridge are **automatically** added to HomeKit for the user.
+
+### Setting up a new `Bridge`
+
+When you conduct a new lighting search with LightingKit, your `LightingKitAccessorySearchDelegate` will receive a callback when a new bridge is discovered requiring setup:
+
+```
+extension AppDelegate: LightingKitAccessorySearchDelegate {
+    func lightingKit(_ lightingKit: LightingKit, foundNewBridge bridge: Bridge) {
+        // A new bridge was found
+    }
+}
+```
+With a new `Bridge` object in hand, you can set it up like this:
+```
+kit.add(newBridge: bridge, toRoom: room) { (success, lights) in
+    if success {
+        // The bridge was set up successfully!
+    }
+}
+```
+On `completion`, the `success` boolean will indicate if the setup was successful.
+
+If `LightingKit` found any lighting accessories connected to the bridge, they will be passed in the completion.
+
+In the above example, `lights` is an optional array of `Light` objects (and will be set to `nil` if no lights were connected to the bridge).
+
+**Important!** - After a `Bridge` is set up, any lights that are connected to it are automatically added to the "Default room" of the 
