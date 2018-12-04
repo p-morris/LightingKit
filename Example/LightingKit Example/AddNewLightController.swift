@@ -75,7 +75,8 @@ class AddNewLightViewController: UITableViewController {
     }
     
     func add(bridge: Bridge, indexPath: IndexPath) {
-        kit.add(newBridge: bridge, toRoom: room) { success, lights in
+        guard let home = kit.home(for: room) else { return }
+        kit.add(newBridge: bridge, toHome: home) { success, lights in
             if success {
                 self.dataSource.objects.remove(at: indexPath.row)
                 if let lights = lights {

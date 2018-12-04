@@ -103,6 +103,15 @@ extension LightingKit {
         return homeManager?.homes.lightingKitObjects() ?? []
     }
     /**
+     Returns the `Home` associated with a given `Room`.
+     - Parameters:
+     - room: The room to find the `Home` for.
+     - Returns: The `Home` associated `room` if one is found, `nil` otherwise.
+     */
+    public func home(for room: Room) -> Home? {
+        return homeManager?.homes.home(for: room)?.lightingKitObject()
+    }
+    /**
      Attempts to add a new home to HomeKit.
      - Parameters:
      - name: The name of the new home.
