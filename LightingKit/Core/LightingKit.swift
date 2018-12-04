@@ -114,6 +114,27 @@ extension LightingKit {
             completion(home?.lightingKitObject())
         }
     }
+    /**
+     Attempts to add a new bridge (that has yet to be set up) to a home.
+     - Parameters:
+     - bridge: The `Bridge` to add..
+     - home: The `Home` that `bridge` should be added to.
+     - completion: The closure to execute on completion. If successful, `true` will be passed otherwise `false`.
+     If `bridge` contains any bridged lighting an array of `Light` objects will also be passed, otherwise `nil`.
+     */
+    public func add(newBridge bridge: Bridge, toHome home: Home, completion: @escaping (Bool, [Light]?) -> Void) {
+        guard let home = homeManager?.homes.filter({ home == $0 }).first,
+            let accessory = browser.newAccessories.filter({ bridge == $0 }).first else {
+                completion(false, nil)
+                return
+        }
+        home.addAccessory(accessory) { error in
+            completion(
+                error == nil,
+                self.homeManager?.homes.lightingKitLights(for: bridge)
+            )
+        }
+    }
 }
 
 // MARK: - Rooms
@@ -165,27 +186,6 @@ extension LightingKit {
                 self.serviceBuilder.assignServices(to: light, with: accessory.services.light?.characteristics)
                 completion(error == nil)
             }
-        }
-    }
-    /**
-     Attempts to add a new bridge (that has yet to be set up) to the `Home` associated with the specified room.
-     - Parameters:
-     - bridge: The `Bridge` to add..
-     - room: The `Room` whose `Home` that `bridge` should be added to.
-     - completion: The closure to execute on completion. If successful, `true` will be passed otherwise `false`.
-      If `bridge` contains any bridged lighting an array of `Light` objects will also be passed, otherwise `nil`.
-     */
-    public func add(newBridge bridge: Bridge, toRoom room: Room, completion: @escaping (Bool, [Light]?) -> Void) {
-        guard let home = homeManager?.homes.home(for: room),
-            let accessory = browser.newAccessories.filter({ bridge == $0 }).first else {
-                completion(false, nil)
-                return
-        }
-        home.addAccessory(accessory) { error in
-            completion(
-                error == nil,
-                self.homeManager?.homes.lightingKitLights(for: bridge)
-            )
         }
     }
     /**
