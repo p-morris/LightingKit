@@ -79,6 +79,7 @@ class AddNewLightViewController: UITableViewController {
         kit.add(newBridge: bridge, toHome: home) { success, lights in
             if success {
                 self.dataSource.objects.remove(at: indexPath.row)
+                self.tableView.reloadData()
                 if let lights = lights {
                     let selectController = SelectBridgedLightsViewController(lights: lights, room: self.room, kit: self.kit)
                     selectController.completion = { [weak self] added, failed in
