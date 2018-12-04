@@ -138,3 +138,40 @@ You can get an array all of the lights within a particular room like this:
 
 `let lights = kit.lights(forRoom: aRoom)`
 
+### Turning a light on and off
+
+With a particular `Light` object in hand, you turn it on and off, via its `power` property:
+
+```
+light.power?.on(true, completion: { (error) in
+    if error != nil {
+        // Light on!
+    }
+})
+
+```
+You can check to see if a `Light` is currently powered on as well. The `Power` property is optional, so it must be unwrapped first:
+
+```
+if let power = light.power, power.isOn {
+    // The light is turned on!
+}
+```
+
+### Setting the brightness
+
+Each `Light` also has a `brightness` property, which can be used to access the current brightness of the `Light`.
+
+The brightness is an `Int` betweeen `0` and `100` (`100` being the highest possible brightness level):
+
+`let brightnessLevel = light.brightness?.value`
+
+You can set the brightness level like this:
+
+```
+light.brightness?.set(brightness: 50, completion: { (error) in
+    if error == nil {
+        // The brightness was set!
+    }
+})
+```
