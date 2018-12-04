@@ -1,5 +1,5 @@
 # LightingKit
-## A simple library, for discover and controling HomeKit Lights on iOS.
+## A simple library, for discovering and controlling HomeKit Lights on iOS.
 ### Introduction
 LightingKit is a simple iOS library for discovering and using lighting accessories via HomeKit. It is specifically designed for dealing with lightbulb accessories.
 
