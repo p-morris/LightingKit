@@ -138,6 +138,8 @@ You can get an array all of the lights within a particular room like this:
 
 `let lights = kit.lights(forRoom: aRoom)`
 
+## Controlling a `Light`
+
 ### Turning a light on and off
 
 With a particular `Light` object in hand, you turn it on and off, via its `power` property:
@@ -175,3 +177,73 @@ light.brightness?.set(brightness: 50, completion: { (error) in
     }
 })
 ```
+### Fading the brighness over time
+
+You can also update the brightness value of a `Light` over a set duration.
+
+When you do this, the light's brightness will be gradually faded from its current value, to the value that you specify.
+
+For example, to set the light's brightness to `100` over 30 seconds:
+
+`light.brightness?.set(brightness: 100, duration: 30, brightnessDelegate: self)`
+
+To receive updates about the status of such a brightness update, have your class conform to the `TimedBrightnessUpdateDelegate` protocol:
+
+```
+extension ViewController: TimedBrightnessUpdateDelegate {
+    func brightness(_ brightness: Brightness, valueDidChange newValue: Int) {
+        // The brightness was updated to a new value!
+    }
+    
+    func brightness(_ brightness: Brightness, didCompleteTimedUpdate newValue: Int) {
+        // The timed brightness update is complete!
+    }
+    
+    func brightness(_ brightness: Brightness, timedUpdateFailed error: Error?) {
+        // The timed brightness update failed
+    }
+}
+```
+## Setting up new lights
+
+If a light has never been added to HomeKit, then you will have to add it before you can control it.
+
+Adding a `Light` to HomeKit involves two simple steps: searching for new lights, and then adding them to a room.
+
+### 1) Searching for lights to set up
+
+Simple set the `searchDelegate` property of your `LightingKit` object, and then start the search:
+
+```
+kit.searchDelegate = self
+kit.searchForNewLighting()
+```
+You'll need to have your class conform to the `LightingKitAccessorySearchDelegate` protocol, in order to receive callbacks when a lighting-related accessory is found:
+
+```
+extension ViewController: LightingKitAccessorySearchDelegate {
+    func lightingKit(_ lightingKit: LightingKit, foundNewLight light: Light) {
+        // LightingKit found a new light!
+    }
+    func lightingKit(_ lightingKit: LightingKit, foundNewBridge bridge: Bridge) {
+        // Don't worry, I'll explain what a bridge is later!
+    }
+}
+```
+### 2) Adding a new light to a room
+
+Once you've found a `Light` that needs setting up, you simply  add it to a room in order to start the set up process:
+
+```
+kit.add(newLight: light, toRoom: room) { (success) in
+    if success {
+        // The light was setup, and added to the room!
+    }
+}
+```
+**Important!** - Adding a new light to a room will trigger the iOS HomeKit accessory setup process within your app.
+
+Once a new `Light` has success been added to a `Room`, you can control it as usual!
+
+## Bridges and bridged lights
+
