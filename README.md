@@ -266,7 +266,7 @@ extension AppDelegate: LightingKitAccessorySearchDelegate {
 ```
 With a new `Bridge` object in hand, you can set it up like this:
 ```
-kit.add(newBridge: bridge, toRoom: room) { (success, lights) in
+kit.add(newBridge: bridge, toHome: home) { (success, lights) in
     if success {
         // The bridge was set up successfully!
     }
@@ -276,6 +276,23 @@ On `completion`, the `success` boolean will indicate if the setup was successful
 
 If `LightingKit` found any lighting accessories connected to the bridge, they will be passed in the completion.
 
-In the above example, `lights` is an optional array of `Light` objects (and will be set to `nil` if no lights were connected to the bridge).
+`lights` is an optional array of `Light` objects (and will be set to `nil` if no lights were connected to the bridge).
 
-**Important!** - After a `Bridge` is set up, any lights that are connected to it are automatically added to the "Default room" of the 
+**Important!** - After a `Bridge` is set up, any lights that are connected to it are automatically added to the "Default room" of the `Home` that was passed to the `add(newBridge:toHome:)` function.
+
+If you wish, you can take the lights that were connected to the bridge, and add them to a room:
+
+```
+kit.assignLights(lights: newLights, toRoom: room) { (assigned, failed) in
+    if assigned.count > 0 {
+        // These lights were successfully assigned to the room!
+    }
+    if failed.count > 0 {
+        // HomeKit failed to add these lights to the room.
+    }
+}
+```
+
+## Issues and Requests
+
+If you come across any bugs, or there is a particular feature that you'd like to see support for, then please file a Github issue and I'll get back to you.
