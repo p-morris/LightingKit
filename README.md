@@ -29,11 +29,15 @@ With LightingKit, you can:
 
 Add LightingKit as a dependency in your project's `Cartfile`:
 
-`github "p-morris/LightingKit" ~> 1.0.0`
+```
+github "p-morris/LightingKit" ~> 1.0.0
+```
 
 Update your project's dependencies using Carthage:
 
-`carthage update`
+```
+carthage update
+```
 
 Make sure that `LightingKit.framework` is linked in your project's build settings, and that it is copied as a resource in your project's build phases.
 
@@ -43,37 +47,49 @@ Add the `HomeKit` iOS framework to your project.
 
 Add LightingKit to your Podfile:
 
-`pod 'LightingKit'`
+```
+pod 'LightingKit'
+```
 
 Install LightingKit by running:
 
-`pod install`
+```
+pod install
+```
 
 ## Getting started
 
-### 1) Add HomeKit Usage Description to `Info.plist`
+### 1) Add the HomeKit Usage Description to `Info.plist`
 
 Open your project's `Info.plist` file, and add the `Privacy - HomeKit Usage Description` key.
 
 Its value should be a `String`. This will be shown to the user when they are asked for HomeKit permissions.
 
+**Important!** - If you fail to add this key to your project's `info.plist` file, then your app will crash when you start LightingKit.
+
 ### 2) Create a `LightingKit` object
 
 Import the LightingKit library into the file you'd like to use it in:
 
-`import LightingKit`
+```
+import LightingKit
+```
 
 Most of your interactions with LightingKit with be through the `LightingKit` class.
 
-Create a `LightingKit` object using the standard initializer:
+Initialize a `LightingKit` object:
 
-`let kit = LightingKit()`
+```
+let kit = LightingKit()
+```
 
 ### 3) Connect to HomeKit
 
 Execute your `LightingKit` object's `start()` function to connect to HomeKit:
 
-`kit.start()`
+```
+kit.start()
+```
 
 **Important!** - Starting `LightingKit` using the `start()` function, will prompt the user for HomeKit permissions (if permission has not already been given).
 
@@ -83,7 +99,9 @@ Starting LightingKit isn't much use if you don't check to see what happened!
 
 To get callbacks, set the `LightingKit` object's `permissionsDelegate` property:
 
-`kit.permissionsDelegate = self`
+```
+kit.permissionsDelegate = self
+```
 
 Then, have your class conform to the `LightingKitPermissionsDelegate` protocol in order to receive a callback when `LightingKit` is ready:
 
@@ -109,7 +127,9 @@ A `Home` is pretty self explanatory! It represents a particular home, which cont
 
 You can access an array of the user's homes via your `LightingKit` object:
 
-`let usersHomes = kit.homes`
+```
+let usersHomes = kit.homes
+```
 
 You can add a new `Home` like this:
 
@@ -144,7 +164,7 @@ kit.addRoom(name: "Bedroom", toHome: myHome) { (room) in
 
 Every `Home` contains a default `Room`.
 
-If the user has chosen not to add any custom rooms to their `Home`, then the `Home` will still contain one `Room`: the default room.
+If the user hasn't added any custom rooms to their `Home`, then the `Home` will still contain one `Room`: the default room.
 
 ### Lights
 
@@ -152,7 +172,9 @@ A `Light` belongs to a `Room`.
 
 You can get an array all of the lights within a particular room like this:
 
-`let lights = kit.lights(forRoom: aRoom)`
+```
+let lights = kit.lights(forRoom: aRoom)
+```
 
 ## Controlling lights
 
@@ -182,7 +204,9 @@ Each `Light` also has a `brightness` property, which can be used to access the c
 
 The brightness is an `Int` betweeen `0` and `100` (`100` being the highest possible brightness level):
 
-`let brightnessLevel = light.brightness?.value`
+```
+let brightnessLevel = light.brightness?.value
+```
 
 You can set the brightness level like this:
 
@@ -201,9 +225,11 @@ When you do this, the light's brightness will be gradually faded from its curren
 
 For example, to set the light's brightness to `100` over 30 seconds:
 
-`light.brightness?.set(brightness: 100, duration: 30, brightnessDelegate: self)`
+```
+light.brightness?.set(brightness: 100, duration: 30, brightnessDelegate: self)
+```
 
-To receive updates about the status of such a brightness update, have your class conform to the `TimedBrightnessUpdateDelegate` protocol:
+To receive callbacks about the status of a timed brightness update, have your class conform to the `TimedBrightnessUpdateDelegate` protocol:
 
 ```
 extension ViewController: TimedBrightnessUpdateDelegate {
@@ -261,6 +287,14 @@ kit.add(newLight: light, toRoom: room) { (success) in
 
 Once a new `Light` has successfully been added to a `Room`, you can control it as usual!
 
+### 3) Stopping the search
+
+When you've finished looking for new lights, remember to stop the search:
+
+```
+kit.stopNewLightingSearch()
+```
+
 ## Bridges and bridged lights
 
 Some smartlights require a "bridge" in order to connect to a network. Philip's Hue lighting, for example, requires such a bridge.
@@ -289,7 +323,7 @@ kit.add(newBridge: bridge, toHome: home) { (success, lights) in
 }
 ```
 
-If any lighting accessories are connected to the bridge, they will be passed as an array of `Light` objects, in the `completion`; in the above example, `lights` is an optional array of `Light` objects (and will be set to `nil` if no lights were connected to the bridge).
+If any lighting accessories are connected to the bridge, they will be passed as an array of `Light` objects, in the `completion`. In the above example, `lights` is an optional array of `Light` objects (and will be set to `nil` if no lights were connected to the bridge).
 
 **Important!** - After a `Bridge` is set up, any lights that are connected to it are automatically added to the "Default room" of the specified `Home`. If you wish, you can assign those lights to a `Room` of your choice:
 
