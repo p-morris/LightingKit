@@ -12,7 +12,9 @@ import HomeKit
 
 class MockServiceHandler: ServiceHandler {
     var wasCalled = false
+    var successorWasNil = true
     func assignService(to light: Light, with characteristic: HomeKitCharacteristicProtocol?, successor: ServiceHandler?) {
         wasCalled = true
+        successorWasNil = successor == nil
     }
 }

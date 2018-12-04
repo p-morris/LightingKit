@@ -43,6 +43,15 @@ class TestServicesBuilderChain: XCTestCase {
         handler.assignService(to: light, with: mockPowerCharacteristic, successor: mockHandler)
         XCTAssertFalse(mockHandler.wasCalled, "PowerServiceHandler should not call successor when characteristic is handled.")
     }
+    func testPowerServiceHandlerSetsNilSuccessorWhenCharacteristicIsNotHandled() {
+        let handler = PowerServiceHandler()
+        let mockHandler = MockServiceHandler()
+        let light = Light(name: "Test Light", uuid: UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!)
+        let mockBrightnessCharacteristic = MockCharacteristic()
+        mockBrightnessCharacteristic.characteristicType = HMCharacteristicTypeBrightness
+        handler.assignService(to: light, with: mockBrightnessCharacteristic, successor: mockHandler)
+        XCTAssertTrue(mockHandler.successorWasNil, "PowerServiceHandler should set successor to nil when characteristic not handled.")
+    }
     func testBrightnessServiceHandlerAssignsBrightness() {
         let handler = BrightnessServiceHandler()
         let light = Light(name: "Test Light", uuid: UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!)
@@ -82,6 +91,15 @@ class TestServicesBuilderChain: XCTestCase {
         builder.assignServices(to: light, with: nil)
         XCTAssertFalse(mockhandler.wasCalled, "LightServiceBuilder should not use handlers when characteristics are nil")
     }
+    func testBrightnessServiceHandlerSetsNilSuccessorWhenCharacteristicIsNotHandled() {
+        let handler = BrightnessServiceHandler()
+        let mockHandler = MockServiceHandler()
+        let light = Light(name: "Test Light", uuid: UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!)
+        let mockBrightnessCharacteristic = MockCharacteristic()
+        mockBrightnessCharacteristic.characteristicType = HMCharacteristicTypeBrightness
+        handler.assignService(to: light, with: mockBrightnessCharacteristic, successor: mockHandler)
+        XCTAssertTrue(mockHandler.successorWasNil, "BrightnessServiceHandler should set successor to nil when characteristic not handled.")
+    }
     func testLightServiceBuilderCorrectlyChainsHandlers() {
         let mockHandler1 = MockServiceHandler()
         let mockHandler2 = MockServiceHandler()
@@ -91,4 +109,5 @@ class TestServicesBuilderChain: XCTestCase {
         builder.assignServices(to: light, with: [MockCharacteristic()])
         XCTAssert(mockHandler1.wasCalled && mockHandler2.wasCalled && mockHandler3.wasCalled)
     }
+    
 }

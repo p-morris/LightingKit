@@ -28,7 +28,7 @@ class PowerServiceHandler: ServiceHandler {
                        with characteristic: HomeKitCharacteristicProtocol?,
                        successor: ServiceHandler?) {
         guard let power = Power(homeKitCharacteristic: characteristic) else {
-            successor?.assignService(to: light, with: characteristic, successor: successor)
+            successor?.assignService(to: light, with: characteristic, successor: nil)
             return
         }
         light.power = power
@@ -41,7 +41,7 @@ class BrightnessServiceHandler: ServiceHandler {
                        with characteristic: HomeKitCharacteristicProtocol?,
                        successor: ServiceHandler?) {
         guard let brightness = Brightness(homeKitCharacteristic: characteristic) else {
-            successor?.assignService(to: light, with: characteristic, successor: successor)
+            successor?.assignService(to: light, with: characteristic, successor: nil)
             return
         }
         light.brightness = brightness
