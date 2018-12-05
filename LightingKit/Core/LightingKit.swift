@@ -58,7 +58,7 @@ public final class LightingKit: NSObject {
         self.init(browser: LightingBrowser())
     }
     init(browser: LightingKitBrowser = LightingBrowser(),
-         serviceBuilder: HomeKitServiceBuilder = LightServiceBuilder()) {
+         serviceBuilder: HomeKitServiceBuilder = LightServiceFactory()) {
         self.browser = browser
         self.serviceBuilder = serviceBuilder
     }

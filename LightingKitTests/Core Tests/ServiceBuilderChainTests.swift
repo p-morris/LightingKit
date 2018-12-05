@@ -86,7 +86,7 @@ class TestServicesBuilderChain: XCTestCase {
     }
     func testLightServiceBuilderDoesntCallHandlersWhenCharacteristicsAreNil() {
         let mockhandler = MockServiceHandler()
-        let builder = LightServiceBuilder(handlers: [mockhandler])
+        let builder = LightServiceFactory(handlers: [mockhandler])
         let light = Light(name: "Test Light", uuid: UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!)
         builder.assignServices(to: light, with: nil)
         XCTAssertFalse(mockhandler.wasCalled, "LightServiceBuilder should not use handlers when characteristics are nil")
@@ -105,7 +105,7 @@ class TestServicesBuilderChain: XCTestCase {
         let mockHandler2 = MockServiceHandler()
         let mockHandler3 = MockServiceHandler()
         let light = Light(name: "Test Light", uuid: UUID(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")!)
-        let builder = LightServiceBuilder(handlers: [mockHandler1, mockHandler2, mockHandler3])
+        let builder = LightServiceFactory(handlers: [mockHandler1, mockHandler2, mockHandler3])
         builder.assignServices(to: light, with: [MockCharacteristic()])
         XCTAssert(mockHandler1.wasCalled && mockHandler2.wasCalled && mockHandler3.wasCalled)
     }

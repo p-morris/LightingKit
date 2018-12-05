@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720BAB3B21B7B3B300A85EC8 /* LightingGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BAB3A21B7B3B300A85EC8 /* LightingGroup.swift */; };
+		720BAB3F21B7B50800A85EC8 /* PowerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BAB3E21B7B50800A85EC8 /* PowerGroup.swift */; };
+		720BAB4121B7B54300A85EC8 /* BrightnessGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BAB4021B7B54300A85EC8 /* BrightnessGroup.swift */; };
+		720BAB4321B80C7100A85EC8 /* GroupFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BAB4221B80C7100A85EC8 /* GroupFactory.swift */; };
+		720BAB4521B80CDC00A85EC8 /* HomeArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BAB4421B80CDC00A85EC8 /* HomeArrayExtensions.swift */; };
+		720BAB4721B80D0F00A85EC8 /* AccessoryArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BAB4621B80D0F00A85EC8 /* AccessoryArrayExtensions.swift */; };
+		720BAB4921B80D3600A85EC8 /* ServiceArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BAB4821B80D3600A85EC8 /* ServiceArrayExtensions.swift */; };
+		720BAB4B21B80DA300A85EC8 /* CharacteristicArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BAB4A21B80DA300A85EC8 /* CharacteristicArrayExtensions.swift */; };
+		720BAB5121B80E9000A85EC8 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BAB5021B80E9000A85EC8 /* ServiceFactory.swift */; };
 		72100E5321A4FE4000834C4D /* LightingKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5221A4FE4000834C4D /* LightingKit.swift */; };
 		72100E5521A5014200834C4D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5421A5014200834C4D /* Home.swift */; };
 		72100E5721A503D600834C4D /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5621A503D600834C4D /* Room.swift */; };
 		72100E5921A5056F00834C4D /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E5821A5056F00834C4D /* Light.swift */; };
-		72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6021A517D800834C4D /* ArrayExtensions.swift */; };
 		72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72100E6221A5187400834C4D /* FilterStrategy.swift */; };
 		72385CAB21AAD1C8004983E9 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72385CAA21AAD1C8004983E9 /* HomeKit.framework */; };
 		72484BC321B65B5300617BA7 /* ServiceBuilderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72484BC221B65B5300617BA7 /* ServiceBuilderChain.swift */; };
@@ -78,11 +86,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		720BAB3A21B7B3B300A85EC8 /* LightingGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingGroup.swift; sourceTree = "<group>"; };
+		720BAB3E21B7B50800A85EC8 /* PowerGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerGroup.swift; sourceTree = "<group>"; };
+		720BAB4021B7B54300A85EC8 /* BrightnessGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessGroup.swift; sourceTree = "<group>"; };
+		720BAB4221B80C7100A85EC8 /* GroupFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFactory.swift; sourceTree = "<group>"; };
+		720BAB4421B80CDC00A85EC8 /* HomeArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeArrayExtensions.swift; sourceTree = "<group>"; };
+		720BAB4621B80D0F00A85EC8 /* AccessoryArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryArrayExtensions.swift; sourceTree = "<group>"; };
+		720BAB4821B80D3600A85EC8 /* ServiceArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceArrayExtensions.swift; sourceTree = "<group>"; };
+		720BAB4A21B80DA300A85EC8 /* CharacteristicArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicArrayExtensions.swift; sourceTree = "<group>"; };
+		720BAB5021B80E9000A85EC8 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		72100E5221A4FE4000834C4D /* LightingKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingKit.swift; sourceTree = "<group>"; };
 		72100E5421A5014200834C4D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		72100E5621A503D600834C4D /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		72100E5821A5056F00834C4D /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
-		72100E6021A517D800834C4D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		72100E6221A5187400834C4D /* FilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
 		72385CAA21AAD1C8004983E9 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		72484BC221B65B5300617BA7 /* ServiceBuilderChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceBuilderChain.swift; sourceTree = "<group>"; };
@@ -161,17 +177,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		72100E5B21A5172900834C4D /* HomeKit Extensions */ = {
+		720BAB4C21B80DB800A85EC8 /* Array Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				720BAB4421B80CDC00A85EC8 /* HomeArrayExtensions.swift */,
+				720BAB4621B80D0F00A85EC8 /* AccessoryArrayExtensions.swift */,
+				720BAB4821B80D3600A85EC8 /* ServiceArrayExtensions.swift */,
+				720BAB4A21B80DA300A85EC8 /* CharacteristicArrayExtensions.swift */,
+			);
+			path = "Array Extensions";
+			sourceTree = "<group>";
+		};
+		720BAB4D21B80DCB00A85EC8 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				720BAB4221B80C7100A85EC8 /* GroupFactory.swift */,
+				720BAB5021B80E9000A85EC8 /* ServiceFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		720BAB4E21B80E0100A85EC8 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				72A036FD21A7C21A001E8761 /* SuccessStrategy.swift */,
+				72100E6221A5187400834C4D /* FilterStrategy.swift */,
+			);
+			path = Strategies;
+			sourceTree = "<group>";
+		};
+		720BAB4F21B80E3700A85EC8 /* Responsibility Chains */ = {
+			isa = PBXGroup;
+			children = (
+				72484BC221B65B5300617BA7 /* ServiceBuilderChain.swift */,
+			);
+			path = "Responsibility Chains";
+			sourceTree = "<group>";
+		};
+		720BAB5221B80EF100A85EC8 /* Swift Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				726F8A8C21AA73CE0086A34B /* FoundationExtensions.swift */,
+				72A0372521A850F1001E8761 /* TimeInterval+FadeBrightness.swift */,
+				7278437321A9E95B00FD2445 /* Int+SanitizeBrightness.swift */,
+			);
+			path = "Swift Extensions";
+			sourceTree = "<group>";
+		};
+		72100E5B21A5172900834C4D /* HomeKit Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				720BAB4C21B80DB800A85EC8 /* Array Extensions */,
 				726F8A7E21AA672F0086A34B /* HomeKitObjectExtensions.swift */,
 				726F8A7A21AA65BD0086A34B /* CharacteristicExtensions.swift */,
 				726A537321B1489D00BFE9B0 /* AccessoryExtensions.swift */,
 				726F8A7C21AA66AE0086A34B /* CategoryExtensions.swift */,
 				726A537521B148C000BFE9B0 /* ServiceExtensions.swift */,
-				72100E6021A517D800834C4D /* ArrayExtensions.swift */,
-				72100E6221A5187400834C4D /* FilterStrategy.swift */,
 				72A0370521A7CEA1001E8761 /* HMHomeManagerExtensions.swift */,
 				72A0371921A7F3B4001E8761 /* HMAccessoryBrowserExtensions.swift */,
 			);
@@ -189,7 +250,6 @@
 		728D896321A547EE005060C4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				72A036FD21A7C21A001E8761 /* SuccessStrategy.swift */,
 				729BC40C21A3F323002E0C0D /* LightingKitPermissions.swift */,
 				72B7B37D21A6607B004336C1 /* LightingBrowser.swift */,
 				72100E5221A4FE4000834C4D /* LightingKit.swift */,
@@ -205,13 +265,13 @@
 				72100E5421A5014200834C4D /* Home.swift */,
 				72100E5621A503D600834C4D /* Room.swift */,
 				72100E5821A5056F00834C4D /* Light.swift */,
-				72484BC221B65B5300617BA7 /* ServiceBuilderChain.swift */,
-				729BB52721B026BF00EB89E1 /* Bridge.swift */,
 				7278437521A9EFF900FD2445 /* Characteristic.swift */,
 				72A0372321A8479D001E8761 /* Power.swift */,
 				72A0372121A84795001E8761 /* Brightness.swift */,
-				72A0372521A850F1001E8761 /* TimeInterval+FadeBrightness.swift */,
-				7278437321A9E95B00FD2445 /* Int+SanitizeBrightness.swift */,
+				729BB52721B026BF00EB89E1 /* Bridge.swift */,
+				720BAB3A21B7B3B300A85EC8 /* LightingGroup.swift */,
+				720BAB3E21B7B50800A85EC8 /* PowerGroup.swift */,
+				720BAB4021B7B54300A85EC8 /* BrightnessGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,7 +299,11 @@
 			isa = PBXGroup;
 			children = (
 				728D896421A54801005060C4 /* Model */,
+				720BAB5221B80EF100A85EC8 /* Swift Extensions */,
 				72100E5B21A5172900834C4D /* HomeKit Extensions */,
+				720BAB4E21B80E0100A85EC8 /* Strategies */,
+				720BAB4F21B80E3700A85EC8 /* Responsibility Chains */,
+				720BAB4D21B80DCB00A85EC8 /* Factories */,
 				728D896321A547EE005060C4 /* Core */,
 				728E44FD21A2BD6100233F9A /* LightingKit.h */,
 				728E44FE21A2BD6100233F9A /* Info.plist */,
@@ -440,31 +504,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				72A036FE21A7C21A001E8761 /* SuccessStrategy.swift in Sources */,
+				720BAB4121B7B54300A85EC8 /* BrightnessGroup.swift in Sources */,
 				72A0370621A7CEA1001E8761 /* HMHomeManagerExtensions.swift in Sources */,
 				726F8A7F21AA672F0086A34B /* HomeKitObjectExtensions.swift in Sources */,
 				72B7B37E21A6607B004336C1 /* LightingBrowser.swift in Sources */,
 				72A0372421A8479D001E8761 /* Power.swift in Sources */,
 				729BC40D21A3F323002E0C0D /* LightingKitPermissions.swift in Sources */,
+				720BAB4521B80CDC00A85EC8 /* HomeArrayExtensions.swift in Sources */,
 				72484BC321B65B5300617BA7 /* ServiceBuilderChain.swift in Sources */,
 				726F8A7D21AA66AE0086A34B /* CategoryExtensions.swift in Sources */,
 				7278437621A9EFF900FD2445 /* Characteristic.swift in Sources */,
 				72100E5721A503D600834C4D /* Room.swift in Sources */,
 				72100E6321A5187400834C4D /* FilterStrategy.swift in Sources */,
 				72A0370C21A7CF6C001E8761 /* LightingKitObject.swift in Sources */,
+				720BAB5121B80E9000A85EC8 /* ServiceFactory.swift in Sources */,
+				720BAB3B21B7B3B300A85EC8 /* LightingGroup.swift in Sources */,
 				7278437421A9E95B00FD2445 /* Int+SanitizeBrightness.swift in Sources */,
 				72100E5321A4FE4000834C4D /* LightingKit.swift in Sources */,
 				729BB52821B026BF00EB89E1 /* Bridge.swift in Sources */,
 				72A0372221A84795001E8761 /* Brightness.swift in Sources */,
 				72100E5521A5014200834C4D /* Home.swift in Sources */,
+				720BAB4721B80D0F00A85EC8 /* AccessoryArrayExtensions.swift in Sources */,
 				726A537421B1489D00BFE9B0 /* AccessoryExtensions.swift in Sources */,
+				720BAB4921B80D3600A85EC8 /* ServiceArrayExtensions.swift in Sources */,
 				726F8A7B21AA65BD0086A34B /* CharacteristicExtensions.swift in Sources */,
+				720BAB4321B80C7100A85EC8 /* GroupFactory.swift in Sources */,
 				72A0372621A850F1001E8761 /* TimeInterval+FadeBrightness.swift in Sources */,
+				720BAB4B21B80DA300A85EC8 /* CharacteristicArrayExtensions.swift in Sources */,
+				720BAB3F21B7B50800A85EC8 /* PowerGroup.swift in Sources */,
 				72100E5921A5056F00834C4D /* Light.swift in Sources */,
 				72A0371A21A7F3B4001E8761 /* HMAccessoryBrowserExtensions.swift in Sources */,
 				7278437221A9E79000FD2445 /* Error.swift in Sources */,
 				726A537621B148C000BFE9B0 /* ServiceExtensions.swift in Sources */,
 				726F8A8D21AA73CE0086A34B /* FoundationExtensions.swift in Sources */,
-				72100E6121A517D800834C4D /* ArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
