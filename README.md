@@ -21,7 +21,7 @@ With LightingKit, you can:
 - Turn lights on and off.
 - Set the brightness.
 - Change the brightness progressively over a specified duration.
-- Support for hue and saturation will be added soon.
+- Support for hue, saturation, and lighting groups will be added soon.
 
 ## Installing LightingKit
 
