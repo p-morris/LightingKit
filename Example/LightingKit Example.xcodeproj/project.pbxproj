@@ -7,6 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720D286221B918F6009E32F3 /* Int+SanitizeBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D283721B918F5009E32F3 /* Int+SanitizeBrightness.swift */; };
+		720D286321B918F6009E32F3 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D283821B918F5009E32F3 /* FoundationExtensions.swift */; };
+		720D286421B918F6009E32F3 /* TimeInterval+FadeBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D283921B918F5009E32F3 /* TimeInterval+FadeBrightness.swift */; };
+		720D286521B918F6009E32F3 /* LightingKitPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D283C21B918F5009E32F3 /* LightingKitPermissions.swift */; };
+		720D286621B918F6009E32F3 /* LightingKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D283D21B918F5009E32F3 /* LightingKit.swift */; };
+		720D286721B918F6009E32F3 /* LightingBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D283E21B918F5009E32F3 /* LightingBrowser.swift */; };
+		720D286821B918F6009E32F3 /* ServiceBuilderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284021B918F5009E32F3 /* ServiceBuilderChain.swift */; };
+		720D286921B918F6009E32F3 /* AccessoryArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284321B918F5009E32F3 /* AccessoryArrayExtensions.swift */; };
+		720D286A21B918F6009E32F3 /* ServiceArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284421B918F5009E32F3 /* ServiceArrayExtensions.swift */; };
+		720D286B21B918F6009E32F3 /* HomeArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284521B918F5009E32F3 /* HomeArrayExtensions.swift */; };
+		720D286C21B918F6009E32F3 /* CharacteristicArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284621B918F5009E32F3 /* CharacteristicArrayExtensions.swift */; };
+		720D286D21B918F6009E32F3 /* AccessoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284721B918F5009E32F3 /* AccessoryExtensions.swift */; };
+		720D286E21B918F6009E32F3 /* CategoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284821B918F5009E32F3 /* CategoryExtensions.swift */; };
+		720D286F21B918F6009E32F3 /* HMAccessoryBrowserExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284921B918F5009E32F3 /* HMAccessoryBrowserExtensions.swift */; };
+		720D287021B918F6009E32F3 /* CharacteristicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284A21B918F5009E32F3 /* CharacteristicExtensions.swift */; };
+		720D287121B918F6009E32F3 /* ServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284B21B918F5009E32F3 /* ServiceExtensions.swift */; };
+		720D287221B918F6009E32F3 /* HomeKitObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284C21B918F5009E32F3 /* HomeKitObjectExtensions.swift */; };
+		720D287321B918F6009E32F3 /* HMHomeManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284D21B918F5009E32F3 /* HMHomeManagerExtensions.swift */; };
+		720D287421B918F6009E32F3 /* SuccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D284F21B918F5009E32F3 /* SuccessStrategy.swift */; };
+		720D287521B918F6009E32F3 /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285021B918F5009E32F3 /* FilterStrategy.swift */; };
+		720D287621B918F6009E32F3 /* GroupFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285221B918F5009E32F3 /* GroupFactory.swift */; };
+		720D287721B918F6009E32F3 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285321B918F5009E32F3 /* ServiceFactory.swift */; };
+		720D287821B918F6009E32F3 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285521B918F5009E32F3 /* Bridge.swift */; };
+		720D287921B918F6009E32F3 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285621B918F5009E32F3 /* Power.swift */; };
+		720D287A21B918F6009E32F3 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285721B918F5009E32F3 /* Error.swift */; };
+		720D287B21B918F6009E32F3 /* LightingGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285821B918F5009E32F3 /* LightingGroup.swift */; };
+		720D287C21B918F6009E32F3 /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285921B918F5009E32F3 /* Brightness.swift */; };
+		720D287D21B918F6009E32F3 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285A21B918F5009E32F3 /* Home.swift */; };
+		720D287E21B918F6009E32F3 /* LightingKitObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285B21B918F5009E32F3 /* LightingKitObject.swift */; };
+		720D287F21B918F6009E32F3 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285C21B918F5009E32F3 /* Room.swift */; };
+		720D288021B918F6009E32F3 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285D21B918F5009E32F3 /* Light.swift */; };
+		720D288121B918F6009E32F3 /* BrightnessGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285E21B918F5009E32F3 /* BrightnessGroup.swift */; };
+		720D288221B918F6009E32F3 /* PowerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D285F21B918F5009E32F3 /* PowerGroup.swift */; };
+		720D288321B918F6009E32F3 /* Characteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D286021B918F5009E32F3 /* Characteristic.swift */; };
 		72517D8521AEBD900075B696 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72517D8421AEBD900075B696 /* UITextField.swift */; };
 		726A537821B1588F00BFE9B0 /* SelectBridgedLightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A537721B1588F00BFE9B0 /* SelectBridgedLightsViewController.swift */; };
 		729BC43021A41233002E0C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BC42F21A41233002E0C0D /* AppDelegate.swift */; };
@@ -23,11 +57,44 @@
 		72AAA3A221ADA177001FA94B /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B7B38121A69D5C004336C1 /* HomeKit.framework */; };
 		72C7E5E921AE7BA900B04A23 /* LightControlsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C7E5E821AE7BA900B04A23 /* LightControlsViewController.xib */; };
 		72C7E5EB21AE7CD800B04A23 /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C7E5EA21AE7CD800B04A23 /* lightbulb.png */; };
-		8DAE61FDA30D48865AF6681D /* Pods_LightingKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		074E6EA29F926B7D2D718F02 /* Pods-LightingKit Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightingKit Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example.release.xcconfig"; sourceTree = "<group>"; };
+		720D283721B918F5009E32F3 /* Int+SanitizeBrightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+SanitizeBrightness.swift"; sourceTree = "<group>"; };
+		720D283821B918F5009E32F3 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		720D283921B918F5009E32F3 /* TimeInterval+FadeBrightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+FadeBrightness.swift"; sourceTree = "<group>"; };
+		720D283A21B918F5009E32F3 /* LightingKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightingKit.h; sourceTree = "<group>"; };
+		720D283C21B918F5009E32F3 /* LightingKitPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingKitPermissions.swift; sourceTree = "<group>"; };
+		720D283D21B918F5009E32F3 /* LightingKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingKit.swift; sourceTree = "<group>"; };
+		720D283E21B918F5009E32F3 /* LightingBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingBrowser.swift; sourceTree = "<group>"; };
+		720D284021B918F5009E32F3 /* ServiceBuilderChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceBuilderChain.swift; sourceTree = "<group>"; };
+		720D284321B918F5009E32F3 /* AccessoryArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryArrayExtensions.swift; sourceTree = "<group>"; };
+		720D284421B918F5009E32F3 /* ServiceArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceArrayExtensions.swift; sourceTree = "<group>"; };
+		720D284521B918F5009E32F3 /* HomeArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeArrayExtensions.swift; sourceTree = "<group>"; };
+		720D284621B918F5009E32F3 /* CharacteristicArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacteristicArrayExtensions.swift; sourceTree = "<group>"; };
+		720D284721B918F5009E32F3 /* AccessoryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryExtensions.swift; sourceTree = "<group>"; };
+		720D284821B918F5009E32F3 /* CategoryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryExtensions.swift; sourceTree = "<group>"; };
+		720D284921B918F5009E32F3 /* HMAccessoryBrowserExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAccessoryBrowserExtensions.swift; sourceTree = "<group>"; };
+		720D284A21B918F5009E32F3 /* CharacteristicExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacteristicExtensions.swift; sourceTree = "<group>"; };
+		720D284B21B918F5009E32F3 /* ServiceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceExtensions.swift; sourceTree = "<group>"; };
+		720D284C21B918F5009E32F3 /* HomeKitObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKitObjectExtensions.swift; sourceTree = "<group>"; };
+		720D284D21B918F5009E32F3 /* HMHomeManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMHomeManagerExtensions.swift; sourceTree = "<group>"; };
+		720D284F21B918F5009E32F3 /* SuccessStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessStrategy.swift; sourceTree = "<group>"; };
+		720D285021B918F5009E32F3 /* FilterStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
+		720D285221B918F5009E32F3 /* GroupFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupFactory.swift; sourceTree = "<group>"; };
+		720D285321B918F5009E32F3 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		720D285521B918F5009E32F3 /* Bridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		720D285621B918F5009E32F3 /* Power.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
+		720D285721B918F5009E32F3 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		720D285821B918F5009E32F3 /* LightingGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingGroup.swift; sourceTree = "<group>"; };
+		720D285921B918F5009E32F3 /* Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brightness.swift; sourceTree = "<group>"; };
+		720D285A21B918F5009E32F3 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		720D285B21B918F5009E32F3 /* LightingKitObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingKitObject.swift; sourceTree = "<group>"; };
+		720D285C21B918F5009E32F3 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		720D285D21B918F5009E32F3 /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		720D285E21B918F5009E32F3 /* BrightnessGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessGroup.swift; sourceTree = "<group>"; };
+		720D285F21B918F5009E32F3 /* PowerGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerGroup.swift; sourceTree = "<group>"; };
+		720D286021B918F5009E32F3 /* Characteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characteristic.swift; sourceTree = "<group>"; };
 		72517D8421AEBD900075B696 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		726A537721B1588F00BFE9B0 /* SelectBridgedLightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBridgedLightsViewController.swift; sourceTree = "<group>"; };
 		729BC42C21A41233002E0C0D /* LightingKit Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LightingKit Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,8 +114,6 @@
 		72B7B38321A69D5C004336C1 /* LightingKit Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LightingKit Example.entitlements"; sourceTree = "<group>"; };
 		72C7E5E821AE7BA900B04A23 /* LightControlsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LightControlsViewController.xib; sourceTree = "<group>"; };
 		72C7E5EA21AE7CD800B04A23 /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
-		8F2E722DB06174FDAD8695BD /* Pods-LightingKit Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightingKit Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightingKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +122,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				72AAA3A221ADA177001FA94B /* HomeKit.framework in Frameworks */,
-				8DAE61FDA30D48865AF6681D /* Pods_LightingKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,18 +132,115 @@
 			isa = PBXGroup;
 			children = (
 				72B7B38121A69D5C004336C1 /* HomeKit.framework */,
-				B6EF92D5D55C778E729AE1F5 /* Pods_LightingKit_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		53C1A0377577FA58D92118FB /* Pods */ = {
+		720D283521B918F5009E32F3 /* LightingKit */ = {
 			isa = PBXGroup;
 			children = (
-				8F2E722DB06174FDAD8695BD /* Pods-LightingKit Example.debug.xcconfig */,
-				074E6EA29F926B7D2D718F02 /* Pods-LightingKit Example.release.xcconfig */,
+				720D283621B918F5009E32F3 /* Swift Extensions */,
+				720D283A21B918F5009E32F3 /* LightingKit.h */,
+				720D283B21B918F5009E32F3 /* Core */,
+				720D283F21B918F5009E32F3 /* Responsibility Chains */,
+				720D284121B918F5009E32F3 /* HomeKit Extensions */,
+				720D284E21B918F5009E32F3 /* Strategies */,
+				720D285121B918F5009E32F3 /* Factories */,
+				720D285421B918F5009E32F3 /* Model */,
 			);
-			name = Pods;
+			name = LightingKit;
+			path = ../../LightingKit;
+			sourceTree = "<group>";
+		};
+		720D283621B918F5009E32F3 /* Swift Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				720D283721B918F5009E32F3 /* Int+SanitizeBrightness.swift */,
+				720D283821B918F5009E32F3 /* FoundationExtensions.swift */,
+				720D283921B918F5009E32F3 /* TimeInterval+FadeBrightness.swift */,
+			);
+			path = "Swift Extensions";
+			sourceTree = "<group>";
+		};
+		720D283B21B918F5009E32F3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				720D283C21B918F5009E32F3 /* LightingKitPermissions.swift */,
+				720D283D21B918F5009E32F3 /* LightingKit.swift */,
+				720D283E21B918F5009E32F3 /* LightingBrowser.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		720D283F21B918F5009E32F3 /* Responsibility Chains */ = {
+			isa = PBXGroup;
+			children = (
+				720D284021B918F5009E32F3 /* ServiceBuilderChain.swift */,
+			);
+			path = "Responsibility Chains";
+			sourceTree = "<group>";
+		};
+		720D284121B918F5009E32F3 /* HomeKit Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				720D284221B918F5009E32F3 /* Array Extensions */,
+				720D284721B918F5009E32F3 /* AccessoryExtensions.swift */,
+				720D284821B918F5009E32F3 /* CategoryExtensions.swift */,
+				720D284921B918F5009E32F3 /* HMAccessoryBrowserExtensions.swift */,
+				720D284A21B918F5009E32F3 /* CharacteristicExtensions.swift */,
+				720D284B21B918F5009E32F3 /* ServiceExtensions.swift */,
+				720D284C21B918F5009E32F3 /* HomeKitObjectExtensions.swift */,
+				720D284D21B918F5009E32F3 /* HMHomeManagerExtensions.swift */,
+			);
+			path = "HomeKit Extensions";
+			sourceTree = "<group>";
+		};
+		720D284221B918F5009E32F3 /* Array Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				720D284321B918F5009E32F3 /* AccessoryArrayExtensions.swift */,
+				720D284421B918F5009E32F3 /* ServiceArrayExtensions.swift */,
+				720D284521B918F5009E32F3 /* HomeArrayExtensions.swift */,
+				720D284621B918F5009E32F3 /* CharacteristicArrayExtensions.swift */,
+			);
+			path = "Array Extensions";
+			sourceTree = "<group>";
+		};
+		720D284E21B918F5009E32F3 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				720D284F21B918F5009E32F3 /* SuccessStrategy.swift */,
+				720D285021B918F5009E32F3 /* FilterStrategy.swift */,
+			);
+			path = Strategies;
+			sourceTree = "<group>";
+		};
+		720D285121B918F5009E32F3 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				720D285221B918F5009E32F3 /* GroupFactory.swift */,
+				720D285321B918F5009E32F3 /* ServiceFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		720D285421B918F5009E32F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				720D285521B918F5009E32F3 /* Bridge.swift */,
+				720D285621B918F5009E32F3 /* Power.swift */,
+				720D285721B918F5009E32F3 /* Error.swift */,
+				720D285821B918F5009E32F3 /* LightingGroup.swift */,
+				720D285921B918F5009E32F3 /* Brightness.swift */,
+				720D285A21B918F5009E32F3 /* Home.swift */,
+				720D285B21B918F5009E32F3 /* LightingKitObject.swift */,
+				720D285C21B918F5009E32F3 /* Room.swift */,
+				720D285D21B918F5009E32F3 /* Light.swift */,
+				720D285E21B918F5009E32F3 /* BrightnessGroup.swift */,
+				720D285F21B918F5009E32F3 /* PowerGroup.swift */,
+				720D286021B918F5009E32F3 /* Characteristic.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		72517D8221AEB5480075B696 /* Support FIles */ = {
@@ -107,7 +268,6 @@
 			children = (
 				729BC42E21A41233002E0C0D /* LightingKit Example */,
 				729BC42D21A41233002E0C0D /* Products */,
-				53C1A0377577FA58D92118FB /* Pods */,
 				38710891E2E071833AE8F21A /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -123,6 +283,7 @@
 		729BC42E21A41233002E0C0D /* LightingKit Example */ = {
 			isa = PBXGroup;
 			children = (
+				720D283521B918F5009E32F3 /* LightingKit */,
 				72517D8321AEB56F0075B696 /* Extensions */,
 				72517D8221AEB5480075B696 /* Support FIles */,
 				729BC42F21A41233002E0C0D /* AppDelegate.swift */,
@@ -147,11 +308,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 729BC43E21A41239002E0C0D /* Build configuration list for PBXNativeTarget "LightingKit Example" */;
 			buildPhases = (
-				C54823981D2BDF001F680384 /* [CP] Check Pods Manifest.lock */,
 				729BC42821A41233002E0C0D /* Sources */,
 				729BC42921A41233002E0C0D /* Frameworks */,
 				729BC42A21A41233002E0C0D /* Resources */,
-				1235476D402AC9D57EED1D46 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,69 +373,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1235476D402AC9D57EED1D46 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/LightingKit/LightingKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LightingKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LightingKit Example/Pods-LightingKit Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C54823981D2BDF001F680384 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LightingKit Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		729BC42821A41233002E0C0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				726A537821B1588F00BFE9B0 /* SelectBridgedLightsViewController.swift in Sources */,
+				720D286321B918F6009E32F3 /* FoundationExtensions.swift in Sources */,
+				720D287121B918F6009E32F3 /* ServiceExtensions.swift in Sources */,
 				72AAA38F21AD5A42001FA94B /* DataSource.swift in Sources */,
+				720D287821B918F6009E32F3 /* Bridge.swift in Sources */,
+				720D287F21B918F6009E32F3 /* Room.swift in Sources */,
+				720D286F21B918F6009E32F3 /* HMAccessoryBrowserExtensions.swift in Sources */,
 				72517D8521AEBD900075B696 /* UITextField.swift in Sources */,
+				720D287421B918F6009E32F3 /* SuccessStrategy.swift in Sources */,
 				729BC43021A41233002E0C0D /* AppDelegate.swift in Sources */,
 				72AAA39521AD5E82001FA94B /* UIAlertController+AddObject.swift in Sources */,
 				72AAA3A121AD9240001FA94B /* AddNewLightController.swift in Sources */,
+				720D288321B918F6009E32F3 /* Characteristic.swift in Sources */,
+				720D288021B918F6009E32F3 /* Light.swift in Sources */,
 				72AAA39B21AD8C32001FA94B /* RoomsViewController.swift in Sources */,
+				720D287921B918F6009E32F3 /* Power.swift in Sources */,
+				720D286C21B918F6009E32F3 /* CharacteristicArrayExtensions.swift in Sources */,
 				72AAA39921AD8882001FA94B /* HomesViewController.swift in Sources */,
+				720D287E21B918F6009E32F3 /* LightingKitObject.swift in Sources */,
+				720D286721B918F6009E32F3 /* LightingBrowser.swift in Sources */,
+				720D287A21B918F6009E32F3 /* Error.swift in Sources */,
+				720D288121B918F6009E32F3 /* BrightnessGroup.swift in Sources */,
+				720D288221B918F6009E32F3 /* PowerGroup.swift in Sources */,
 				72AAA39F21AD8E6F001FA94B /* LightControlsViewController.swift in Sources */,
+				720D286B21B918F6009E32F3 /* HomeArrayExtensions.swift in Sources */,
+				720D287D21B918F6009E32F3 /* Home.swift in Sources */,
+				720D287B21B918F6009E32F3 /* LightingGroup.swift in Sources */,
+				720D287521B918F6009E32F3 /* FilterStrategy.swift in Sources */,
+				720D287021B918F6009E32F3 /* CharacteristicExtensions.swift in Sources */,
+				720D287621B918F6009E32F3 /* GroupFactory.swift in Sources */,
+				720D287221B918F6009E32F3 /* HomeKitObjectExtensions.swift in Sources */,
+				720D286D21B918F6009E32F3 /* AccessoryExtensions.swift in Sources */,
+				720D286621B918F6009E32F3 /* LightingKit.swift in Sources */,
+				720D287321B918F6009E32F3 /* HMHomeManagerExtensions.swift in Sources */,
+				720D286521B918F6009E32F3 /* LightingKitPermissions.swift in Sources */,
+				720D286921B918F6009E32F3 /* AccessoryArrayExtensions.swift in Sources */,
+				720D286E21B918F6009E32F3 /* CategoryExtensions.swift in Sources */,
+				720D287721B918F6009E32F3 /* ServiceFactory.swift in Sources */,
+				720D286221B918F6009E32F3 /* Int+SanitizeBrightness.swift in Sources */,
+				720D287C21B918F6009E32F3 /* Brightness.swift in Sources */,
 				72AAA37821AD29D6001FA94B /* AppFacade.swift in Sources */,
+				720D286821B918F6009E32F3 /* ServiceBuilderChain.swift in Sources */,
+				720D286421B918F6009E32F3 /* TimeInterval+FadeBrightness.swift in Sources */,
 				72AAA39D21AD8DA0001FA94B /* LightsVIewController.swift in Sources */,
+				720D286A21B918F6009E32F3 /* ServiceArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +558,6 @@
 		};
 		729BC43F21A41239002E0C0D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F2E722DB06174FDAD8695BD /* Pods-LightingKit Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "LightingKit Example/Support Files/LightingKit Example.entitlements";
@@ -432,7 +577,6 @@
 		};
 		729BC44021A41239002E0C0D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 074E6EA29F926B7D2D718F02 /* Pods-LightingKit Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "LightingKit Example/Support Files/LightingKit Example.entitlements";
