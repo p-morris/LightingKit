@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TimedBrightnessGroupUpdateDelegate: class {
+public protocol TimedBrightnessGroupUpdateDelegate: class {
     func brightnessGroup(_ group: BrightnessGroup, didCompleteTimedBrightnessUpdate errors: [Error]?)
 }
 
@@ -71,11 +71,12 @@ extension BrightnessGroup: TimedBrightnessUpdateDelegate {
      - Note: Any timed brightness operations currently in operation will be cancelled, and the operation
      will start from the light's current brightness value.
      */
-    public func set(brightness: Int, duration: TimeInterval, brightnessDelegate: TimedBrightnessUpdateDelegate) {
+    public func set(brightness: Int, duration: TimeInterval, brightnessDelegate: TimedBrightnessGroupUpdateDelegate) {
         updatingServices = services.count
+        delegate = brightnessDelegate
         services.forEach { service in
             service.delegate = self
-            service.set(brightness: brightness, duration: duration, brightnessDelegate: brightnessDelegate)
+            service.set(brightness: brightness, duration: duration, brightnessDelegate: self)
         }
     }
     public func brightness(_ brightness: Brightness, valueDidChange newValue: Int) {
