@@ -68,7 +68,6 @@ public final class Brightness: Characteristic {
      - Parameters:
      - brightness: The new brightness value. 0-100.
      - completion: The closure that should be execute when the brightness value has been updated.
-     - returns: An initialized `Brightness` object.
      */
     public func set(brightness: Int, completion: @escaping (Error?) -> Void) {
         homeKitCharacteristic.writeValue(brightness, completionHandler: completion)
