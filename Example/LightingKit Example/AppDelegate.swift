@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import LightingKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
