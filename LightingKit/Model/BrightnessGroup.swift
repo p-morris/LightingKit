@@ -26,6 +26,7 @@ public class BrightnessGroup: CharacteristicGroup {
                 let errors: [Error]? = updateErrors.count > 0 ? updateErrors : nil
                 delegate?.brightnessGroup(self, didCompleteTimedBrightnessUpdate: errors)
                 updateErrors.removeAll()
+                delegate = nil
             }
         }
     }

@@ -11,13 +11,13 @@ import HomeKit
 /// Represents a grouping of lights, along with their services such as power and brightness
 public struct LightingGroup {
     /// The name of the group
-    let name: String
+    public let name: String
     /// The unique identifier of the group
-    let uuid: UUID
+    public let uuid: UUID
     /// The power services for the group
-    let power: PowerGroup
+    public let power: PowerGroup
     /// The brightness services for the group
-    let brightness: BrightnessGroup?
+    public let brightness: BrightnessGroup?
     /**
      Initializes a `LightingGroup` object.
      - Parameters:
