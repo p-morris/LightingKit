@@ -31,4 +31,21 @@ public struct PowerGroup: CharacteristicGroup {
         guard services.count > 0 else { return nil }
         self.services = services
     }
+    /**
+     Used to turn the power of the all the lights within the service group on or off.
+     - Parameters:
+     - on: A `Bool` representing whether the `Light` should be turned on (`true`) or off (`false`).
+     - completion: The closure to execute when the power value has been updated.
+     */
+    public func on(_ isOn: Bool, completion: @escaping ([Error]?) -> Void) {
+        var errors: [Error] = []
+        for (index, service) in services.enumerated() {
+            service.on(isOn) { error in
+                if let error = error { errors.append(error) }
+                if index == self.services.count - 1 {
+                    completion(errors.count > 0 ? errors : nil)
+                }
+            }
+        }
+    }
 }

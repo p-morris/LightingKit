@@ -18,10 +18,10 @@ LightingKit is a simple iOS library for discovering and using lighting accessori
 With LightingKit, you can:
 
 - Discover new lights and add them to a home and room.
-- Turn lights on and off.
+- Turn lights on and off (included grouped lights).
 - Set the brightness.
 - Change the brightness progressively over a specified duration.
-- Support for hue, saturation, and lighting groups will be added soon.
+- Support for hue, and saturation will be added soon.
 
 ## Installing LightingKit
 
@@ -336,6 +336,62 @@ kit.assignLights(lights: newLights, toRoom: room) { (assigned, failed) in
     }
     if failed.count > 0 {
         // HomeKit failed to add these lights to the room.
+    }
+}
+```
+
+## Lighting groups
+
+Using the iOS Home app, the user can create a group and add lights to it. This allows them to control all of the lights within that group simultaneously.
+
+In LightingKit, groups of lights are represented by the `LightingGroup` class.
+
+You can get an array of the `LightingGroup` objects for a particular `Room` like this:
+
+```
+kit.lightingGroups(forRoom: room) { lightingGroups in 
+    if let lightingGroups = lightingGroups {
+        // We have some lighting groups
+    }
+}
+```
+
+A `LightingGroup` object, has a name and unique identifier. It also provides `PowerGroup` and `BrightnessGroup` properties for accessing the power and brightness services of all the lights within the group.
+
+To turn on all of the lights in a particular `LightingGroup`, use its `power` property:
+
+```
+group.power.on(true) { errors in 
+    if errors == nil {
+        // All the lights in the group were turned on! 
+    }
+}
+```
+
+To set the brightness of all the lights in the group:
+
+```
+group.brightness?.set(brightness: 100) { errors in 
+    if errors == nil {
+        // The brightness was set for all lights in the group!
+    }
+}
+```
+
+You can also set off a timed brightness update on a group:
+
+```
+group.brightness?.set(brightness: 100, duration: 10, brightnessDelegate: self)
+```
+
+To receive callbacks for a timed brightness update to a `LightingGroup`, you'll need to conform to the `TimedBrightnessGroupUpdateDelegate` protocol:
+
+```
+extension ViewController: TimedBrightnessGroupUpdateDelegate {
+    func brightnessGroup(_ group: BrightnessGroup, didCompleteTimedBrightnessUpdate errors: [Error]?) {
+        if errors == nil {
+            // The brightness was updated for all lights in the group!
+        }
     }
 }
 ```
