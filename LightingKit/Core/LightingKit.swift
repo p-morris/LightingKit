@@ -274,6 +274,16 @@ extension LightingKit {
         return homeManager?.homes.lightingKitLights(for: room) ?? []
     }
     /**
+     Returns the currently available LightingGroups for a given room.
+     - Parameters:
+     - room: The `Room` the `LightingGroup` objects returned should be associated with.
+     - Returns: An array of `LightingGroup` objects, all of which belong to `room`.
+     - Note: Returns and empty array if there are no lighting groups, or if `LightingKit` is not ready.
+     */
+    public func lightingGroups(forRoom room: Room) -> [LightingGroup] {
+        return homeManager?.homes.lightingKitGroups(for: room) ?? []
+    }
+    /**
      Returns the currently available Lights for a given bridge.
      - Parameters:
      - bridge: The `Bridge` the `Light` objects returned should be associated with.

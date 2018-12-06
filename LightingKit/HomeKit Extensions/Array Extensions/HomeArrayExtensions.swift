@@ -11,6 +11,12 @@ import HomeKit
 
 /// Used to add utility functions to arrays of `HMHome` objects
 internal extension Array where Element: HMHome {
+    /**
+     Returns  the `HMHome` object required associated with a given bridge.
+     - Parameters:
+     - bridge: The `Bridge` to find the home for.
+     - Returns: An `HMHome` object if one is found. Nil otherwise
+     */
     func home(for bridge: Bridge) -> HMHome? {
         return filter {
             return $0.accessories.contains(where: { bridge == $0 })
@@ -71,5 +77,9 @@ internal extension Array where Element: HMHome {
             $0.isLighting &&
                 bridge.uniqueIdentifiersForBridgedAccessories?.contains($0.uniqueIdentifier) ?? false
         }).lightingKitLights()
+    }
+    func lightingKitGroups(for room: Room) -> [LightingGroup]? {
+        guard let home = home(for: room) else { return nil }
+        return home.serviceGroups.lightingGroups(for: room)
     }
 }
