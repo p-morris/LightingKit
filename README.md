@@ -41,8 +41,6 @@ carthage update
 
 Make sure that `LightingKit.framework` is linked in your project's build settings, and that it is copied as a resource in your project's build phases.
 
-Add the `HomeKit` iOS framework to your project.
-
 ### Cocoapods
 
 Add LightingKit to your Podfile:
@@ -59,7 +57,11 @@ pod install
 
 ## Getting started
 
-### 1) Add the HomeKit Usage Description to `Info.plist`
+### 1) Enable HomeKit capabilities for your project
+
+Open the "Capabilities" tab for your project. Scroll down to "HomeKit" and switch it to "On".
+
+### 2) Add the HomeKit Usage Description to `Info.plist`
 
 Open your project's `Info.plist` file, and add the `Privacy - HomeKit Usage Description` key.
 
@@ -67,7 +69,7 @@ Its value should be a `String`. This will be shown to the user when they are ask
 
 **Important!** - If you fail to add this key to your project's `info.plist` file, then your app will crash when you start LightingKit.
 
-### 2) Create a `LightingKit` object
+### 3) Create a `LightingKit` object
 
 Import the LightingKit library into the file you'd like to use it in:
 
@@ -83,7 +85,7 @@ Initialize a `LightingKit` object:
 let kit = LightingKit()
 ```
 
-### 3) Connect to HomeKit
+### 4) Connect to HomeKit
 
 Execute your `LightingKit` object's `start()` function to connect to HomeKit:
 
@@ -93,7 +95,7 @@ kit.start()
 
 **Important!** - Starting `LightingKit` using the `start()` function, will prompt the user for HomeKit permissions (if permission has not already been given).
 
-### 4) Get a callback when LightingKit is ready
+### 5) Get a callback when LightingKit is ready
 
 Starting LightingKit isn't much use if you don't check to see what happened!
 
