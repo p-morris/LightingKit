@@ -85,7 +85,7 @@ extension Brightness {
      - Note: Any timed brightness operations currently in operation will be cancelled, and the operation
      will start from the light's current brightness value.
      */
-    public func set(brightness: Int, duration: TimeInterval, brightnessDelegate: TimedBrightnessUpdateDelegate) {
+    public func set(brightness: Int, duration: TimeInterval, brightnessDelegate: TimedBrightnessUpdateDelegate?) {
         // If `timer` is not nil, then another timed update is currently in progress.
         // Cancel that, and make a recursive call to set(brightness:duration:delegate).
         guard timer == nil else {
@@ -97,13 +97,13 @@ extension Brightness {
         // We can't accept 0 as the duration for a timed updated.
         // Notify the delegate, passing an error.
         guard duration > 0 else {
-            brightnessDelegate.brightness(self, timedUpdateFailed: LightingError.brightnessDuration)
+            brightnessDelegate?.brightness(self, timedUpdateFailed: LightingError.brightnessDuration)
             return
         }
         // Finally, we must be able to access the current brightness value. This should guard
         // should never fail.
         guard let currentBrightness = value else {
-            brightnessDelegate.brightness(self, timedUpdateFailed: LightingError.unknownBrightness)
+            brightnessDelegate?.brightness(self, timedUpdateFailed: LightingError.unknownBrightness)
             return
         }
 
@@ -126,7 +126,7 @@ extension Brightness {
     internal func scheduleBrightnessTimer(start: Int,
                                           end: Int,
                                           duration: TimeInterval,
-                                          delegate: TimedBrightnessUpdateDelegate,
+                                          delegate: TimedBrightnessUpdateDelegate?,
                                           timerType: TimerProtocol.Type = Timer.self) {
         self.targetBrightness = end
         self.startingBrightness = start
