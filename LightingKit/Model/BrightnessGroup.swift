@@ -72,7 +72,7 @@ extension BrightnessGroup: TimedBrightnessUpdateDelegate {
      - Note: Any timed brightness operations currently in operation will be cancelled, and the operation
      will start from the light's current brightness value.
      */
-    public func set(brightness: Int, duration: TimeInterval, brightnessDelegate: TimedBrightnessGroupUpdateDelegate) {
+    public func set(brightness: Int, duration: TimeInterval, brightnessDelegate: TimedBrightnessGroupUpdateDelegate?) {
         updatingServices = services.count
         delegate = brightnessDelegate
         services.forEach { service in
