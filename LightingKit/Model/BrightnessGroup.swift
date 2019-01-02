@@ -60,6 +60,14 @@ public class BrightnessGroup: CharacteristicGroup {
             }
         }
     }
+    /**
+     Cancels any pending timed brightness update.
+     */
+    public func cancelTimedBrightnessUpdate() {
+        services.forEach {
+            $0.cancelTimedBrightnessUpdate()
+        }
+    }
 }
 
 extension BrightnessGroup: TimedBrightnessUpdateDelegate {
