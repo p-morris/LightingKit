@@ -25,6 +25,7 @@
 		72484BC321B65B5300617BA7 /* ServiceBuilderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72484BC221B65B5300617BA7 /* ServiceBuilderChain.swift */; };
 		72484BC521B65F5D00617BA7 /* ServiceBuilderChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72484BC421B65F5D00617BA7 /* ServiceBuilderChainTests.swift */; };
 		72484BC721B6625D00617BA7 /* MockServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72484BC621B6625D00617BA7 /* MockServiceHandler.swift */; };
+		724CEC2D21DC9A18001D3505 /* LightingKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 724CEC2C21DC9A18001D3505 /* LightingKit.podspec */; };
 		726A537421B1489D00BFE9B0 /* AccessoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A537321B1489D00BFE9B0 /* AccessoryExtensions.swift */; };
 		726A537621B148C000BFE9B0 /* ServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A537521B148C000BFE9B0 /* ServiceExtensions.swift */; };
 		726F8A7B21AA65BD0086A34B /* CharacteristicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F8A7A21AA65BD0086A34B /* CharacteristicExtensions.swift */; };
@@ -104,6 +105,7 @@
 		72484BC221B65B5300617BA7 /* ServiceBuilderChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceBuilderChain.swift; sourceTree = "<group>"; };
 		72484BC421B65F5D00617BA7 /* ServiceBuilderChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceBuilderChainTests.swift; sourceTree = "<group>"; };
 		72484BC621B6625D00617BA7 /* MockServiceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceHandler.swift; sourceTree = "<group>"; };
+		724CEC2C21DC9A18001D3505 /* LightingKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LightingKit.podspec; sourceTree = SOURCE_ROOT; };
 		726A537321B1489D00BFE9B0 /* AccessoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryExtensions.swift; sourceTree = "<group>"; };
 		726A537521B148C000BFE9B0 /* ServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceExtensions.swift; sourceTree = "<group>"; };
 		726F8A7A21AA65BD0086A34B /* CharacteristicExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicExtensions.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				728D896321A547EE005060C4 /* Core */,
 				728E44FD21A2BD6100233F9A /* LightingKit.h */,
 				728E44FE21A2BD6100233F9A /* Info.plist */,
+				724CEC2C21DC9A18001D3505 /* LightingKit.podspec */,
 			);
 			path = LightingKit;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				724CEC2D21DC9A18001D3505 /* LightingKit.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
