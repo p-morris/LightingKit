@@ -52,7 +52,7 @@ internal extension Array where Element: HMHome {
      */
     func lightingKitLights(for home: Home) -> [Light] {
         guard let home = filter({ home == $0 }).first else { return [] }
-        return home.accessories.filter({ $0.category.type == .lighting }).lightingKitLights()
+        return home.accessories.filter({ $0.isLighting }).lightingKitLights()
     }
     /**
      Returns all the `Light` objects associated with a given `Room`.
