@@ -78,6 +78,12 @@ internal extension Array where Element: HMHome {
                 bridge.uniqueIdentifiersForBridgedAccessories?.contains($0.uniqueIdentifier) ?? false
         }).lightingKitLights()
     }
+    /**
+     Returns all the `LightingGroup` objects associated with a given `Room`.
+     - Parameters:
+     - room: The `Room` which the groups should be associated with.
+     - Returns: An array of `LightingGroup` objects associated with `bridge`.
+     */
     func lightingKitGroups(for room: Room) -> [LightingGroup]? {
         guard let home = home(for: room) else { return nil }
         return home.serviceGroups.lightingGroups(for: room)

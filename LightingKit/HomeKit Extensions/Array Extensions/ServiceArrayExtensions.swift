@@ -47,6 +47,22 @@ internal extension Array where Element: HMServiceGroup {
         return lightingKitGroups
     }
     /**
+     Returns all the `LightingGroup` objects associated with service group.
+     - Parameters:
+     - factory: The `GroupFactory` to use for creating `LightingGroup` objects.
+     - Returns: An array of `LightingGroup` objects associated with the current service group.
+     */
+    func lightingGroups(factory: GroupFactory = LightingGroupFactory()) -> [LightingGroup] {
+        return lightingServices().compactMap { group -> LightingGroup? in
+            return factory.build(
+                name: group.name,
+                uuid: group.uniqueIdentifier,
+                powerArray: group.services.lightingKitCharacteristics(),
+                brightnessArray: group.services.lightingKitCharacteristics()
+            )
+        }
+    }
+    /**
      Returns all the `HMServiceGroup` objects associated with a given `Room`.
      - Parameters:
      - room: The `Room` which the groups should be associated with.
@@ -57,6 +73,18 @@ internal extension Array where Element: HMServiceGroup {
             $0.services.filter { service -> Bool in
                 guard let accessoryRoom = service.accessory?.room else { return false }
                 return service.isLighting && room == accessoryRoom
+            }.count > 0
+        }
+    }
+    /**
+     Returns all the `HMServiceGroup` objects associated with the current service group.
+     - Parameters:
+     - Returns: An array of `HMServiceGroup` objects.
+     */
+    func lightingServices() -> [HMServiceGroup] {
+        return filter {
+            $0.services.filter { service -> Bool in
+                return service.isLighting
             }.count > 0
         }
     }
